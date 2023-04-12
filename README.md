@@ -1,27 +1,30 @@
-# AmericasNLP 2021 Shared Task on Open Machine Translation
+# AmericasNLP 2023 Shared Task on Machine Translation into Indigenous Languages
 
-This is the official repository for the [AmericasNLP 2021 Shared Task on Open Machine Translation](http://turing.iimas.unam.mx/americasnlp/st.html). All scripts have been tested with Python 3.8.5, and requirements will be updated accordingly.
+## Shared Task
 
-A example of data in the shared task's format can be found in ```pilot_data/```, and ```evaluate.py``` is an example of the metrics and evaluations that will be used for submitted MT systems.
+For the 2023 Shared Task, Spanish (or another high-resource language) will be used as the source language, and model outputs should be in the target Indigenous language. 
 
-## Additional resources about the Helsinki submissions
+### Rules
 
-- Overview of additional data (see also language-specific subfolders): https://github.com/Helsinki-NLP/americasnlp2021-st/tree/main/data
-- Instruction for data filtering with OpusFilter: https://github.com/Helsinki-NLP/americasnlp2021-st/blob/main/README-opusfilter.md
-- Overview of results: https://github.com/Helsinki-NLP/americasnlp2021-st/blob/main/results.md
-- Documentation of the (winning) Model B: https://github.com/Helsinki-NLP/americasnlp2021-st/tree/main/ModelB
-- Pretrained model files of Model B: https://doi.org/10.5281/zenodo.4906353
-- The translated test sets submitted to the shared task: https://github.com/Helsinki-NLP/americasnlp2021-st/tree/main/submissions
+1. This year's shared task will be similar to Track 2 of the 2021 ST: training on the development set is **not** allowed.
+2. Using the [AmericasNLI](https://aclanthology.org/2022.acl-long.435.pdf) test set for hyperparameter tuning or any form of decision making is not allowed. 
+3. Evaluation will be done using the `evaluate.py` script. The final order of teams will be selected using average ChrF across all languages.
 
-## Data sources
 
-If you use one or more of the datasets included in this repository, please do not forget to cite each of te original papers.
- 
- - Nahuatl: Gutierrez-Vasques, X., Sierra, G., & Pompa, I. H. (2016). [Axolotl: a Web Accessible Parallel Corpus for Spanish-Nahuatl](http://www.lrec-conf.org/proceedings/lrec2016/pdf/1068_Paper.pdf). In _LREC_.
- - Hñähñu online corpus: https://tsunkua.elotl.mx/about/
- - Wixarika: Mager, M., Carrillo, D., & Meza, I. (2018). Probabilistic finite-state morphological segmenter for wixarika (huichol) language. Journal of Intelligent & Fuzzy Systems, 34(5), 3081-3087.
- - Guaraní: Chiruzzo, L., Amarilla, P., Ríos, A., & Lugo, G. G. (2020, May). [Development of a Guarani-Spanish Parallel Corpus](https://www.aclweb.org/anthology/2020.lrec-1.320/). In Proceedings of The 12th Language Resources and Evaluation Conference (pp. 2629-2633).
- - Feldman, I., & Coto-Solano, R. (2020, December). [Neural Machine Translation Models with Back-Translation for the Extremely Low-Resource Indigenous Language Bribri](https://www.aclweb.org/anthology/2020.coling-main.351.pdf). In Proceedings of the 28th International Conference on Computational Linguistics (pp. 3965-3976).
- - Quechua: Agic, Ž., & Vulic, I. (2020). [JW300: A wide-coverage parallel corpus for low-resource languages.](https://www.aclweb.org/anthology/P19-1310.pdf). ACL 2019.
- - Aymara (GlobalVoices): Tiedemann, J. (2012, May). [Parallel Data, Tools and Interfaces in OPUS.](http://www.lrec-conf.org/proceedings/lrec2012/pdf/463_Paper.pdf) In LREC (Vol. 2012, pp. 2214-2218).
- - Shipibo-konibo: Galarreta, A. P., Melgar, A., & Oncevay-Marcos, A. (2017, September). [Corpus Creation and Initial SMT Experiments between Spanish and Shipibo-konibo](https://www.aclweb.org/anthology/R17-1033/). In RANLP (pp. 238-244).
+## Baseline System
+
+This year's baseline is the [best performing system from the 2021 AmericasNLP Shared Task](https://helda.helsinki.fi/bitstream/handle/10138/334239/2021.americasnlp_1.29.pdf?sequence=1&isAllowed=y), particularly the *B-0dev* model. The repository for this model can be found [here](https://github.com/Helsinki-NLP/americasnlp2021-st). Baseline performance for the system is described, per-language, below:
+
+| ISO| Language | ChrF |
+---|---|----
+aym | Aymara | 0.283
+bzd |Bribri | 0.165
+cni | Asháninka| 0.258
+gn | Guarani| 0.336
+hch |Wixarika | 0.304
+nah | Nahuatl| 0.266
+oto | Otomí| 0.147
+quy |Quechua | 0.343
+shp |Shipibo-Konibo | 0.329
+tar |Rarámuri | 0.184
+
