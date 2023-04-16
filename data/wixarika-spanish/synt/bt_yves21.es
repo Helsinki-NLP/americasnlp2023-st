@@ -1,4 +1,4 @@
-No creo que tú hayas venido a parar al infierno.- Tú has huido, pero ya no puedes seguir así.
+No creo que tú hayas venido a parar al infierno. Tú no has venido, ¿verdad? Tú no has creído, ¿verdad?
 Por favor, Ne Kie Ten
 Mi Hermano
 Buenos días..
@@ -11,7 +11,7 @@ Tienes razón de mármol..
 Gracias a nosotros. Estás satisfecho.
 Jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
 CONSTITUCIÓN POLÍTICA DE LOS ESTADOS UNIDOS MEXICANOS QUE REFORMA LA DE 5 DE FEBRERO.
-
+Mira! Ya está aquí mi casa, y vendremos a tomarla, y le daremos una sepultura.
 CONSTITUCIÓN POLÍTICA DE LOS ESTADOS UNIDOS MEXICANOS...
 CONSTITUCIÓN POLÍTICA DE LOS ESTADOS UNIDOS MEXICANOS
 Padres, sentencien con nuestro dormitorio"-
@@ -57,7 +57,7 @@ que nunca
 mostrando mi amistad..
 ¡También el día de su nacimiento...! ¡Tiempo de puericultura.!!
 Gracias a todos. Yo se lo agradezco. ...mi mujer siempre ha estado dispuesta a llevarme
--"Pásenle un cuenco y cuéntenlo en el hocico.-Quiero ver que les queda bien.
+-"Pásenle un cuenco y cuéntenlo en el hocico..." -"pero yo quiero ver que les da igual."-
 ¡Un perro, unos ojos saltones! ¡Tus ojos me han visto!
 que era tan joven como tú.
 Pueblo de mi pueblo.. ¡Fuera de aquí, ustedes pudieron ser curados!...
@@ -88,32 +88,32 @@ Dónde está, pues, aquel sentido de bendición que tuvimos? Pues testigo soy en
 Ayer al atardecer cantamos juntos
 Pero por alguna circunstancia te fuiste, y aún me dejaste un hombre más grande. Vete lejos, y mata
 Buenas palabras te diré claramente que eres mi espíritu
-
+Al año siguiente, antes de reanudar el viaje, el samaritano dio dos denarios,
 dicen que gritaré. Pero ahora morirán. Mis hermanos
 Me acerqué a mi casa y me dije: “ ¿Quién está lejos de mí, de quien he salido? No sabemos de dónde hemos salido.
-Por qué se llama así..... El hombre cayó entonces sobre nosotros y dijo que somos exactamente como serpientes que caen en la trampa,
+Por lo que se llama... ..el hombre bajó por causa de sus dolores y angustias,
 Yo ya sé que lo que hace falta en mi boca es comer algo sacrificado a los ídolos.
 No sabemos qué clase de palabra es aquella
 Claro que sí, pensando, yo soy más fuerte que tú
 si no puedes caer de pronto, tú no podrás probarlo
 sino más bien.
 Yo soy la madre. Yo soy la más pequeña de todas las semillas, y mis hermanos son los más ricos. Yo no soy la más pequeña de todas las semillas, pero sé que es la más pequeña de todas las plantas, y tengo todo lo que necesito para vivir. Amén.
-
+Abrimos un camino ancho, y llegamos a un lugar llamado Buenos Puertos, y buscamos el lugar donde estábamos reunidos. Les dimos un mensaje,
 Pero ustedes no hacen más que desafiarme, porque para mí es la vida, y usted es mi corazón.
 El hermano, el hermano, el hermano.
-
-
+Yo, por mi parte, no tengo nada fuera de mi alcance. Solamente sé de qué me sirve. Saludos de Pablo, de Bernabé y de Pablo,
+Acaso has entrado en el reino de Dios, o has caído muerto? ¡No te preocupes, ni te aflijas! ¿No sabes que tu vida es mucho más larga que la primera?
 Si tienes un mes libre, dile adiós; si tienes un hijo, dile que venga a mí y que estoy cerca de él, porque mi Dios tiene hambre.
 Dices que has llamado sol. Ahora ya no merezco llamarme tu padre;
 y llorando, él sabía que, durante el año, había estado cerca.
 La Wixarika es la víctima de su corazón
-
+Mientras estoy con ustedes, les ruego que me ayuden. ¿Acaso no quieren que les suelte un vaso de agua viva?
 Porque todo lo que hay bajo el cielo, es decir, los sacerdotes, y los ancianos, ¿acaso no dicen nada? Pero Dios sabe que sí:
 Un fantasma en su corazón
 El fruto de la vid es amor, y si la raíz es amor, también lo es el crecimiento.
 De nuestro pueblo
 Miren! El salario que se debe a los obreros que cosecharon sus campos, pero el cual es retenido por las cosechas, sigue clamando, y los gritos por auxilio de los segadores han entrado en los oídos de Dios de los ejércitos.
-
+Dondequiera que estés, allí nos separaremos unos de otros: en las orillas del mar.
 Estarías seguro si supieras de dónde vienes
 Y ahora, ¿qué estás haciendo en tu país?
 Nosotros hemos nacido juntos, y nos hemos preparado para partir.
@@ -123,8 +123,8 @@ Todo está permitido., excepto nosotros.
 Sólo tenemos palabras para construir nuestro pueblo.
 Sin embargo, el complot de ellos contra él llegó a serle conocido a nuestros jueces.
 En el suelo, las ovejas se juntan.
-
-
+Los sacerdotes no son los únicos que han oído. Y, sin embargo, tampoco el sumo sacerdote es uno solo.
+En lo que se refiere al comer carne ofrecida en sacrificio a los ídolos, sabemos que los ídolos no significan nada en el templo de Dios y que los ídolos no son nada.
 si alguien de frente nos decía que seríamos...
 que sería lo único que podría hacer
 Vamos a educar a nuestro pueblo en la senda correcta.
@@ -185,7 +185,7 @@ La mamá es una de las cabritas
 ¡Tampoco! Estás hecho un hombre
 CONSTITUCIÓN POLÍTICA DE LOS ESTADOS UNIDOS MEXICANOS.
 La cuerda para que se use..__en__
-
+Mira! Ya está aquí mi casa, y vendremos a tomarla, y le daremos una sepultura.
 CONSTITUCIÓN POLÍTICA DE LOS ESTADOS UNIDOS MEXICANOS ...
 CONSTITUCIÓN POLÍTICA DE LOS ESTADOS UNIDOS MEXICANOS
 Padres, sentencien con nuestro dormitorio"-
@@ -203,7 +203,7 @@ mostrando mi amistad..
 Tamaulipas.. Los extranjeros de San Blas...
 gracias juntos.
 Yo temblaba ...angelina cayó cayó sobre mi hombro como si fuera Navidad
--"Permítele que vaya y beba un bocado de pescado."- Buenos días, gente de jesús María.. que dicen... hola hermanos míos... lo que la gente de jesús dice.
+-"Permítele que vaya y beba un bocado en el hocico..." -"pero ahora yo quiero que ustedes se vayan. Buenos días mi gente de María..que dicen... hola hermanos..."- lo que dice la gente de jesús.
 perro, ojos saltones! ¡Tus ojos me ven!
 que era tan joven como tú.
 Pueblo de mi pueblo.. ¡Fuera de aquí, ustedes han sido curados!
@@ -416,12 +416,12 @@ Yo tengo hambre. Uno está llorando. Yo se lo comí. seguro que sí.
 Bueno, vamos a pasar la noche .... Sí
 Al anochecer...jeje
 Déjala ir.. ..pero no seas cazada lógicamente
-que es... que se me ha pegado a la cara...
+que es... que se me ha pegado a la cara..
 Mi novio... debe
 Ahora... lajaja
 Cel... Vístete... nada más...
 Tambien mi jarra...
-En la escuela estaba hablando
+en la escuela estaba hablando
 o sea, nuestros hijos ... ustedes
 la jajajajajajita tiene tu nariz
 el pajarito de soldado solamente
@@ -438,9 +438,9 @@ El Jeje ya estaba sentado.
 Municipio
 que debemos de hacer para salvarnos
 Kturi.
-hoy......??
+hoy...???
 Buenos días
-es la lista de las... invitaciones....buenos días...
+es la lista de... tú... tú... tú...
 Ay...
 Por lo que respecta a Zhenia
 que nuestro venado no tiene comparación
@@ -471,7 +471,7 @@ Alí con una chimenea
 Estás bien para ir al príncipe! Los magistrados golpearon las ramas y las sostuvieron
 No importa lo que diga...
 Está bien! Siguió entonces las dos
-
+En cuanto a nosotros, llevando todos el rostro descubierto y reflejando la gloria de Dios, vamos incorporando su imagen cada vez más resplandeciente bajo el influjo del Espíritu de Dios, para que tengamos nuestra morada eterna en Dios.
 porque tenemos un Espíritu que resplandece dentro de nosotros hasta Dios, y nos libra del poder de las tinieblas.
 Gracias, claro"-
 tu jabalí vivo
@@ -486,7 +486,7 @@ gracias a mi esposo SSS
 otros dicen que son míos
 el hombre dice
 Allí te veías tan hermosa que hasta las primeras como un arroyo.
-
+Varones, hermanos, ustedes los samaritanos, hombres y mujeres, y ustedes, los samaritanos, son gente de paso entre ustedes. Por eso les rogamos que se reúnan conmigo este domingo, a las nueve de la mañana.
 el niño no me decía nada.
 con mujeres preciosas..
 contigo solamente con tu dinero derivado...
@@ -496,14 +496,14 @@ De un lado para otro
 Hombres y mujeres marchan hacia la casa
 que es lo que estás diciendo!-
 qué feliz está hoy tu vida
-
+En cuanto a ustedes, hermanos, vivan en paz, y tengan paz los unos con los otros, aunque sean vecinos de la familia y vecinos de Cristo.
 Buenas tardes para todos.
 fácilmente
 Piensas bien que hoy has nacido de tu vientre;
 Amado, estás pensando en un niño.
 ¡KOMA y paz!
-
-
+En cuanto a nosotros, nuestra vida vale mucho más que la comida, y nuestros hermanos, nuestros parientes y amigos más, hasta el día de hoy, saben que nuestro corazón está bien.
+Todos mis hermanos los han desamparado. ¿No han hecho acaso algo bueno? También han hecho lo bueno, ¿y no se acuerdan de nosotros?
 sabemos que están ahí sentados tomando cuidado...
 Estando nosotros aquí reunidos en busca de refugio, si al cabo de algún día él les da...
 Con estos días subió de nuevo
