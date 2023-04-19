@@ -23,7 +23,8 @@ LANGCODE = {
     'quechua': 'quy',
     'raramuri': 'tar',
     'shipibo_konibo': 'shp',
-    'wixarika': 'hch'
+    'wixarika': 'hch',
+    'spanish': 'es'
 }
 
 TOKENIZED_TRAIN = {
@@ -153,28 +154,34 @@ MONOLINGUAL = {
 
 
 def get_bible_files(lang):
-    return ['../data/bibles/{lang}/{fname}'.format(lang=lang, fname=fname) for fname in BIBLES[lang]]
+    return [f'../data/bibles/{lang}/{fname}' for fname in BIBLES[lang]]
 
 
 def get_monolingual_files(lang):
-    return ['../data/{lang}-spanish/mono/{fname}'.format(lang=lang, fname=fname)
-            for fname in MONOLINGUAL[lang]]
+    return [f'../data/{lang}-spanish/mono/{fname}' for fname in MONOLINGUAL[lang]]
 
 
 def get_input_files(lang, prefix='train', code=None):
-    src = '../data/{lang}-spanish/{prefix}.es'.format(lang=lang, prefix=prefix)
-    tgt = '../data/{lang}-spanish/{prefix}.{code}'.format(
-        lang=lang, prefix=prefix, code=LANGCODE[lang] if code is None else code)
+    code = LANGCODE[lang] if code is None else code
+    src = f'../data/{lang}-spanish/{prefix}.es'
+    tgt = f'../data/{lang}-spanish/{prefix}.{code}'
     return [src, tgt]
 
 
 def get_work_files(lang, prefix):
     code = LANGCODE[lang]
-    src = '{lang}/{prefix}.es.gz'.format(
-        code=code, lang=lang, prefix=prefix)
-    tgt = '{lang}/{prefix}.{code}.gz'.format(
-        code=code, lang=lang, prefix=prefix)
+    src = f'{lang}/{prefix}.es.gz'
+    tgt = f'{lang}/{prefix}.{code}.gz'
     return [src, tgt]
+
+
+def get_score_file(lang, prefix):
+    return f'{lang}/{prefix}.scores.jsonl.gz'
+
+
+def get_lm_file(lang, prefix):
+    code = LANGCODE.get(lang, lang)
+    return os.path.join('..', 'char_lms', f'{prefix}.{code}.arpa.gz')
 
 
 # From https://github.com/pywirrarika/wixnlp/blob/master/normwix.py
@@ -349,7 +356,7 @@ class BlankFilter(opusfilter.FilterABC):
 
 
 def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=True,
-         monolingual=True, restricted_extra=False, filtering=True):
+         monolingual=True, restricted_extra=False, filtering=True, train_lms=False):
     # WORKDIR = 'processed_data'
     # OUTPUT = 'opusfilter.yaml'
 
@@ -402,7 +409,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
         })
 
     # Preprocess/copy dev sets
-    if dev:
+    if dev or train_lms:
         for lang in LANGUAGES:
             if single and lang != single:
                 continue
@@ -663,6 +670,138 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                 }
             })
 
+    if train_lms:
+        # Spanish models
+        spanish_dev = 'spanish/all-dev.gz'
+        spanish_dev_dedup = 'spanish/all-dev-dedup.gz'
+        spanish_combined = 'spanish/all-combined.gz'
+        spanish_combined_dedup = 'spanish/all-combined-dedup.gz'
+        steps.append({
+            'type': 'concatenate',
+            'parameters': {
+                'inputs': [get_work_files(lang, 'dev')[0] for lang in LANGUAGES],
+                'output': spanish_dev
+            }
+        })
+        steps.append({
+            'type': 'remove_duplicates',
+            'parameters': {
+                'inputs': [spanish_dev],
+                'outputs': [spanish_dev_dedup]
+            }
+        })
+        steps.append({
+            'type': 'train_ngram',
+            'parameters': {
+                'data': spanish_dev_dedup,
+                'parameters': {'norder': 6, 'dscale': 0.01, 'absolute': True},
+                'model': get_lm_file('spanish', 'dev')
+            }
+        })
+        steps.append({
+            'type': 'concatenate',
+            'parameters': {
+                'inputs': [get_work_files(lang, 'combined')[0] for lang in LANGUAGES],
+                'output': spanish_combined
+            }
+        })
+        steps.append({
+            'type': 'remove_duplicates',
+            'parameters': {
+                'inputs': [spanish_combined],
+                'outputs': [spanish_combined_dedup]
+            }
+        })
+        steps.append({
+            'type': 'train_ngram',
+            'parameters': {
+                'data': spanish_combined_dedup,
+                'parameters': {'norder': 6, 'dscale': 0.1, 'absolute': True},
+                'model': get_lm_file('spanish', 'bg')
+            }
+        })
+        # Target language models
+        for lang in LANGUAGES:
+            if single and lang != single:
+                continue
+            steps.append({
+                'type': 'train_ngram',
+                'parameters': {
+                    'data': get_work_files(lang, 'dev')[1],  # target
+                    'parameters': {'norder': 6, 'dscale': 0.01, 'absolute': True},
+                    'model': get_lm_file(lang, 'dev')
+                }
+            })
+            source_files = ['dedup', 'bibles']
+            if lang in MONOLINGUAL:
+                source_files.append('monolingual')
+            steps.append({
+                'type': 'concatenate',
+                'parameters': {
+                    'inputs': [get_work_files(lang, source)[1] for source in source_files],
+                    'output': get_work_files(lang, 'combined_monolingual')[1]
+                }
+            })
+            steps.append({
+                'type': 'train_ngram',
+                'parameters': {
+                    'data': get_work_files(lang, 'combined_monolingual')[1],  # target
+                    'parameters': {'norder': 6, 'dscale': 0.1, 'absolute': True},
+                    'model': get_lm_file(lang, 'bg')
+                }
+            })
+        # Global background model (for e.g. language identification use, prevents OOVs)
+        # TODO: add English?
+        global_combined = 'global/all-combined.gz'
+        steps.append({
+            'type': 'concatenate',
+            'parameters': {
+                'inputs': [spanish_combined_dedup] + [get_work_files(lang, 'dedup')[0] for lang in LANGUAGES],
+                'output': global_combined
+            }
+        })
+        steps.append({
+            'type': 'train_ngram',
+            'parameters': {
+                'data': global_combined,
+                'parameters': {'norder': 1, 'dscale': 0, 'absolute': True},
+                'model': get_lm_file('global', 'bg')
+            }
+        })
+        # Score training material on cross-entropy difference
+        for lang in LANGUAGES:
+            if single and lang != single:
+                continue
+            steps.append({
+                'type': 'score',
+                'parameters': {
+                    'inputs': get_work_files(lang, 'dedup_filtered'),
+                    'output': get_score_file(lang, 'dedup_filtered'),
+                    'filters': [{
+                        'CrossEntropyDifferenceFilter': {
+                            'id_lm_params': [
+                                {'filename': get_lm_file('spanish', 'dev'), 'interpolate': [[get_lm_file('spanish', 'bg'), 0.1]]},
+                                {'filename': get_lm_file(lang, 'dev'), 'interpolate': [[get_lm_file(lang, 'bg'), 0.1]]},
+                            ],
+                            'nd_lm_params': [
+                                {'filename': get_lm_file('spanish', 'bg')},
+                                {'filename': get_lm_file(lang, 'bg')},
+                            ],
+                            'thresholds': 0
+                        }
+                    }],
+                }
+            })
+            steps.append({
+                'type': 'sort',
+                'parameters': {
+                    'inputs': get_work_files(lang, 'dedup_filtered'),
+                    'outputs': get_work_files(lang, 'dedup_filtered_sorted'),
+                    'values': get_score_file(lang, 'dedup_filtered'),
+                    'key': 'CrossEntropyDifferenceFilter.1'
+                }
+            })
+
     logging.info("%s steps generated for %s", len(steps), config_output)
 
     # Write YAML configuration for opusfilter
@@ -687,9 +826,11 @@ if __name__ == '__main__':
                         help='Exclude extra parallel data sets not provided by the organizers')
     parser.add_argument('--no-filtering', dest='filtering', action='store_false', help='Exclude filtering')
     parser.add_argument('--tokenize', action='store_true', help='Include tokenization')
+    parser.add_argument('--lm', action='store_true', help='Train char LMs')
     parser.add_argument('--single', default=None, help='Use single language')
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO)
     main(args.output, args.workdir, single=args.single, tokenize=args.tokenize,
          bibles=args.bibles, dev=args.dev, monolingual=args.monolingual,
-         restricted_extra=args.restricted_extra, filtering=args.filtering)
+         restricted_extra=args.restricted_extra, filtering=args.filtering,
+         train_lms=args.lm)
