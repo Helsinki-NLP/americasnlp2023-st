@@ -1,0 +1,225 @@
+# this is the OpusFilter config used in 2021 to clean the backtranslations
+# this should be integrated into the main OpusFilter config, with adapted paths
+
+
+common:
+    output_directory: filtered
+
+steps:
+
+    - type: filter
+      parameters:
+            inputs:
+                - ../../../pretrainToEs2/bt/mono_aym.es.txt
+                - ../../../americasnlp2021-st/processed_data/aymara/monolingual.aym.txt
+            outputs:
+                - mono_aym.filt.es
+                - mono_aym.filt.aym
+            filters:
+                - LengthRatioFilter:
+                    unit: word
+                    threshold: 2
+                - CharacterScoreFilter:
+                    scripts:
+                        - Latin
+                        - Latin
+                    thresholds:
+                        - 0.9
+                        - 0.7
+                - LanguageIDFilter:
+                    languages:
+                        - es
+                        - en
+                    thresholds:
+                        - 0.8
+                        - -1
+
+    - type: filter
+      parameters:
+            inputs:
+                - ../../../pretrainToEs2/bt/mono_cni.es.txt
+                - ../../../americasnlp2021-st/processed_data/ashaninka/monolingual.cni.txt
+            outputs:
+                - mono_cni.filt.es
+                - mono_cni.filt.cni
+            filters:
+                - LengthRatioFilter:
+                    unit: word
+                    threshold: 2
+                - CharacterScoreFilter:
+                    scripts:
+                        - Latin
+                        - Latin
+                    thresholds:
+                        - 0.9
+                        - 0.7
+                - LanguageIDFilter:
+                    languages:
+                        - es
+                        - en
+                    thresholds:
+                        - 0.8
+                        - -1
+
+    - type: filter
+      parameters:
+            inputs:
+                - ../../../pretrainToEs2/bt/mono_gn.es.txt
+                - ../../../americasnlp2021-st/processed_data/guarani/monolingual.gn.txt
+            outputs:
+                - mono_gn.filt.es
+                - mono_gn.filt.gn
+            filters:
+                - LengthRatioFilter:
+                    unit: word
+                    threshold: 2
+                - CharacterScoreFilter:
+                    scripts:
+                        - Latin
+                        - Latin
+                    thresholds:
+                        - 0.9
+                        - 0.7
+                - LanguageIDFilter:
+                    languages:
+                        - es
+                        - en
+                    thresholds:
+                        - 0.8
+                        - -1
+
+    - type: filter
+      parameters:
+            inputs:
+                - ../../../pretrainToEs2/bt/mono_hch.es.txt
+                - ../../../americasnlp2021-st/processed_data/wixarika/monolingual.hch.txt
+            outputs:
+                - mono_hch.filt.es
+                - mono_hch.filt.hch
+            filters:
+                - LengthRatioFilter:
+                    unit: word
+                    threshold: 2
+                - CharacterScoreFilter:
+                    scripts:
+                        - Latin
+                        - Latin
+                    thresholds:
+                        - 0.9
+                        - 0.7
+                - LanguageIDFilter:
+                    languages:
+                        - es
+                        - en
+                    thresholds:
+                        - 0.8
+                        - -1
+
+    - type: filter
+      parameters:
+            inputs:
+                - ../../../pretrainToEs2/bt/mono_nah.es.txt
+                - ../../../americasnlp2021-st/processed_data/nahuatl/monolingual.nah.txt
+            outputs:
+                - mono_nah.filt.es
+                - mono_nah.filt.nah
+            filters:
+                - LengthRatioFilter:
+                    unit: word
+                    threshold: 2
+                - CharacterScoreFilter:
+                    scripts:
+                        - Latin
+                        - Latin
+                    thresholds:
+                        - 0.9
+                        - 0.7
+                - LanguageIDFilter:
+                    languages:
+                        - es
+                        - en
+                    thresholds:
+                        - 0.8
+                        - -1
+
+    - type: filter
+      parameters:
+            inputs:
+                - ../../../pretrainToEs2/bt/mono_oto.es.txt
+                - ../../../americasnlp2021-st/processed_data/hñähñu/monolingual.oto.txt
+            outputs:
+                - mono_oto.filt.es
+                - mono_oto.filt.oto
+            filters:
+                - LengthRatioFilter:
+                    unit: word
+                    threshold: 2
+                - CharacterScoreFilter:
+                    scripts:
+                        - Latin
+                        - Latin
+                    thresholds:
+                        - 0.9
+                        - 0.7
+                - LanguageIDFilter:
+                    languages:
+                        - es
+                        - en
+                    thresholds:
+                        - 0.8
+                        - -1
+
+    - type: filter
+      parameters:
+            inputs:
+                - ../../../pretrainToEs2/bt/mono_quy.es.txt
+                - ../../../americasnlp2021-st/processed_data/quechua/monolingual.quy.txt 
+            outputs:
+                - mono_quy.filt.es
+                - mono_quy.filt.quy
+            filters:
+                - LengthRatioFilter:
+                    unit: word
+                    threshold: 2
+                - CharacterScoreFilter:
+                    scripts:
+                        - Latin
+                        - Latin
+                    thresholds:
+                        - 0.9
+                        - 0.7
+                - LanguageIDFilter:
+                    languages:
+                        - es
+                        - en
+                    thresholds:
+                        - 0.8
+                        - -1
+
+    - type: filter
+      parameters:
+            inputs:
+                - ../../../pretrainToEs2/bt/mono_shp.es.txt
+                - ../../../americasnlp2021-st/processed_data/shipibo_konibo/monolingual.shp.txt
+            outputs:
+                - mono_shp.filt.es
+                - mono_shp.filt.shp
+            filters:
+                - LengthRatioFilter:
+                    unit: word
+                    threshold: 2
+                - CharacterScoreFilter:
+                    scripts:
+                        - Latin
+                        - Latin
+                    thresholds:
+                        - 0.9
+                        - 0.7
+                - LanguageIDFilter:
+                    languages:
+                        - es
+                        - en
+                    thresholds:
+                        - 0.8
+                        - -1
+ 
