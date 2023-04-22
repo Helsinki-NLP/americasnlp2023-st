@@ -20,6 +20,4 @@ def extractData(fileid):
 
 
 if __name__ == "__main__":
-    extractData("cuentos")
     extractData("texts")
-    
