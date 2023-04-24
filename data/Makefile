@@ -7,14 +7,18 @@ XMLALG   = ${sort ${patsubst %,%.alignxml,${XMLBASE}}}
 CORPUSFILES = ${patsubst %.xml,%.sentxml,${XMLFILES}}
 
 
+
+
+
 .PHONY: align-xml
 align-xml: ${XMLALG}
 
+chatino-spanish: chatino-spanish/extra/mxconst.alignxml
 
 ## add sentence IDs
 
 ${CORPUSFILES}: %.sentxml: %.xml
-	perl -pe 'if (/<s>/){$$i++;s/<s/<s id="$$i">/;}' < $< > $@
+	perl -pe 'if (/<s>/){$$i++;s/<s/<s id="$$i"/;}' < $< > $@
 
 
 ## sentence align and extract plain text
