@@ -39,6 +39,9 @@ cut -f1-2 verses.nah-spa.tsv > file.temp
 cat file.temp  >> texts.nah-spa.tsv
 #mv file.temp texts.nah-spa.tsv
 
+### DATASET: dictexamplesents
+paste dictexamplesents.spa-nah.nah dictexamplesents.spa-nah.spa >> texts.nah-spa.tsv
+
 cd $currentdir
 
 echo "dataset texts.nah-spa.tsv created in data/nahuatl-spanish/extra/"
