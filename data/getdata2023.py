@@ -400,15 +400,29 @@ def spl_ng_es():
                     lang['texts'].append(content.p.text)
 
 
-
     with open('guarani-spanish/extra/scrapped_news.pkl', 'wb') as f:
         pickle.dump(iterdic, f)
 
     esfull= ' '.join(iterdic['SPANISH']['texts'])
     gnfull= ' '.join(iterdic['GUARANI']['texts'])
 
-    esarts = esfull.split('[NEW_DOCUMENT DOCid= Publicado: ')
+    splitterspa = SentenceSplitter(language='es')
+    splittergn = SentenceSplitter(language='en') 
+
+    es = splitterspa.split(text=esfull)
+    gn = splittergn.split(text=gnfull)
+
+    with open('guarani-spanish/extra/noticias.doclevel.es','w') as fout:
+        fout.write('\n'.join(es))
+    with open('guarani-spanish/extra/noticias.doclevel.gn','w') as fout:
+        fout.write('\n'.join(gn))
+
     gnarts = gnfull.split('[NEW_DOCUMENT DOCid= Publicado: ')
+    esarts = esfull.split('[NEW_DOCUMENT DOCid= Publicado: ')
+    estimes = [ re.sub(' ..\:.*m','',k.split('. ].  ')[0]) for k in esarts]
+    gntimes = [ re.sub(' ..\:.*m','',k.split('. ].  ')[0]) for k in gnarts]
+    # TODO: insert a dummy in the index of estimes or gntimes where the two entries don't match
+
 
     estimes = [ k.split('. ].  ')[0] for k in esarts]
     gntimes = [ k.split('. ].  ')[0] for k in gnarts]
@@ -417,91 +431,113 @@ def spl_ng_es():
         print(re.sub(' ..\:.*m','',estimes[i]), re.sub(' ..\:.*m','',gntimes[i]))
         # if this two are not the same, insert a dummy in the side that is missing that article ()
 
-    splitterspa = SentenceSplitter(language='es')
-    splittergn = SentenceSplitter(language='en') 
-
-    gn = splittergn.split(text=gnfull)
-    es = splitterspa.split(text=esfull)
-
-    with open('guarani-spanish/extra/noticias.doclevel.es','w') as fout:
-        fout.write('\n'.join(es))
-    with open('guarani-spanish/extra/noticias.doclevel.gn','w') as fout:
-        fout.write('\n'.join(gn))
 
 
 # BRIBRI
 
-maintext = []
+
+maintextspa = []
+maintextbzd = []
 chaptertitles = []
-#captions = []
-#quotes = []
+capitals = []
 def visitor_body_BZD(text, cm, tm, fontDict, fontSize):
     fs = tm[0]
     x = tm[4]
     y = tm[5]
-    # skip header
-    #if y < 600:
-    #    print(text, tm)
-    #    parts.append(text)
-    # main text is fontsize = 9.5
-    if fs == 9.5 or fs == 8.075 or fs == 5.7 or fs == 9.0:
-        maintext.append(text)
-    elif fs == 22.0:
+    if pag == 57:
+        print(tm, len(text), text[:100])
+    # main text is fontsize 12 or 15
+    if fs == 12.0 or fs == 15.0: # or fs == 5.7 or fs == 9.0:
+        if x > 300:
+            maintextspa.append(text)
+        if x < 300:
+            maintextbzd.append(text)
+    elif fs == 24.0:
         chaptertitles.append(text)
-    elif fs == 7.0 or fs == 3.9:
-        captions.append(text)
-    elif fs == 12.0 or fs == 11.0:
-        if text.find('http://www.cdi.gob.mx') == -1:
-            quotes.append(text)
     # skip page numbering always fontsize = 8.0
-    elif fs == 8.0:
-        pass 
+    elif fs >= 70.0:
+        if text != '\n':
+            capitals.append(text)
     elif text:
         pass
-        #print("SKIIIIPED:     ",text, tm)
+        #print("SKIIIIPED:     page",pag,text, tm)
 
 def enciclopedia_bzdspa():
-
+    # BRIBRI enciclopedia - bzd-spa
     opath=pathlib.Path('./pdfs/enciclopedia_bzd-spa')
     opath.mkdir(exist_ok=True)
 
     urlbase='https://mep.go.cr/sites/default/files/tomo'
-    # YOU NEED A VPN IN CR!!!
-    #for idx in range(1,8):
-    #    subprocess.run(["wget", "-nc", "-P", str(opath), f"{urlbase}_{idx}.pdf"])
+    print( '''HUOM! YOU NEED A VPN IN CR!!! To download the books with: 
+                for idx in range(1,8):
+                    subprocess.run(["wget", "-nc", "-P", str(opath), f"{urlbase}_{idx}.pdf"])
+            ''')
 
-    bzdfull = ""
-    spafull = ""
-    for idx in range(1,8):
-        #subprocess.run(["wget", "-nc", "-P", str(opath), f"{urlbase}_{idx}.pdf"])
+    bzdfull, spafull = [], []
+    global pag # global for debugging purposes
+    for idx in range(2,6):
+        # HUOM!
+        #      BOOK 1 BEHAVES STRANGE!!! I think that copypaseting the pdf contents and then doing the processing might work better
+
         reader = PdfReader(f'{str(opath)}/tomo_{idx}.pdf')
-        npag=len(reader.pages)
-        title = reader.pages[6].extract_text().replace('\n',' ')
-        nahfull += f" [NEW_DOCUMENT:  DOCid={idx}, lang=nah, DOCNAME={title}]. "
-        spafull += f" [NEW_DOCUMENT:  DOCid={idx}, lang=spa, DOCNAME={title}]. "
-        for i,j in zip(range(2,npag,2), range(3,npag,2)):
+        npag=len(reader.pages) if idx!=3 else 73
+        title = reader.pages[6].extract_text().split('–')[0]
+        bzdchp = f" [NEW_DOCUMENT:  DOCid={idx}, lang=bzd, DOCNAME={title}]. "
+        spachp = f" [NEW_DOCUMENT:  DOCid={idx}, lang=spa, DOCNAME={title}]. "
+        newfile = True
+        for pag in range(11,npag):
+            maintextspa, maintextbzd, chaptertitles,capitals = [],[],[],[]
+
             # first two pages are not useful
             # always starts with nahuatl in page 3 (i=2)
             # the spanish translation is in the odd page index
-            nah,spa = reader.pages[i].extract_text().replace('\n',''), reader.pages[j].extract_text().replace('\n','')
-            # clean headers and footers
-            nah = re.sub(r' DR©.*','',nah)
-            nah = re.sub( r'^.*[0-9] CUENTOS IND.GENAS ', '',nah)
-            spa = re.sub(r' DR©.*','',spa)
-            spa = re.sub( r'^.*[0-9] ', '',spa)
-            # delete hyphens to break sentences
-            nah = nah.replace('-', '')
-            spa = spa.replace('-', '')
-            spa = spa.replace(u'\xad','')
-            nah = nah.replace(u'\xad','')
-            nahfull += nah
-            spafull += spa
-        nahfull += f" [END OF DOCUMENT]."
-        spafull += f" [END OF DOCUMENT]."
+            print(f"\n####### TOMO {idx}, PAG: {pag}")
+            coso = reader.pages[pag].extract_text(visitor_text=visitor_body_BZD)
+            if chaptertitles:
+                if not capitals:
+                    capitals = ['','']
+                print(capitals)
+                bzd = "[NEW CHAPTER: "+' '.join(chaptertitles).replace('\n',' ')+f' , DOCid={idx},]. '+capitals[-1]+''.join(maintextbzd)
+                spa = "[NEW CHAPTER: "+' '.join(chaptertitles).replace('\n',' ')+f' , DOCid={idx},]. '+capitals[-2]+''.join(maintextspa)
+                if newfile:
+                    newfile=False
+                    bzdchp += bzd.replace('\n','')
+                    spachp += spa.replace('\n','')
+                else:
+                    bzdchp += f" [END OF CHAPTER]. "
+                    spachp += f" [END OF CHAPTER]. "
+                    bzdfull.append(bzdchp)
+                    spafull.append(spachp)
+                
+                    bzdchp = bzd.replace('\n','')
+                    spachp = spa.replace('\n','')
+            else:
+                spa = ''.join(maintextspa).replace('\n','').replace('-', '')
+                bzd = ''.join(maintextbzd).replace('\n','').replace('-', '')
+                bzdchp += bzd
+                spachp += spa
+        
+        bzdchp = bzdchp.replace('.', '. ')
+        spachp = spachp.replace('.', '. ')
+        bzdchp += f" [END OF CHAPTER]. "
+        spachp += f" [END OF CHAPTER]. "
+        bzdchp += f" [END OF DOCUMENT]. "
+        spachp += f" [END OF DOCUMENT]. "
+        bzdfull.append(bzdchp)
+        spafull.append(spachp)
 
+    splitterspa = SentenceSplitter(language='es')
+    splitterbzd = SentenceSplitter(language='en') 
 
+    for id, chapter in enumerate(bzdfull):
+        txt = splitterbzd.split(text=chapter.replace('.', '. '))
+        with open(f'bribri-spanish/extra/enciclopedia.{id}.doclevel.bzd', 'w') as fout:
+            fout.write('\n'.join(txt))
 
-
+    for id, chapter in enumerate(spafull):
+        txt = splitterspa.split(text=chapter.replace('.', '. '))
+        with open(f'bribri-spanish/extra/enciclopedia.{id}.doclevel.spa', 'w') as fout:
+            fout.write('\n'.join(txt))
 
 
 
