@@ -422,7 +422,8 @@ def spl_ng_es(from_pkl=False):
                     texts_bydate[curr_date] = {"SPANISH": {}, "GUARANI": {}}
                 if curr_time not in texts_bydate[curr_date][lang]:
                     texts_bydate[curr_date][lang][curr_time] = []
-            else:
+            elif text.strip() != "":
+                text = re.sub(r'\s*\n\s*', ' ', text)
                 texts_bydate[curr_date][lang][curr_time].append(text)
     
     with open('guarani-spanish/extra/noticias.prealigned.tsv','w') as fout:
@@ -433,15 +434,10 @@ def spl_ng_es(from_pkl=False):
                 continue
 
             for time_sp, time_gn in zip(texts_bydate[date]['SPANISH'], texts_bydate[date]['GUARANI']):
-                sents_sp = []
-                for text_sp in texts_bydate[date]['SPANISH'][time_sp]:
-                    s = splitterspa.split(text=text_sp)
-                    sents_sp.extend(s)
-                sents_gn = []
-                for text_gn in texts_bydate[date]['GUARANI'][time_gn]:
-                    s = splittergn.split(text=text_gn)
-                    sents_gn.extend(s)
-                
+                text_sp = " ".join(texts_bydate[date]['SPANISH'][time_sp])
+                sents_sp = splitterspa.split(text=text_sp)
+                text_gn = " ".join(texts_bydate[date]['GUARANI'][time_gn])
+                sents_gn = splittergn.split(text=text_gn)
                 fout.write(f"[NEW DOCUMENT {date} SP:{time_sp} GN:{time_gn}]\t[NEW DOCUMENT {date} SP:{time_sp} GN:{time_gn}]\n")
                 for sent_sp, sent_gn in itertools.zip_longest(sents_sp, sents_gn, fillvalue=''):
                     fout.write(f"{sent_sp}\t{sent_gn}\n")
