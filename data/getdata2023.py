@@ -4,7 +4,7 @@ from sentence_splitter import SentenceSplitter, split_text_into_sentences
 import pandas as pd
 
 #from langdetect import detect
-import pathlib, subprocess, requests, re, random, pickle
+import pathlib, subprocess, requests, re, random, pickle, sys, itertools
 
 
 
@@ -357,80 +357,94 @@ def inpi():
 
 
 
-def spl_ng_es():
+def spl_ng_es(from_pkl=False):
     # GUARANÍ
-    urles = 'https://spl.gov.py/es/index.php/noticias'
-    urlgn = 'https://www.spl.gov.py/gn/index.php/marandukuera'
-    user_agents = [
-      "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0",
-      "Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0",
-      "Mozilla/5.0 (X11; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
-      ]
 
-    esfull, gnfull = [], []
+    if not from_pkl:
+        urles = 'https://spl.gov.py/es/index.php/noticias'
+        urlgn = 'https://www.spl.gov.py/gn/index.php/marandukuera'
+        user_agents = [
+        "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0",
+        "Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0",
+        "Mozilla/5.0 (X11; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+        ]
 
-    iterdic = {'SPANISH': {'url':urles, 'texts':esfull}, 'GUARANI': {'url':urlgn, 'texts':gnfull}, }
-    with requests.Session() as session:
-        for key,lang in iterdic.items():
-            print(f"processing {key}")
-            url = lang['url'] 
-            numpages =  67 # sorry, I was lazy here
-            for page in range(numpages):
-                print(f'page {page+1}/{numpages}')
-                random_user_agent = random.choice(user_agents)
-                headers = {'User-Agent': random_user_agent }
-                response = session.get(f'{url}?ccm_paging_p={page}', headers = headers)
+        esfull, gnfull = [], []
 
-                soup = bs(response.text, 'html.parser')
+        iterdic = {'SPANISH': {'url':urles, 'texts':esfull}, 'GUARANI': {'url':urlgn, 'texts':gnfull}, }
+        with requests.Session() as session:
+            for key,lang in iterdic.items():
+                print(f"processing {key}")
+                url = lang['url'] 
+                numpages =  67 # sorry, I was lazy here
+                for page in range(numpages):
+                    print(f'page {page+1}/{numpages}')
+                    random_user_agent = random.choice(user_agents)
+                    headers = {'User-Agent': random_user_agent }
+                    response = session.get(f'{url}?ccm_paging_p={page}', headers = headers)
 
-            
-                articles = soup.find_all('span', {'class':'card-title'})
+                    soup = bs(response.text, 'html.parser')
 
-                for art in articles:
-                    link = art.a['href']
-                    response2 = session.get(f"{link}", headers = headers)
-                    soup2 = bs(response2.text, 'html.parser')
-                    
-                    lang['texts'].append(f"[NEW_DOCUMENT DOCid= {soup2.find('blockquote').text} ]. ") # use publication date as ID
-                    lang['texts'].append(f"{soup2.find('h5', {'class':'page-title'}).text}. ".replace('\u200b', ' ').strip()) # append the document title
+                
+                    articles = soup.find_all('span', {'class':'card-title'})
 
-                    #sentences = soup2.find_all('p')
-                    
-                    content = soup2.find('div', {'class':'section contenido_principal'})
-                    lang['texts'].append(content.p.text)
+                    for art in articles:
+                        link = art.a['href']
+                        response2 = session.get(f"{link}", headers = headers)
+                        soup2 = bs(response2.text, 'html.parser')
+                        
+                        lang['texts'].append(f"[NEW_DOCUMENT DOCid= {soup2.find('blockquote').text} ]. ") # use publication date as ID
+                        lang['texts'].append(f"{soup2.find('h5', {'class':'page-title'}).text}. ".replace('\u200b', ' ').strip()) # append the document title
+
+                        #sentences = soup2.find_all('p')
+                        
+                        content = soup2.find('div', {'class':'section contenido_principal'})
+                        lang['texts'].append(content.p.text)
 
 
-    with open('guarani-spanish/extra/scrapped_news.pkl', 'wb') as f:
-        pickle.dump(iterdic, f)
-
-    esfull= ' '.join(iterdic['SPANISH']['texts'])
-    gnfull= ' '.join(iterdic['GUARANI']['texts'])
-
+        with open('guarani-spanish/extra/scrapped_news.pkl', 'wb') as f:
+            pickle.dump(iterdic, f)
+    
+    if from_pkl:
+        iterdic = pickle.load(open('guarani-spanish/extra/scrapped_news.pkl', 'rb'))
+    
     splitterspa = SentenceSplitter(language='es')
-    splittergn = SentenceSplitter(language='en') 
+    splittergn = SentenceSplitter(language='es')   # or en?
 
-    es = splitterspa.split(text=esfull)
-    gn = splittergn.split(text=gnfull)
+    texts_bydate = {}
+    for lang in ('SPANISH', 'GUARANI'):
+        for text in iterdic[lang]['texts']:
+            if text.startswith("["):
+                datetime = re.search(r'\s(\d+/\d+/\d+)\s(\d+:\d+:[ap])', text)
+                curr_date = datetime.group(1)
+                curr_time = datetime.group(2)
+                if curr_date not in texts_bydate:
+                    texts_bydate[curr_date] = {"SPANISH": {}, "GUARANI": {}}
+                if curr_time not in texts_bydate[curr_date][lang]:
+                    texts_bydate[curr_date][lang][curr_time] = []
+            else:
+                texts_bydate[curr_date][lang][curr_time].append(text)
+    
+    with open('guarani-spanish/extra/noticias.prealigned.tsv','w') as fout:
+        for date in texts_bydate:
+            count_sp = len(texts_bydate[date]['SPANISH'])
+            count_gn = len(texts_bydate[date]['GUARANI'])
+            if count_sp != count_gn:
+                continue
 
-    with open('guarani-spanish/extra/noticias.doclevel.es','w') as fout:
-        fout.write('\n'.join(es))
-    with open('guarani-spanish/extra/noticias.doclevel.gn','w') as fout:
-        fout.write('\n'.join(gn))
-
-    gnarts = gnfull.split('[NEW_DOCUMENT DOCid= Publicado: ')
-    esarts = esfull.split('[NEW_DOCUMENT DOCid= Publicado: ')
-    estimes = [ re.sub(' ..\:.*m','',k.split('. ].  ')[0]) for k in esarts]
-    gntimes = [ re.sub(' ..\:.*m','',k.split('. ].  ')[0]) for k in gnarts]
-    # TODO: insert a dummy in the index of estimes or gntimes where the two entries don't match
-
-
-    estimes = [ k.split('. ].  ')[0] for k in esarts]
-    gntimes = [ k.split('. ].  ')[0] for k in gnarts]
-
-    for i in range(len(estimes)):
-        print(re.sub(' ..\:.*m','',estimes[i]), re.sub(' ..\:.*m','',gntimes[i]))
-        # if this two are not the same, insert a dummy in the side that is missing that article ()
-
+            for time_sp, time_gn in zip(texts_bydate[date]['SPANISH'], texts_bydate[date]['GUARANI']):
+                sents_sp = []
+                for text_sp in texts_bydate[date]['SPANISH'][time_sp]:
+                    s = splitterspa.split(text=text_sp)
+                    sents_sp.extend(s)
+                sents_gn = []
+                for text_gn in texts_bydate[date]['GUARANI'][time_gn]:
+                    s = splittergn.split(text=text_gn)
+                    sents_gn.extend(s)
+                
+                fout.write(f"[NEW DOCUMENT {date} SP:{time_sp} GN:{time_gn}]\t[NEW DOCUMENT {date} SP:{time_sp} GN:{time_gn}]\n")
+                for sent_sp, sent_gn in itertools.zip_longest(sents_sp, sents_gn, fillvalue=''):
+                    fout.write(f"{sent_sp}\t{sent_gn}\n")
 
 
 # BRIBRI
@@ -566,5 +580,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    #main()
+    spl_ng_es(from_pkl=True)
 
