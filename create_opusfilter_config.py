@@ -49,7 +49,7 @@ EXTRA = {
         {'prefix': 'extra/sent-boconst_aym'}
     ],
     'chatino': [
-        {'prefix': 'extra/sent-mxconst'},
+        {'prefix': 'extra/sent-mxconst', 'variant': 'plain'},
         {'prefix': 'synt/ctp-eng', 'code': 'ctp'},
     ],
     'hñähñu': [
@@ -114,66 +114,95 @@ RESTRICTED_EXTRA = {
 }
 
 BIBLES = {
-    'ashaninka': ['cni-x-bible-cni-v1.txt'],
-    'aymara': ['ayr-x-bible-1997-v1.txt', 'ayr-x-bible-2011-v1.txt'],
-    'bribri': ['bzd-x-bible-bzd-v1.txt'],
+    'ashaninka': [
+        {'file': 'cni-x-bible-cni-v1.txt'}
+    ],
+    'aymara': [
+        {'file': 'ayr-x-bible-1997-v1.txt'},
+        {'file': 'ayr-x-bible-2011-v1.txt'}
+    ],
+    'bribri': [
+        {'file': 'bzd-x-bible-bzd-v1.txt'}
+    ],
     'chatino': [
-        'cta-x-bible-cta-v1.txt',
-        'ctp-x-bible-ctp-v1.txt',
-        'cya-x-bible-cya-v1.txt'
+        {'file': 'cta-x-bible-cta-v1.txt', 'variant': 'plain'},
+        {'file': 'ctp-x-bible-ctp-v1.txt', 'variant': 'plain'},
+        {'file': 'cya-x-bible-cya-v1.txt', 'variant': 'plain'}
     ],
-    'guarani': ['gug-x-bible-gug-v1.txt'],
-    'hñähñu': ['ote-x-bible-ote-v1.txt'],
+    'guarani': [{'file': 'gug-x-bible-gug-v1.txt'}],
+    'hñähñu': [{'file': 'ote-x-bible-ote-v1.txt'}],
     'nahuatl': [
-        # Yves: I would restrict the selection of Bibles to nch, ngu, nhe, nhw.
-        'nch-x-bible-nch-v1.txt',
-        'ngu-x-bible-ngu-v1.txt',
-        'nhe-x-bible-nhe-v1.txt',
-        'nhw-x-bible-nhw-v1.txt',
-        # 'nah-NHXNTV.txt',
-        # 'azz-x-bible-azz-v1.txt',
-        # 'ncj-x-bible-ncj-v1.txt',
-        # 'nhi-x-bible-nhi-v1.txt',
-        # 'nhy-x-bible-nhy-v1.txt'
+        {'file': 'nhi-x-bible-nhi-v1.txt'},  # ce = 0.2671 (excluded in 2021)
+        {'file': 'ncj-x-bible-ncj-v1.txt'},  # ce = 1.05 (excluded in 2021)
+        {'file': 'azz-x-bible-azz-v1.txt'},  # ce = 1.9494 (excluded in 2021)
+        {'file': 'nah-NHXNTV.txt'},          # ce = 3.5871 (excluded in 2021)
+        {'file': 'nhy-x-bible-nhy-v1.txt'},  # ce = 3.8592 (excluded in 2021)
+        # {'file': 'nhe-x-bible-nhe-v1.txt'},  # ce = 5.1487
+        # {'file': 'ngu-x-bible-ngu-v1.txt'},  # ce = 5.363
+        # {'file': 'nhw-x-bible-nhw-v1.txt'},  # ce = 5.555
+        # {'file': 'nch-x-bible-nch-v1.txt'},  # ce = 5.9472
     ],
-    'quechua': ['quy-x-bible-quy-v1.txt', 'quz-x-bible-quz-v1.txt'],
-    'raramuri': ['tac-x-bible-tac-v1.txt'],
-    'shipibo_konibo': ['shp-SHPTBL.txt'],
-    'wixarika': ['hch-x-bible-hch-v1.txt'],
+    'quechua': [
+        {'file': 'quy-x-bible-quy-v1.txt'},
+        {'file': 'quz-x-bible-quz-v1.txt'}
+    ],
+    'raramuri': [
+        {'file': 'tac-x-bible-tac-v1.txt'}
+    ],
+    'shipibo_konibo': [
+        {'file': 'shp-SHPTBL.txt'}
+    ],
+    'wixarika': [
+        {'file': 'hch-x-bible-hch-v1.txt'}
+    ],
     'spanish': [
-        'spa-x-bible-americas.txt.jhubc',
-        'spa-x-bible-hablahoi-latina.txt.jhubc',
-        'spa-x-bible-lapalabra.txt.jhubc',
-        'spa-x-bible-newworld.txt.jhubc',
-        'spa-x-bible-nuevadehoi.txt.jhubc',
-        'spa-x-bible-nuevaviviente.txt.jhubc',
-        'spa-x-bible-nuevointernacional.txt.jhubc',
-        'spa-x-bible-reinavaleracontemporanea.txt.jhubc'
+        {'file': 'spa-x-bible-americas.txt.jhubc'},
+        {'file': 'spa-x-bible-hablahoi-latina.txt.jhubc'},
+        {'file': 'spa-x-bible-lapalabra.txt.jhubc'},
+        {'file': 'spa-x-bible-newworld.txt.jhubc'},
+        {'file': 'spa-x-bible-nuevadehoi.txt.jhubc'},
+        {'file': 'spa-x-bible-nuevaviviente.txt.jhubc'},
+        {'file': 'spa-x-bible-nuevointernacional.txt.jhubc'},
+        {'file': 'spa-x-bible-reinavaleracontemporanea.txt.jhubc'}
     ]
 }
 
 
 MONOLINGUAL = {
-    'ashaninka': ['test.txt', 'train.txt', 'valid.txt'],
-    'aymara': ['wiki.ay.aa'],
-    'guarani': ['wiki.gn.aa'],
-    'hñähñu': ['ote.txt'],
-    'nahuatl': ['wikibooks.nah.aa', 'wiki.nah.aa'],
-    'quechua': ['wikibooks.qu.aa', 'wiki.qu.aa'],
-    'shipibo_konibo': ['test.txt', 'train.txt', 'valid.txt'],
-    'wixarika': ['social.wix']
+    'ashaninka': [
+        {'file': 'test.txt'},
+        {'file': 'train.txt'},
+        {'file': 'valid.txt'}
+    ],
+    'aymara': [{'file': 'wiki.ay.aa'}],
+    'guarani': [{'file': 'wiki.gn.aa'}],
+    'hñähñu': [{'file': 'ote.txt'}],
+    'nahuatl': [
+        {'file': 'wikibooks.nah.aa'},
+        {'file': 'wiki.nah.aa'}
+    ],
+    'quechua': [
+        {'file': 'wikibooks.qu.aa'},
+        {'file': 'wiki.qu.aa'}
+    ],
+    'shipibo_konibo': [
+        {'file': 'test.txt'},
+        {'file': 'train.txt'},
+        {'file': 'valid.txt'}
+    ],
+    'wixarika': [{'file': 'social.wix'}]
 }
 
 
 def get_bible_files(lang):
-    return [f'../data/bibles/{lang}/{fname}' for fname in BIBLES[lang]]
+    return [(f'../data/bibles/{lang}/{entry["file"]}', entry.get('variant', 'default')) for entry in BIBLES[lang]]
 
 
 def get_monolingual_files(lang):
-    return [f'../data/{lang}-spanish/mono/{fname}' for fname in MONOLINGUAL[lang]]
+    return [f'../data/{lang}-spanish/mono/{entry["file"]}' for entry in MONOLINGUAL[lang]]
 
 
-def get_input_files(lang, prefix='train', code=None):
+def get_input_files(lang, prefix='train', code=None, variant=None):
     code = LANGCODE[lang] if code is None else code
     src = f'../data/{lang}-spanish/{prefix}.es'
     tgt = f'../data/{lang}-spanish/{prefix}.{code}'
@@ -397,8 +426,22 @@ class BlankFilter(opusfilter.FilterABC):
         return all(score)
 
 
+class PrefixLabels(opusfilter.PreprocessorABC):
+    """Add labels as prefixes to the source sentence"""
+
+    def __init__(self, labels, workdir='', **kwargs):
+        super().__init__(workdir, **kwargs)
+        self.labels = labels
+
+    def process(self, pairs):
+        for segments in pairs:
+            src, tgt = segments
+            yield ' '.join(self.labels) + ' ' + src, tgt
+
+
 def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=True,
-         monolingual=True, restricted_extra=False, filtering=True, train_lms=False):
+         monolingual=True, restricted_extra=False, filtering=True, train_lms=False,
+         add_labels=False):
     # WORKDIR = 'processed_data'
     # OUTPUT = 'opusfilter.yaml'
 
@@ -419,13 +462,44 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
         extra_datasets = EXTRA
     if not filtering:
         logging.info("Filtering disabled")
+    if add_labels:
+        logging.info("Labels enabled")
+        if train_lms:
+            logger.warning("Labels should not be used when training char LMs for source language!")
 
+
+    filter_params = {
+        'LengthFilter': {'unit': 'char', 'min_length': 1, 'max_length': 1000},
+        'LengthRatioFilter': {'unit': 'char', 'threshold': 4},
+        'CharacterScoreFilter': {'scripts': ['Latin', 'Latin'], 'thresholds': [0.9, 0.9]},
+        'TerminalPunctuationFilter': {'threshold': -2},
+        'NonZeroNumeralsFilter': {'threshold': 0.5}
+    }
+
+    active_filters = {
+        'ashaninka': ['LengthRatioFilter'],
+        'aymara': ['LengthFilter', 'LengthRatioFilter', 'CharacterScoreFilter',
+                   'TerminalPunctuationFilter', 'NonZeroNumeralsFilter'],
+        'bribri': [],
+        'chatino': ['LengthFilter', 'LengthRatioFilter'],
+        'guarani': ['LengthRatioFilter'],
+        'hñähñu': ['LengthRatioFilter'],
+        'nahuatl': ['LengthFilter', 'LengthRatioFilter'],
+        'quechua': ['LengthFilter', 'LengthRatioFilter', 'CharacterScoreFilter',
+                    'TerminalPunctuationFilter', 'NonZeroNumeralsFilter'],
+        'raramuri': ['LengthFilter', 'LengthRatioFilter', 'CharacterScoreFilter',
+                     'NonZeroNumeralsFilter'],
+        'shipibo_konibo': [],
+        'wixarika': ['LengthRatioFilter', 'NonZeroNumeralsFilter']
+    }
+            
     steps = []
 
     # Preprocess/copy train sets
     for lang in LANGUAGES:
         if single and lang != single:
             continue
+        code = LANGCODE[lang]
         inputs = get_input_files(lang, 'train')
         outputs = get_work_files(lang, 'train')
         preprocessors = []
@@ -443,6 +517,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
             }})
         else:
             pass  # no preprocessing needed
+        preprocessors.append({'WhitespaceNormalizer': {}})
         steps.append({
             'type': 'preprocess',
             'parameters': {
@@ -451,14 +526,42 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                 'preprocessors': preprocessors
             }
         })
+        if filtering and active_filters[lang]:
+            inputs = outputs
+            outputs = get_work_files(lang, 'train_filtered')
+            filters = [{filt: filter_params[filt]} for filt in active_filters[lang]]
+            steps.append({
+                'type': 'filter',
+                'parameters': {
+                    'inputs': inputs,
+                    'outputs': outputs,
+                    'filters': filters
+                }
+            })
+        if add_labels:
+            inputs = outputs
+            outputs = get_work_files(lang, 'train_labeled')
+            steps.append({
+                'type': 'preprocess',
+                'parameters': {
+                    'inputs': inputs,
+                    'outputs': outputs,
+                    'preprocessors': [
+                        {'PrefixLabels': {'labels': [f'<{code}>', f'<{code}-default>', '<default>']},
+                         'module': 'create_opusfilter_config'}
+                    ]
+                }
+            })
 
     # Preprocess/copy dev sets
+    # - No filtering for dev sets
     if dev or train_lms:
         for lang in LANGUAGES:
             if single and lang != single:
                 continue
+            code = LANGCODE[lang]
             inputs = get_input_files(lang, 'dev')
-            outputs = get_work_files(lang, 'dev')
+            outputs = get_work_files(lang, 'dev_labeled' if add_labels else 'dev')
             preprocessors = []
             if lang == 'bribri':
                 preprocessors.append({'BribriNormalizer': {}, 'module': 'create_opusfilter_config'})
@@ -466,6 +569,10 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                 preprocessors.append({'ChatinoNormalizer': {}, 'module': 'create_opusfilter_config'})
             else:
                 pass  # no preprocessing needed
+            preprocessors.append({'WhitespaceNormalizer': {}})
+            if add_labels:
+                preprocessors.append({'PrefixLabels': {'labels': [f'<{code}>', f'<{code}-default>', '<default>']},
+                                      'module': 'create_opusfilter_config'})
             steps.append({
                 'type': 'preprocess',
                 'parameters': {
@@ -475,47 +582,86 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                 }
             })
 
-    # Combine extra data sets
+    # Preprocess/copy extra corpora
     for lang in extra_datasets:
         if single and lang != single:
             continue
-        inputs = [get_input_files(lang, **params) for params in extra_datasets[lang]]
+        for idx, extra in enumerate(extra_datasets[lang]):
+            inputs = get_input_files(lang, **extra)
+            outputs = get_work_files(lang, f'extra-part-{idx}')
+            preprocessors = []
+            if lang == 'raramuri':
+                preprocessors.append({'RaramuriNormalizer': {}, 'module': 'create_opusfilter_config'})
+            elif lang == 'chatino':
+                preprocessors.append({'ChatinoNormalizer': {}, 'module': 'create_opusfilter_config'})
+            else:
+                pass  # no preprocessing needed
+            preprocessors.append({'WhitespaceNormalizer': {}})
+            steps.append({
+                'type': 'preprocess',
+                'parameters': {
+                    'inputs': inputs,
+                    'outputs': outputs,
+                    'preprocessors': preprocessors
+                }
+            })
+            if filtering and active_filters[lang]:
+                inputs = outputs
+                outputs = get_work_files(lang, f'extra-part-{idx}_filtered')
+                filters = [{filt: filter_params[filt]} for filt in active_filters[lang]]
+                steps.append({
+                    'type': 'filter',
+                    'parameters': {
+                        'inputs': inputs,
+                        'outputs': outputs,
+                        'filters': filters
+                    }
+                })
+            if add_labels:
+                inputs = outputs
+                outputs = get_work_files(lang, f'extra-part-{idx}_labeled')
+                variant = extra.get('variant', 'default')
+                steps.append({
+                    'type': 'preprocess',
+                    'parameters': {
+                        'inputs': inputs,
+                        'outputs': outputs,
+                        'preprocessors': [
+                            {'PrefixLabels': {'labels': [f'<{code}>', f'<{code}-{variant}>', '<default>']},
+                             'module': 'create_opusfilter_config'}
+                        ]
+                    }
+                })
+
+    # Combine extra data sets
+    # - includes filtering and prefix labels when those are enabled
+    for lang in extra_datasets:
+        if single and lang != single:
+            continue
+        if add_labels:
+            inputs = [get_work_files(lang, f'extra-part-{idx}_labeled') for idx in range(len(extra_datasets[lang]))]
+        elif filtering:
+            inputs = [get_work_files(lang, f'extra-part-{idx}_filtered') for idx in range(len(extra_datasets[lang]))]
+        else:
+            inputs = [get_work_files(lang, f'extra-part-{idx}') for idx in range(len(extra_datasets[lang]))]
         for idx in [0, 1]:
             steps.append({
                 'type': 'concatenate',
                 'parameters': {
                     'inputs': [f[idx] for f in inputs],
-                    'output': get_work_files(lang, 'extra-raw')[idx]
+                    'output': get_work_files(lang, 'extra')[idx]
                 }
             })
 
-    # Preprocess/copy extra corpora
-    for lang in extra_datasets:
-        if single and lang != single:
-            continue
-        inputs = get_work_files(lang, 'extra-raw')
-        outputs = get_work_files(lang, 'extra')
-        preprocessors = []
-        if lang == 'raramuri':
-            preprocessors.append({'RaramuriNormalizer': {}, 'module': 'create_opusfilter_config'})
-        elif lang == 'chatino':
-            preprocessors.append({'ChatinoNormalizer': {}, 'module': 'create_opusfilter_config'})
-        else:
-            pass  # no preprocessing needed
-        steps.append({
-            'type': 'preprocess',
-            'parameters': {
-                'inputs': inputs,
-                'outputs': outputs,
-                'preprocessors': preprocessors
-            }
-        })
-
     # Combine training and extra data sets
+    # - includes filtering and prefix labels when those are enabled
     for lang in LANGUAGES:
         if single and lang != single:
             continue
-        inputs = [get_work_files(lang, 'train')]
+        if add_labels:
+            inputs = [get_work_files(lang, 'train_labeled')]
+        else:
+            inputs = [get_work_files(lang, 'train')]
         if lang in extra_datasets:
             inputs.append(get_work_files(lang, 'extra'))
         for idx in [0, 1]:
@@ -527,130 +673,96 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                 }
             })
 
-    # Normalize whitespaces
+    # Remove duplicates
+    # - includes filtering and prefix labels when those are enabled
     for lang in LANGUAGES:
         if single and lang != single:
             continue
         inputs = get_work_files(lang, 'combined')
-        outputs = get_work_files(lang, 'input')
         steps.append({
-            'type': 'preprocess',
+            'type': 'remove_duplicates',
             'parameters': {
                 'inputs': inputs,
-                'outputs': outputs,
-                'preprocessors': [{'WhitespaceNormalizer': {}}]
+                'outputs': get_work_files(lang, 'dedup')
             }
         })
 
-    if filtering:
-        # Remove duplicates
-        for lang in LANGUAGES:
-            if single and lang != single:
-                continue
-            inputs = get_work_files(lang, 'input')
-            steps.append({
-                'type': 'remove_duplicates',
-                'parameters': {
-                    'inputs': inputs,
-                    'outputs': get_work_files(lang, 'dedup')
-                }
-            })
-
-        filter_params = {
-            'LengthFilter': {'unit': 'char', 'min_length': 1, 'max_length': 1000},
-            'LengthRatioFilter': {'unit': 'char', 'threshold': 4},
-            'CharacterScoreFilter': {'scripts': ['Latin', 'Latin'], 'thresholds': [0.9, 0.9]},
-            'TerminalPunctuationFilter': {'threshold': -2},
-            'NonZeroNumeralsFilter': {'threshold': 0.5}
-        }
-
-        active_filters = {
-            'ashaninka': ['LengthRatioFilter'],
-            'aymara': ['LengthFilter', 'LengthRatioFilter', 'CharacterScoreFilter',
-                       'TerminalPunctuationFilter', 'NonZeroNumeralsFilter'],
-            'bribri': [],
-            'chatino': [],
-            'guarani': ['LengthRatioFilter'],
-            'hñähñu': ['LengthRatioFilter'],
-            'nahuatl': ['LengthFilter', 'LengthRatioFilter'],
-            'quechua': ['LengthFilter', 'LengthRatioFilter', 'CharacterScoreFilter',
-                        'TerminalPunctuationFilter', 'NonZeroNumeralsFilter'],
-            'raramuri': ['LengthFilter', 'LengthRatioFilter', 'CharacterScoreFilter',
-                         'NonZeroNumeralsFilter'],
-            'shipibo_konibo': [],
-            'wixarika': ['LengthRatioFilter', 'NonZeroNumeralsFilter']
-        }
-
-        for lang in LANGUAGES:
-            if single and lang != single:
-                continue
-            inputs = get_work_files(lang, 'dedup')
-            outputs = get_work_files(lang, 'dedup_filtered')
-            filters = [{filt: filter_params[filt]} for filt in active_filters[lang]]
-            steps.append({
-                'type': 'filter',
-                'parameters': {
-                    'inputs': inputs,
-                    'outputs': outputs,
-                    'filters': filters
-                }
-            })
-        output_prefix = 'dedup_filtered'
-    else:
-        output_prefix = 'input'
-
     # Bibles
-    # * at most k=5 entries per line
+    # * k=3 random entries from Spanish bibles
     # * all tokenized -> detokenize
     # * wixarika should use normalization in normwix.py
     if bibles:
+        spanish_bibles = [t[0] for t in get_bible_files('spanish')]
         for lang in LANGUAGES:
             if single and lang != single:
                 continue
-            inputs = [get_bible_files('spanish'), get_bible_files(lang)]
-            raw = get_work_files(lang, 'bibles-raw')
-            outputs = get_work_files(lang, 'bibles')
-            filtered_outputs = get_work_files(lang, 'bibles_filtered')
-            steps.append({
-                'type': 'product',
-                'parameters': {
-                    'inputs': inputs,
-                    'outputs': raw,
-                    'skip_empty': True,
-                    'skip_duplicates': True,
-                    'k': 5,
-                    'seed': 'bibles'
-                }
-            })
-            preprocessors = []
-            if lang == 'wixarika':
-                preprocessors.append({'WixarikaNormalizer': {}, 'module': 'create_opusfilter_config'})
-            elif lang == 'raramuri':
-                preprocessors.append({'RaramuriNormalizer': {}, 'module': 'create_opusfilter_config'})
-            preprocessors.append(
-                {'Detokenizer': {
-                    'tokenizer': 'moses',
-                    'languages': ['es', LANGCODE[lang]]
-                }}
-            )
-            steps.append({
-                'type': 'preprocess',
-                'parameters': {
-                    'inputs': raw,
-                    'outputs': outputs,
-                    'preprocessors': preprocessors
-                }
-            })
-            steps.append({
-                'type': 'filter',
-                'parameters': {
-                    'inputs': outputs,
-                    'outputs': filtered_outputs,
-                    'filters': [
-                        {'BlankFilter': {}, 'module': 'create_opusfilter_config'}
-                    ]
-                }
-            })
+            n_bibles = len(BIBLES[lang])
+            # Number of samples from Spanish bibles per sentence
+            if n_bibles == 1:
+                n_samples = 3
+            elif n_bibles <= 3:
+                n_samples = 2
+            else:
+                n_samples = 1
+            for idx, (biblefile, variant) in enumerate(get_bible_files(lang)):
+                inputs = [spanish_bibles, [biblefile]]
+                raw = get_work_files(lang, f'bible-{idx}-raw')
+                steps.append({
+                    'type': 'product',
+                    'parameters': {
+                        'inputs': inputs,
+                        'outputs': raw,
+                        'skip_empty': True,
+                        'skip_duplicates': True,
+                        'k': n_samples,
+                        'seed': 'bibles'
+                    }
+                })
+                outputs = get_work_files(lang, f'bible-{idx}')
+                preprocessors = []
+                if lang == 'wixarika':
+                    preprocessors.append({'WixarikaNormalizer': {}, 'module': 'create_opusfilter_config'})
+                elif lang == 'raramuri':
+                    preprocessors.append({'RaramuriNormalizer': {}, 'module': 'create_opusfilter_config'})
+                preprocessors.append(
+                    {'Detokenizer': {
+                        'tokenizer': 'moses',
+                        'languages': ['es', LANGCODE[lang]]
+                    }}
+                )
+                preprocessors.append({'WhitespaceNormalizer': {}})
+                if add_labels:
+                    preprocessors.append({'PrefixLabels': {'labels': [f'<{code}>', f'<{code}-{variant}>', '<bible>']},
+                                          'module': 'create_opusfilter_config'})
+                steps.append({
+                    'type': 'preprocess',
+                    'parameters': {
+                        'inputs': raw,
+                        'outputs': outputs,
+                        'preprocessors': preprocessors
+                    }
+                })
+                filtered_outputs = get_work_files(lang, f'bible-{idx}_filtered')
+                steps.append({
+                    'type': 'filter',
+                    'parameters': {
+                        'inputs': outputs,
+                        'outputs': filtered_outputs,
+                        'filters': [
+                            {'BlankFilter': {}, 'module': 'create_opusfilter_config'}
+                        ]
+                    }
+                })
+            inputs = [get_work_files(lang, f'bible-{idx}_filtered') for idx in range(n_bibles)]
+            logging.warning(inputs)
+            for idx in [0, 1]:
+                steps.append({
+                    'type': 'concatenate',
+                    'parameters': {
+                        'inputs': [f[idx] for f in inputs],
+                        'output': get_work_files(lang, 'bibles')[idx]
+                    }
+                })
 
     # Combine monolingual data sets
     if monolingual:
@@ -876,10 +988,11 @@ if __name__ == '__main__':
     parser.add_argument('--no-filtering', dest='filtering', action='store_false', help='Exclude filtering')
     parser.add_argument('--tokenize', action='store_true', help='Include tokenization')
     parser.add_argument('--lm', action='store_true', help='Train char LMs')
+    parser.add_argument('--add-labels', action='store_true', help='Include lang / variant / quality labels')
     parser.add_argument('--single', default=None, help='Use single language')
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO)
     main(args.output, args.workdir, single=args.single, tokenize=args.tokenize,
          bibles=args.bibles, dev=args.dev, monolingual=args.monolingual,
          restricted_extra=args.restricted_extra, filtering=args.filtering,
-         train_lms=args.lm)
+         train_lms=args.lm, add_labels=args.add_labels)
