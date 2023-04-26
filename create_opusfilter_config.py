@@ -11,12 +11,14 @@ import opusfilter
 from yaml import dump, Dumper
 
 
-LANGUAGES = ['ashaninka', 'aymara', 'bribri', 'guarani', 'hñähñu', 'nahuatl', 'quechua', 'raramuri', 'shipibo_konibo', 'wixarika']
+LANGUAGES = ['ashaninka', 'aymara', 'bribri', 'chatino', 'guarani', 'hñähñu', 'nahuatl',
+             'quechua', 'raramuri', 'shipibo_konibo', 'wixarika']
 
 LANGCODE = {
     'ashaninka': 'cni',
     'aymara': 'aym',
     'bribri': 'bzd',
+    'chatino': 'czn',
     'guarani': 'gn',
     'hñähñu': 'oto',
     'nahuatl': 'nah',
@@ -31,6 +33,7 @@ TOKENIZED_TRAIN = {
     'ashaninka': False,
     'aymara': False,
     'bribri': True,
+    'chatino': False,
     'guarani': False,
     'hñähñu': True,
     'nahuatl': True,
@@ -44,6 +47,10 @@ EXTRA = {
     'aymara': [
         {'prefix': 'parallel_data/es-aym/opus_globalvoices.es-aym'},
         {'prefix': 'extra/sent-boconst_aym'}
+    ],
+    'chatino': [
+        {'prefix': 'extra/sent-mxconst'},
+        {'prefix': 'synt/ctp-eng', 'code': 'ctp'},
     ],
     'hñähñu': [
         {'prefix': 'extra/sent-mxconst'}
@@ -110,6 +117,11 @@ BIBLES = {
     'ashaninka': ['cni-x-bible-cni-v1.txt'],
     'aymara': ['ayr-x-bible-1997-v1.txt', 'ayr-x-bible-2011-v1.txt'],
     'bribri': ['bzd-x-bible-bzd-v1.txt'],
+    'chatino': [
+        'cta-x-bible-cta-v1.txt',
+        'ctp-x-bible-ctp-v1.txt',
+        'cya-x-bible-cya-v1.txt'
+    ],
     'guarani': ['gug-x-bible-gug-v1.txt'],
     'hñähñu': ['ote-x-bible-ote-v1.txt'],
     'nahuatl': [
@@ -344,6 +356,36 @@ class RaramuriTrainCleaner(opusfilter.PreprocessorABC):
             yield esp, tar
 
 
+class ChatinoNormalizer(opusfilter.PreprocessorABC):
+    """Normalizer for Chatino data. Assumes Spanish - Raramuri input.
+
+    Normalizes two tone letters that use different unicode characters.
+
+    """
+
+    replacements = [
+        # train & dev set
+        ('ᵃ', 'ᴬ'),
+        ('ᵇ', 'ᴮ'),
+        ('ᵉ', 'ᴱ'),
+        ('ⁱ', 'ᴵ'),
+        ('ʲ', 'ᴶ'),
+        ('ᵏ', 'ᴷ'),
+        ('', ''),
+        ('', ''),
+        # extras
+        ('ꟲ', 'ᶜ'),
+        ('ꟳ', 'ᶠ')
+    ]
+    
+    def process(self, pairs):
+        for segments in pairs:
+            esp, tar = segments
+            for old, new in self.replacements:
+                tar = tar.replace(old, new)
+            yield esp, tar
+
+
 class BlankFilter(opusfilter.FilterABC):
     """Filter out lines containing only BLANK (for data from Bibles)"""
 
@@ -389,6 +431,8 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
         preprocessors = []
         if lang == 'bribri':
             preprocessors.append({'BribriNormalizer': {}, 'module': 'create_opusfilter_config'})
+        elif lang == 'chatino':
+            preprocessors.append({'ChatinoNormalizer': {}, 'module': 'create_opusfilter_config'})
         elif lang == 'raramuri':
             preprocessors.append({'RaramuriTrainCleaner': {}, 'module': 'create_opusfilter_config'})
             preprocessors.append({'RaramuriNormalizer': {}, 'module': 'create_opusfilter_config'})
@@ -418,6 +462,8 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
             preprocessors = []
             if lang == 'bribri':
                 preprocessors.append({'BribriNormalizer': {}, 'module': 'create_opusfilter_config'})
+            elif lang == 'chatino':
+                preprocessors.append({'ChatinoNormalizer': {}, 'module': 'create_opusfilter_config'})
             else:
                 pass  # no preprocessing needed
             steps.append({
@@ -452,6 +498,8 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
         preprocessors = []
         if lang == 'raramuri':
             preprocessors.append({'RaramuriNormalizer': {}, 'module': 'create_opusfilter_config'})
+        elif lang == 'chatino':
+            preprocessors.append({'ChatinoNormalizer': {}, 'module': 'create_opusfilter_config'})
         else:
             pass  # no preprocessing needed
         steps.append({
@@ -521,6 +569,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
             'aymara': ['LengthFilter', 'LengthRatioFilter', 'CharacterScoreFilter',
                        'TerminalPunctuationFilter', 'NonZeroNumeralsFilter'],
             'bribri': [],
+            'chatino': [],
             'guarani': ['LengthRatioFilter'],
             'hñähñu': ['LengthRatioFilter'],
             'nahuatl': ['LengthFilter', 'LengthRatioFilter'],
