@@ -135,12 +135,12 @@ BIBLES = {
         {'file': 'nhi-x-bible-nhi-v1.txt'},  # ce = 0.2671 (excluded in 2021)
         {'file': 'ncj-x-bible-ncj-v1.txt'},  # ce = 1.05 (excluded in 2021)
         {'file': 'azz-x-bible-azz-v1.txt'},  # ce = 1.9494 (excluded in 2021)
-        {'file': 'nah-NHXNTV.txt'},          # ce = 3.5871 (excluded in 2021)
-        {'file': 'nhy-x-bible-nhy-v1.txt'},  # ce = 3.8592 (excluded in 2021)
-        # {'file': 'nhe-x-bible-nhe-v1.txt'},  # ce = 5.1487
-        # {'file': 'ngu-x-bible-ngu-v1.txt'},  # ce = 5.363
-        # {'file': 'nhw-x-bible-nhw-v1.txt'},  # ce = 5.555
-        # {'file': 'nch-x-bible-nch-v1.txt'},  # ce = 5.9472
+        # {'file': 'nah-NHXNTV.txt'},          # ce = 3.5871 (excluded in 2021)
+        # {'file': 'nhy-x-bible-nhy-v1.txt'},  # ce = 3.8592 (excluded in 2021)
+        # {'file': 'nhe-x-bible-nhe-v1.txt'},  # ce = 5.1487 (included in 2021)
+        # {'file': 'ngu-x-bible-ngu-v1.txt'},  # ce = 5.363 (included in 2021)
+        # {'file': 'nhw-x-bible-nhw-v1.txt'},  # ce = 5.555 (included in 2021)
+        # {'file': 'nch-x-bible-nch-v1.txt'},  # ce = 5.9472 (included in 2021)
     ],
     'quechua': [
         {'file': 'quy-x-bible-quy-v1.txt'},
@@ -406,7 +406,7 @@ class ChatinoNormalizer(opusfilter.PreprocessorABC):
         ('ꟲ', 'ᶜ'),
         ('ꟳ', 'ᶠ')
     ]
-    
+
     def process(self, pairs):
         for segments in pairs:
             esp, tar = segments
@@ -492,7 +492,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
         'shipibo_konibo': [],
         'wixarika': ['LengthRatioFilter', 'NonZeroNumeralsFilter']
     }
-            
+
     steps = []
 
     # Preprocess/copy train sets
