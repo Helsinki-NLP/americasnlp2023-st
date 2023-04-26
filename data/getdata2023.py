@@ -1,10 +1,11 @@
 from bs4 import BeautifulSoup as bs
 from PyPDF2 import PdfReader
 from sentence_splitter import SentenceSplitter, split_text_into_sentences
+
 import pandas as pd
 
 #from langdetect import detect
-import pathlib, subprocess, requests, re, random, pickle, sys, itertools
+import pathlib, subprocess, requests, re, random, pickle
 
 
 
@@ -126,6 +127,7 @@ def naheng_dictionary():
 
 def nawatldotcom():
     # NAHWATL.com
+    print("Processing texts from nahwatl.com")
     #extracted = pd.DataFrame(columns=['spa','nah'])
     splitterspa = SentenceSplitter(language='es')
     splitternah = SentenceSplitter(language='es')
@@ -176,6 +178,7 @@ def nawatldotcom():
 
 def cuentosunam():
     # UNAM - nah-spa
+    print("Processing cuentos_indigenas form UNAM")
     opath=pathlib.Path('./pdfs/cuentos_nah-spa')
     opath.mkdir(exist_ok=True)
     # Page is blocking scrappers
@@ -189,9 +192,9 @@ def cuentosunam():
             "04_12_hombre_rico.pdf", "04_18_doncella_fiera.pdf", "04_20_muchacho_desobediente.pdf"]
     nahfull = ""
     spafull = ""
+    iterdict = {h:{'title':'','spa':'','nah':''} for h in range(len(pdfnames))}
     for idx, f in enumerate(pdfnames):
         subprocess.run(["wget", "-nc", "-P", str(opath), f"{urlbase}/{f}"])
-        #wget.download(f"{urlbase}/{f}", out=str(opath))
         reader = PdfReader(f'{str(opath)}/{f}')
         npag=len(reader.pages)
         title = reader.pages[1].extract_text().replace('\n','| ').split('|')
@@ -199,6 +202,7 @@ def cuentosunam():
         spafull += f" [NEW_DOCUMENT:  DOCid={idx}, lang=spa, DOCNAME={title[1]}]. "
         nahfull += f" {title[0]}. "
         spafull += f" {title[1]}. "
+        iterdict[idx]['title'] = re.sub('[0-9]*_','_',pdfnames[idx].strip('.pdf')).lstrip('_')
         for i,j in zip(range(2,npag,2), range(3,npag,2)):
             # first two pages are not useful
             # always starts with nahuatl in page 3 (i=2)
@@ -218,6 +222,12 @@ def cuentosunam():
             spafull += spa
         nahfull += f" [END OF DOCUMENT]."
         spafull += f" [END OF DOCUMENT]."
+        spadoc = spafull.split('[END OF DOCUMENT].')[-2]+'[END OF DOCUMENT].'
+        nahdoc = nahfull.split('[END OF DOCUMENT].')[-2]+'[END OF DOCUMENT].'
+        nahdoc = nahdoc.replace('...',',').strip('.').replace('.', '. ')
+        spadoc = spadoc.replace('...',',').strip('.').replace('.', '. ')
+        iterdict[idx]['spa'] += spadoc
+        iterdict[idx]['nah'] += nahdoc
 
     splitternah = SentenceSplitter(language='en') # here the opening question and exclamation marks are NOT used 
     nah = nahfull.replace('...',',').strip('.')
@@ -229,17 +239,24 @@ def cuentosunam():
     spa = spa.replace('.', '. ')
     spa = splitterspa.split(text=spa)
 
-    with open('nahuatl-spanish/extra/cuentos.doclevel.spa','w') as fout:
-        fout.write('\n'.join(spa))
-    with open('nahuatl-spanish/extra/cuentos.doclevel.nah','w') as fout:
-        fout.write('\n'.join(nah))
+    #with open('nahuatl-spanish/extra/cuentos.doclevel.spa','w') as fout:
+    #    fout.write('\n'.join(spa))
+    #with open('nahuatl-spanish/extra/cuentos.doclevel.nah','w') as fout:
+    #    fout.write('\n'.join(nah))
 
 
+    import ipdb; ipdb.set_trace()
+    for k, txts in iterdict.items():
+        txt = splitternah.split(text=txts['nah'])
+        print(f"SAVING: nahuatl-spanish/extra/cuento.{txts['title']}.nah-spa.nah")
+        with open(f"nahuatl-spanish/extra/cuento.{txts['title']}.nah-spa.nah", 'w') as fout:
+            fout.write('\n'.join(txt))
 
-maintext = []
-chaptertitles = []
-captions = []
-quotes = []
+        txt = splitterspa.split(text=txts['spa'])
+        print(f"SAVING: nahuatl-spanish/extra/cuento.{txts['title']}.nah-spa.spa")
+        with open(f"nahuatl-spanish/extra/cuento.{txts['title']}.nah-spa.spa", 'w') as fout:
+            fout.write('\n'.join(txt))
+
 def visitor_body(text, cm, tm, fontDict, fontSize):
     fs = tm[0]
     x = tm[4]
@@ -268,9 +285,11 @@ def visitor_body(text, cm, tm, fontDict, fontSize):
 
 def inpi():
     # INPI - nah-spa monografia 
+    import ipdb; ipdb.set_trace()
+    print("Processing Monografía Nacional de Pueblos Indígenas de Mexico")
     url='https://www.gob.mx/inpi/documentos/libros-en-lenguas-indigenas'
 
-    opath=pathlib.Path('./pdfs/cuentos_nah-spa')
+    opath=pathlib.Path('./pdfs/')
     #SPANISH
     subprocess.run(["wget", "-nc", "-P", str(opath), f"https://www.gob.mx/cms/uploads/attachment/file/255517/monografia_nacional_pueblos_indigenas_mexico.pdf"])
     subprocess.run(["mv", f"{str(opath)}/monografia_nacional_pueblos_indigenas_mexico.pdf", f"{str(opath)}/monografia_nacional_espanol.pdf"])
@@ -287,6 +306,8 @@ def inpi():
     spaquot, nahquot = "", ""
     splitternah = SentenceSplitter(language='es')
     splitterspa = SentenceSplitter(language='es')
+    global maintext, chaptertitles, captions, quotes
+
     # SPANISH
     for i in range(5,139):
         maintext, chaptertitles, captions, quotes = [],[],[],[]
@@ -349,6 +370,17 @@ def inpi():
     nah = splitternah.split(text=nahfull)
     spa = splitterspa.split(text=spafull)
 
+    spachp = spafull.split('[NEW DOCUMENT]. ')
+    nahchp = nahfull.split('[NEW DOCUMENT]. ')
+    for idx in range(1,len(spachp)):
+        nah = splitternah.split(text='[NEW DOCUMENT]. \n'+nahchp[idx])
+        spa = splitterspa.split(text='[NEW DOCUMENT]. \n'+spachp[idx])
+        with open(f'nahuatl-spanish/extra/monografia.{idx}.doclevel.spa','w') as fout:
+            fout.write('\n'.join(spa))
+
+        with open(f'nahuatl-spanish/extra/monografia.{idx}.doclevel.nah','w') as fout:
+            fout.write('\n'.join(nah))
+
     with open('nahuatl-spanish/extra/monografia.doclevel.spa','w') as fout:
         fout.write('\n'.join(spa))
     with open('nahuatl-spanish/extra/monografia.doclevel.nah','w') as fout:
@@ -357,105 +389,89 @@ def inpi():
 
 
 
-def spl_ng_es(from_pkl=False):
+def spl_gn_es():
     # GUARANÍ
+    urles = 'https://spl.gov.py/es/index.php/noticias'
+    urlgn = 'https://www.spl.gov.py/gn/index.php/marandukuera'
+    user_agents = [
+      "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0",
+      "Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0",
+      "Mozilla/5.0 (X11; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
+      ]
 
-    if not from_pkl:
-        urles = 'https://spl.gov.py/es/index.php/noticias'
-        urlgn = 'https://www.spl.gov.py/gn/index.php/marandukuera'
-        user_agents = [
-        "Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0",
-        "Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0",
-        "Mozilla/5.0 (X11; Linux x86_64; rv:95.0) Gecko/20100101 Firefox/95.0"
-        ]
+    esfull, gnfull = [], []
 
-        esfull, gnfull = [], []
+    iterdic = {'SPANISH': {'url':urles, 'texts':esfull}, 'GUARANI': {'url':urlgn, 'texts':gnfull}, }
+    with requests.Session() as session:
+        for key,lang in iterdic.items():
+            print(f"processing {key}")
+            url = lang['url'] 
+            numpages =  67 # sorry, I was lazy here
+            for page in range(numpages):
+                print(f'page {page+1}/{numpages}')
+                random_user_agent = random.choice(user_agents)
+                headers = {'User-Agent': random_user_agent }
+                response = session.get(f'{url}?ccm_paging_p={page}', headers = headers)
 
-        iterdic = {'SPANISH': {'url':urles, 'texts':esfull}, 'GUARANI': {'url':urlgn, 'texts':gnfull}, }
-        with requests.Session() as session:
-            for key,lang in iterdic.items():
-                print(f"processing {key}")
-                url = lang['url'] 
-                numpages =  67 # sorry, I was lazy here
-                for page in range(numpages):
-                    print(f'page {page+1}/{numpages}')
-                    random_user_agent = random.choice(user_agents)
-                    headers = {'User-Agent': random_user_agent }
-                    response = session.get(f'{url}?ccm_paging_p={page}', headers = headers)
+                soup = bs(response.text, 'html.parser')
 
-                    soup = bs(response.text, 'html.parser')
+            
+                articles = soup.find_all('span', {'class':'card-title'})
 
-                
-                    articles = soup.find_all('span', {'class':'card-title'})
+                for art in articles:
+                    link = art.a['href']
+                    response2 = session.get(f"{link}", headers = headers)
+                    soup2 = bs(response2.text, 'html.parser')
+                    
+                    lang['texts'].append(f"[NEW_DOCUMENT DOCid= {soup2.find('blockquote').text} ]. ") # use publication date as ID
+                    lang['texts'].append(f"{soup2.find('h5', {'class':'page-title'}).text}. ".replace('\u200b', ' ').strip()) # append the document title
 
-                    for art in articles:
-                        link = art.a['href']
-                        response2 = session.get(f"{link}", headers = headers)
-                        soup2 = bs(response2.text, 'html.parser')
-                        
-                        lang['texts'].append(f"[NEW_DOCUMENT DOCid= {soup2.find('blockquote').text} ]. ") # use publication date as ID
-                        lang['texts'].append(f"{soup2.find('h5', {'class':'page-title'}).text}. ".replace('\u200b', ' ').strip()) # append the document title
-
-                        #sentences = soup2.find_all('p')
-                        
-                        content = soup2.find('div', {'class':'section contenido_principal'})
-                        lang['texts'].append(content.p.text)
+                    #sentences = soup2.find_all('p')
+                    
+                    content = soup2.find('div', {'class':'section contenido_principal'})
+                    lang['texts'].append(content.p.text)
 
 
-        with open('guarani-spanish/extra/scrapped_news.pkl', 'wb') as f:
-            pickle.dump(iterdic, f)
-    
-    if from_pkl:
-        iterdic = pickle.load(open('guarani-spanish/extra/scrapped_news.pkl', 'rb'))
-    
+    with open('guarani-spanish/extra/scrapped_news.pkl', 'wb') as f:
+        pickle.dump(iterdic, f)
+
+    esfull= ' '.join(iterdic['SPANISH']['texts'])
+    gnfull= ' '.join(iterdic['GUARANI']['texts'])
+
     splitterspa = SentenceSplitter(language='es')
-    splittergn = SentenceSplitter(language='es')   # or en?
+    splittergn = SentenceSplitter(language='en') 
 
-    texts_bydate = {}
-    for lang in ('SPANISH', 'GUARANI'):
-        for text in iterdic[lang]['texts']:
-            if text.startswith("["):
-                datetime = re.search(r'\s(\d+/\d+/\d+)\s(\d+:\d+:[ap])', text)
-                curr_date = datetime.group(1)
-                curr_time = datetime.group(2)
-                if curr_date not in texts_bydate:
-                    texts_bydate[curr_date] = {"SPANISH": {}, "GUARANI": {}}
-                if curr_time not in texts_bydate[curr_date][lang]:
-                    texts_bydate[curr_date][lang][curr_time] = []
-            elif text.strip() != "":
-                text = re.sub(r'\s*\n\s*', ' ', text)
-                texts_bydate[curr_date][lang][curr_time].append(text)
-    
-    with open('guarani-spanish/extra/noticias.prealigned.tsv','w') as fout:
-        for date in texts_bydate:
-            count_sp = len(texts_bydate[date]['SPANISH'])
-            count_gn = len(texts_bydate[date]['GUARANI'])
-            if count_sp != count_gn:
-                continue
+    es = splitterspa.split(text=esfull)
+    gn = splittergn.split(text=gnfull)
 
-            for time_sp, time_gn in zip(texts_bydate[date]['SPANISH'], texts_bydate[date]['GUARANI']):
-                text_sp = " ".join(texts_bydate[date]['SPANISH'][time_sp])
-                sents_sp = splitterspa.split(text=text_sp)
-                text_gn = " ".join(texts_bydate[date]['GUARANI'][time_gn])
-                sents_gn = splittergn.split(text=text_gn)
-                fout.write(f"[NEW DOCUMENT {date} SP:{time_sp} GN:{time_gn}]\t[NEW DOCUMENT {date} SP:{time_sp} GN:{time_gn}]\n")
-                for sent_sp, sent_gn in itertools.zip_longest(sents_sp, sents_gn, fillvalue=''):
-                    fout.write(f"{sent_sp}\t{sent_gn}\n")
+    with open('guarani-spanish/extra/noticias.doclevel.es','w') as fout:
+        fout.write('\n'.join(es))
+    with open('guarani-spanish/extra/noticias.doclevel.gn','w') as fout:
+        fout.write('\n'.join(gn))
+
+    gnarts = gnfull.split('[NEW_DOCUMENT DOCid= Publicado: ')
+    esarts = esfull.split('[NEW_DOCUMENT DOCid= Publicado: ')
+    estimes = [ re.sub(' ..\:.*m','',k.split('. ].  ')[0]) for k in esarts]
+    gntimes = [ re.sub(' ..\:.*m','',k.split('. ].  ')[0]) for k in gnarts]
+    # TODO: insert a dummy in the index of estimes or gntimes where the two entries don't match
+
+
+    estimes = [ k.split('. ].  ')[0] for k in esarts]
+    gntimes = [ k.split('. ].  ')[0] for k in gnarts]
+
+    for i in range(len(estimes)):
+        print(re.sub(' ..\:.*m','',estimes[i]), re.sub(' ..\:.*m','',gntimes[i]))
+        # if this two are not the same, insert a dummy in the side that is missing that article ()
+
 
 
 # BRIBRI
 
 
-maintextspa = []
-maintextbzd = []
-chaptertitles = []
-capitals = []
 def visitor_body_BZD(text, cm, tm, fontDict, fontSize):
     fs = tm[0]
     x = tm[4]
     y = tm[5]
-    if pag == 57:
-        print(tm, len(text), text[:100])
     # main text is fontsize 12 or 15
     if fs == 12.0 or fs == 15.0: # or fs == 5.7 or fs == 9.0:
         if x > 300:
@@ -474,6 +490,7 @@ def visitor_body_BZD(text, cm, tm, fontDict, fontSize):
 
 def enciclopedia_bzdspa():
     # BRIBRI enciclopedia - bzd-spa
+    print("Processing Minienciclopedias de los pueblos indígenas de Costa Rica")
     opath=pathlib.Path('./pdfs/enciclopedia_bzd-spa')
     opath.mkdir(exist_ok=True)
 
@@ -483,18 +500,28 @@ def enciclopedia_bzdspa():
                     subprocess.run(["wget", "-nc", "-P", str(opath), f"{urlbase}_{idx}.pdf"])
             ''')
 
-    bzdfull, spafull = [], []
+    #bzdfull, spafull = [], []
+    iterdict = {1:{'lang':'bzd','spa':[],'trg':[]},
+                2:{'lang':'cjp','spa':[],'trg':[]},
+                3:{'lang':'bzd2','spa':[],'trg':[]},
+                4:{'lang':'gym','spa':[],'trg':[]},
+                5:{'lang':'gut','spa':[],'trg':[]},
+                }
+    global maintextspa, maintextbzd, chaptertitles,capitals
     global pag # global for debugging purposes
-    for idx in range(2,6):
+    id2lang = {1:'bzd',2:'cjp',3:'bzd2',4:'gym',5:'gut'}
+    for idx in range(1,6):
         # HUOM!
         #      BOOK 1 BEHAVES STRANGE!!! I think that copypaseting the pdf contents and then doing the processing might work better
 
         reader = PdfReader(f'{str(opath)}/tomo_{idx}.pdf')
         npag=len(reader.pages) if idx!=3 else 73
         title = reader.pages[6].extract_text().split('–')[0]
-        bzdchp = f" [NEW_DOCUMENT:  DOCid={idx}, lang=bzd, DOCNAME={title}]. "
+        bzdchp = f" [NEW_DOCUMENT:  DOCid={idx}, lang={iterdict[idx]['lang']}, DOCNAME={title}]. "
         spachp = f" [NEW_DOCUMENT:  DOCid={idx}, lang=spa, DOCNAME={title}]. "
         newfile = True
+        firstpage = 11 #if idx > 2 else 14
+
         for pag in range(11,npag):
             maintextspa, maintextbzd, chaptertitles,capitals = [],[],[],[]
 
@@ -506,9 +533,11 @@ def enciclopedia_bzdspa():
             if chaptertitles:
                 if not capitals:
                     capitals = ['','']
+                if len(capitals) == 1:
+                    capitals.append('')
                 print(capitals)
-                bzd = "[NEW CHAPTER: "+' '.join(chaptertitles).replace('\n',' ')+f' , DOCid={idx},]. '+capitals[-1]+''.join(maintextbzd)
-                spa = "[NEW CHAPTER: "+' '.join(chaptertitles).replace('\n',' ')+f' , DOCid={idx},]. '+capitals[-2]+''.join(maintextspa)
+                bzd = "[NEW CHAPTER: "+' '.join(chaptertitles).replace('\n',' ')+f" , DOCid={idx}, lang={iterdict[idx]['lang']}]. "+capitals[-1]+''.join(maintextbzd)
+                spa = "[NEW CHAPTER: "+' '.join(chaptertitles).replace('\n',' ')+f" , DOCid={idx}, lang=spa]. "+capitals[-2]+''.join(maintextspa)
                 if newfile:
                     newfile=False
                     bzdchp += bzd.replace('\n','')
@@ -516,9 +545,10 @@ def enciclopedia_bzdspa():
                 else:
                     bzdchp += f" [END OF CHAPTER]. "
                     spachp += f" [END OF CHAPTER]. "
-                    bzdfull.append(bzdchp)
-                    spafull.append(spachp)
-                
+                    #bzdfull.append(bzdchp)
+                    #spafull.append(spachp)
+                    iterdict[idx]['spa'].append(spachp)
+                    iterdict[idx]['trg'].append(bzdchp)
                     bzdchp = bzd.replace('\n','')
                     spachp = spa.replace('\n','')
             else:
@@ -529,38 +559,45 @@ def enciclopedia_bzdspa():
         
         bzdchp = bzdchp.replace('.', '. ')
         spachp = spachp.replace('.', '. ')
-        bzdchp += f" [END OF CHAPTER]. "
-        spachp += f" [END OF CHAPTER]. "
+        bzdchp += f" [END OF CHAPTER]. \n"
+        spachp += f" [END OF CHAPTER]. \n"
         bzdchp += f" [END OF DOCUMENT]. "
         spachp += f" [END OF DOCUMENT]. "
-        bzdfull.append(bzdchp)
-        spafull.append(spachp)
-
+        #bzdfull.append(bzdchp)
+        #spafull.append(spachp)
+        iterdict[idx]['spa'].append(spachp)
+        iterdict[idx]['trg'].append(bzdchp)
     splitterspa = SentenceSplitter(language='es')
     splitterbzd = SentenceSplitter(language='en') 
+    
+    for k, txts in iterdict.items():
+        #for id, chapter in enumerate(bzdfull):
+        for i, chapter in enumerate(txts['trg']):
+            txt = splitterbzd.split(text=chapter.replace('.', '. '))
+            print(f"SAVING: bribri-spanish/extra/enciclopedia.{i}.doclevel.{txts['lang']}-spa.{txts['lang']}")
+            with open(f"bribri-spanish/extra/enciclopedia.{i}.doclevel.{txts['lang']}-spa.{txts['lang']}", 'w') as fout:
+                fout.write('\n'.join(txt))
 
-    for id, chapter in enumerate(bzdfull):
-        txt = splitterbzd.split(text=chapter.replace('.', '. '))
-        with open(f'bribri-spanish/extra/enciclopedia.{id}.doclevel.bzd', 'w') as fout:
-            fout.write('\n'.join(txt))
-
-    for id, chapter in enumerate(spafull):
-        txt = splitterspa.split(text=chapter.replace('.', '. '))
-        with open(f'bribri-spanish/extra/enciclopedia.{id}.doclevel.spa', 'w') as fout:
-            fout.write('\n'.join(txt))
+        #for id, chapter in enumerate(spafull):
+        for i, chapter in enumerate(txts['spa']):
+            txt = splitterspa.split(text=chapter.replace('.', '. '))
+            print(f"SAVING: bribri-spanish/extra/enciclopedia.{i}.doclevel.{txts['lang']}-spa.spa")
+            with open(f"bribri-spanish/extra/enciclopedia.{i}.doclevel.{txts['lang']}-spa.spa", 'w') as fout:
+                fout.write('\n'.join(txt))
 
 
 
 def main():
+    ## bribri
+    enciclopedia_bzdspa()
     # nahuatl:
-    naheng_dictionary()
     nawatldotcom()
     cuentosunam()
     inpi()
+    naheng_dictionary()
     # guarani
-    spl_ng_es()
-    # bribri
-    enciclopedia_bzdspa()
+    spl_gn_es()
+
 
     print(""" HUOM! From this point, you need to run an sent-alignment tool. 
         RUN THE FOLLOWING TO UNSTALL HUNALIGN
@@ -576,6 +613,5 @@ def main():
 
 
 if __name__ == '__main__':
-    #main()
-    spl_ng_es(from_pkl=True)
+    main()
 
