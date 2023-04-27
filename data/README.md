@@ -6,11 +6,14 @@
   - `extra`:
     - boconst
     - JW300 from OPUS (*not used in experiments*)
+    - data from OPUS (Mozilla-I10n, wikimedia)
   - `mono`: Wikipedia data from Tatoeba challenge
 - bribri-spanish
   - nothing :(
 - guarani-spanish
-  - `extra`: pyconst (*not used in experiments*)
+  - `extra`: 
+    - pyconst (*not used in experiments*)
+    - data from OPUS (GNOME, Mozilla-I10n, Tatoeba, Ubuntu, wikimedia)
   - `mono`: Wikipedia data from Tatoeba challenge
 - hñähñu-spanish
   - `extra`:
@@ -18,13 +21,16 @@
     - mxconst
   - `mono`: JW300 from Opus (Spanish alignment is not available)
 - nahuatl-spanish
-  - `extra`: mxconst
+  - `extra`: 
+    - mxconst
+    - data from OPUS (Tatoeba, wikimedia)
   - `mono`: Wikipedia data from Tatoeba challenge
 - quechua-spanish
   - `extra`:
     - Tatoeba from Opus
     - boconst
     - peconst
+    - data from OPUS (GNOME, Mozilla-I10n, Tatoeba, Ubuntu, wikimedia)
   - `mono`: Wikipedia data from Tatoeba challenge
 - raramuri-spanish
   - `extra`: mxconst
