@@ -53,7 +53,7 @@ TOKENIZED_TRAIN = {
 
 EXTRA = {
     'ashaninka': [
-        {'prefix': 'synt/bt_yves21'}
+        {'prefix': 'synt/bt_yves21', 'quality': 'bt'}
     ],
     'aymara': [
         {'prefix': 'extra/sent-boconst_aym'},
@@ -653,16 +653,15 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
     for lang in extra_datasets:
         if single and lang != single:
             continue
+        code = LANGCODE[lang]
         for idx, extra in enumerate(extra_datasets[lang]):
             inputs = get_input_files(lang, **extra)
             outputs = get_work_files(lang, f'extra-part-{idx}')
             quality_label = extra.get('quality', 'default')
             preprocessors = []
             if lang == 'bribri':
-                # if variant label can be handled by normalizer, add the normalizer and remove the label
                 if "variant" in extra and extra["variant"] in ("constenla", "jara"):
                     preprocessors.append({'BribriNormalizer': {"orthography": "{}".format(extra["variant"])}, 'module': 'create_opusfilter_config'})
-                    extra["variant"] == "default"
             if lang == 'raramuri':
                 preprocessors.append({'RaramuriNormalizer': {}, 'module': 'create_opusfilter_config'})
             elif lang == 'chatino':
@@ -705,6 +704,9 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                 inputs = outputs
                 outputs = get_work_files(lang, f'extra-part-{idx}_labeled')
                 variant = extra.get('variant', 'default')
+                # these spelling conversions have been taken care of by the normalizer
+                if lang == 'bribri' and variant in ('constenla', 'jara'):
+                    variant = 'default'
                 steps.append({
                     'type': 'preprocess',
                     'parameters': {
@@ -778,6 +780,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
     if bibles:
         spanish_bibles = [t[0] for t in get_bible_files('spanish')]
         for lang in LANGUAGES:
+            code = LANGCODE[lang]
             if single and lang != single:
                 continue
             n_bibles = len(BIBLES[lang])
@@ -805,10 +808,9 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                 outputs = get_work_files(lang, f'bible-{idx}')
                 preprocessors = []
                 if lang == 'bribri':
-                    # if variant label can be handled by normalizer, add the normalizer and remove the label
-                    if "variant" in extra and extra["variant"] in ("constenla", "jara"):
-                        preprocessors.append({'BribriNormalizer': {"orthography": "{}".format(extra["variant"])}, 'module': 'create_opusfilter_config'})
-                        extra["variant"] == "default"
+                    if variant in ("constenla", "jara"):
+                        preprocessors.append({'BribriNormalizer': {"orthography": "{}".format(variant)}, 'module': 'create_opusfilter_config'})
+                        variant = "default"
                 if lang == 'wixarika':
                     preprocessors.append({'WixarikaNormalizer': {}, 'module': 'create_opusfilter_config'})
                 elif lang == 'raramuri':
@@ -816,7 +818,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                 preprocessors.append(
                     {'Detokenizer': {
                         'tokenizer': 'moses',
-                        'languages': ['es', LANGCODE[lang]]
+                        'languages': ['es', code]
                     }}
                 )
                 preprocessors.append({'WhitespaceNormalizer': {}})
