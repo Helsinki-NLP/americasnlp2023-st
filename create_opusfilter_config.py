@@ -225,6 +225,31 @@ def get_lm_file(lang, prefix):
     return os.path.join('..', 'char_lms', f'{prefix}.{code}.arpa.gz')
 
 
+def guaraniNormalize(text):
+    text = re.sub(r"[ãäā]", "â", text, flags=re.IGNORECASE)
+    text = re.sub(r"[ẽëē]", "ê", text, flags=re.IGNORECASE)
+    text = re.sub(r"[ĩïī]", "î", text, flags=re.IGNORECASE)
+    text = re.sub(r"[õöō]", "ô", text, flags=re.IGNORECASE)
+    text = re.sub(r"[ũüū]", "û", text, flags=re.IGNORECASE)
+    text = re.sub(r"[ỹŷ]", "ÿ", text, flags=re.IGNORECASE)
+    text = re.sub(r"g̃", "ĝ", text, flags=re.IGNORECASE)
+    return text
+
+class GuaraniNormalizer(opusfilter.PreprocessorABC):
+    """Normalizer for Guarani. Normalizes all nasal diacritics (ã, ä, ā to â).
+    ~ is most standard, but ^ is used in the dev set.
+    Normalizes only the second input file.
+    """
+
+    def process(self, pairs):
+        for segments in pairs:
+            output = []
+            for idx, segment in enumerate(segments):
+                output.append(guaraniNormalize(segment) if idx == 1 else segment)
+            yield output
+
+
+
 # From https://github.com/pywirrarika/wixnlp/blob/master/normwix.py
 def normwix(text):
     text = text.lower()
@@ -262,62 +287,75 @@ class WixarikaNormalizer(opusfilter.PreprocessorABC):
 
 
 # From data/bribri-spanish/bribri-orthography-conversion.ipynb
-def convertToHumanSpelling(bribriInput, outputOrthography):
-    bribriOutput = bribriInput
-    punctuation = {
-        " .": ".", " ,": ",", " !": "!", " ?": "?"
+# This isn't used in the shared task - it's just for displaying the examples in a human-readable way.
+def intermediate2constenla(s):
+    # These use Sofía Flores' diacritic conventions,
+    # where the line is a COMBINING MINUS SIGN BELOW 0x0320
+    diacriticChars = {
+        "ã":"a̠", "ẽ":"e̠","ĩ":"i̠", "õ":"o̠","ũ":"u̠",                  # Nasal low tone
+        "áx":"á̠", "éx":"é̠", "íx":"í̠", "óx":"ó̠", "úx":"ú̠",           # Nasal falling tone
+        "àx":"à̠", "èx":"è̠", "ìx":"ì̠", "òx":"ò̠", "ùx":"ù̠",           # Nasal high tone
+        "âx":"â̠", "êx":"ê̠", "îx":"î̠", "ôx":"ô̠", "ûx":"û̠",           # Nasal rising tone
+        "éq":"ë́", "óq":"ö́", "èq":"ë̀", "òq":"ö̀", "êq":"ë̂", "ôq":"ö̂"  # Lax vowels
     }
-    if (outputOrthography=="constenla"):
+    for c in diacriticChars:
+        s = s.replace(c, diacriticChars.get(c))
+    return s
 
-        # These use Sofía Flores' diacritic conventions,
-        # where the line is a COMBINING MINUS SIGN BELOW 0x0320
-        diacriticChars = {
-            "ã":"a̠", "ẽ":"e̠","ĩ":"i̠", "õ":"o̠","ũ":"u̠",                  # Nasal low tone
-            "áx":"á̠", "éx":"é̠", "íx":"í̠", "óx":"ó̠", "úx":"ú̠",           # Nasal falling tone
-            "àx":"à̠", "èx":"è̠", "ìx":"ì̠", "òx":"ò̠", "ùx":"ù̠",           # Nasal high tone
-            "âx":"â̠", "êx":"ê̠", "îx":"î̠", "ôx":"ô̠", "ûx":"û̠",           # Nasal rising tone
-            "éq":"ë́", "óq":"ö́", "èq":"ë̀", "òq":"ö̀", "êq":"ë̂", "ôq":"ö̂"  # Lax vowels
-        }
-        for c in diacriticChars: bribriOutput = bribriOutput.replace(c, diacriticChars.get(c))
-        for c in punctuation: bribriOutput = bribriOutput.replace(c, punctuation.get(c))
-    elif (outputOrthography=="jara"):
-        diacriticChars = {
-            "ã":"ã","ẽ":"ẽ","ĩ":"ĩ","õ":"õ","ũ":"ũ",                # Nasal low tone
-            "áx":"ã́","éx":"ẽ́","íx":"ĩ́","óx":"ṍ","úx":"ṹ",           # Nasal falling tone
-            "àx":"ã̀","èx":"ẽ̀","ìx":"ĩ̀","òx":"õ̀","ùx":"ũ̀",           # Nasal high tone
-            "âx":"ã̂","êx":"ẽ̂","îx":"ĩ̂","ôx":"õ̂","ûx":"ũ̂",           # Nasal rising tone
-            "éq":"ë́","óq":"ö́","èq":"ë̀","òq":"ö̀","êq":"ë̂","ôq":"ö̂"   # Lax vowels
-        }
-        coromaChanges = {
-            "tk":"tch",
-            "Ñãlàx":"Ñõlòx","ñãlàx":"ñõlòx",                   # road
-            "Káx":"Kóx","káx":"kóx",                           # place
-            "Kàxlĩ":"Kòxlĩ","kàxlĩ":"kòxlĩ",                   # rain
-            "Káxwötã'":"Kóxwötã'","káxwötã'":"kóxwötã'",       # need
-            "Káxwötã":"Kóxwötã","káxwötã":"kóxwötã",           # need
-            "Dakarò":"Krò","dakarò":"krò"                      # chicken
-        }
-        for c in coromaChanges: bribriOutput = bribriOutput.replace(c, coromaChanges.get(c))
-        for c in diacriticChars: bribriOutput = bribriOutput.replace(c, diacriticChars.get(c))
-        for c in punctuation: bribriOutput = bribriOutput.replace(c, punctuation.get(c))
-    else:
-        print("Please specify one of the two available systems: constenla, jara")
-    return(bribriOutput)
+def constenla2intermediate(s):
+    diacriticChars = {
+        "a̠":"ã", "e̠":"ẽ", "i̠":"ĩ", "o̠":"õ", "u̠":"ũ",               # Nasal low tone
+        "á̠":"áx", "é̠":"éx", "í̠":"íx", "ó̠":"óx", "ú̠":"úx",           # Nasal falling tone
+        "à̠":"àx", "è̠":"èx", "ì̠":"ìx", "ò̠":"òx", "ù̠":"ùx",           # Nasal high tone
+        "â̠":"âx", "ê̠":"êx", "î̠":"îx", "ô̠":"ôx", "û̠":"ûx",           # Nasal rising tone
+        "ë́":"éq", "ö́":"óq", "ë̀":"èq", "ö̀":"òq", "ë̂":"êq", "ö̂":"ôq"  # Lax vowels
+    }
+    for c in diacriticChars:
+        s = s.replace(c, diacriticChars.get(c))
+    return s
 
+def jara2intermediate(s):
+    diacriticChars = {
+        "ã":"ã", "ẽ":"ẽ", "ĩ":"ĩ", "õ":"õ", "ũ":"ũ",                # Nasal low tone
+        "ã́":"áx", "ẽ́":"éx", "ĩ́":"íx", "ṍ":"óx", "ṹ":"úx",           # Nasal falling tone
+        "ã̀":"àx", "ẽ̀":"èx", "ĩ̀":"ìx", "õ̀":"òx", "ũ̀":"ùx",           # Nasal high tone
+        "ã̂":"âx", "ẽ̂":"êx", "ĩ̂":"îx", "õ̂":"ôx", "ũ̂":"ûx",           # Nasal rising tone
+        "ë́":"éq", "ö́":"óq", "ë̀":"èq", "ö̀":"òq", "ë̂":"êq", "ö̂":"ôq"  # Lax vowels
+    }
+    coromaChanges = {
+        "tch":"tk",
+        "Ñõlòx":"Ñãlàx", "ñõlòx":"ñãlàx",                   # road
+        "Kóx":"Káx", "kóx":"káx",                           # place
+        "Kòxlĩ":"Kàxlĩ", "kòxlĩ":"kàxlĩ",                   # rain
+        "Kóxwötã'":"Káxwötã'", "kóxwötã'":"káxwötã'",       # need
+        "Kóxwötã":"Káxwötã", "kóxwötã":"káxwötã",           # need
+        "Krò":"Dakarò", "krò":"dakarò"                      # chicken
+    }
+    for c in diacriticChars:
+        s = s.replace(c, diacriticChars.get(c))
+    for c in coromaChanges:
+        s = s.replace(c, coromaChanges.get(c))
+    return s
 
 class BribriNormalizer(opusfilter.PreprocessorABC):
     """Normalizer for the Bribri train/dev corpora. Normalizes only the 2nd input file."""
 
-    def __init__(self, orthography='constenla', **kwargs):
-        self.orthography = orthography
+    def __init__(self, orthography, **kwargs):
         super().__init__(**kwargs)
+        self.srcOrthography = orthography
 
     def process(self, pairs):
         for segments in pairs:
             output = []
             for idx, segment in enumerate(segments):
-                output.append(convertToHumanSpelling(
-                    segment, self.orthography) if idx == 1 else segment)
+                if self.srcOrthography == 'constenla':
+                    output.append(constenla2intermediate(segment) if idx == 1 else segment)
+                elif self.srcOrthography == 'jara':
+                    output.append(jara2intermediate(segment) if idx == 1 else segment)
+                elif self.srcOrthography == 'intermediate':
+                    output.append(intermediate2constenla(segment) if idx == 1 else segment)
+                else:
+                    output.append(segment)
             yield output
 
 
@@ -503,10 +541,10 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
         inputs = get_input_files(lang, 'train')
         outputs = get_work_files(lang, 'train')
         preprocessors = []
-        if lang == 'bribri':
-            preprocessors.append({'BribriNormalizer': {}, 'module': 'create_opusfilter_config'})
-        elif lang == 'chatino':
+        if lang == 'chatino':
             preprocessors.append({'ChatinoNormalizer': {}, 'module': 'create_opusfilter_config'})
+        elif lang == 'guarani':
+            preprocessors.append({'GuaraniNormalizer': {}, 'module': 'create_opusfilter_config'})
         elif lang == 'raramuri':
             preprocessors.append({'RaramuriTrainCleaner': {}, 'module': 'create_opusfilter_config'})
             preprocessors.append({'RaramuriNormalizer': {}, 'module': 'create_opusfilter_config'})
@@ -563,9 +601,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
             inputs = get_input_files(lang, 'dev')
             outputs = get_work_files(lang, 'dev_labeled' if add_labels else 'dev')
             preprocessors = []
-            if lang == 'bribri':
-                preprocessors.append({'BribriNormalizer': {}, 'module': 'create_opusfilter_config'})
-            elif lang == 'chatino':
+            if lang == 'chatino':
                 preprocessors.append({'ChatinoNormalizer': {}, 'module': 'create_opusfilter_config'})
             else:
                 pass  # no preprocessing needed
@@ -590,10 +626,17 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
             inputs = get_input_files(lang, **extra)
             outputs = get_work_files(lang, f'extra-part-{idx}')
             preprocessors = []
+            if lang == 'bribri':
+                # if variant label can be handled by normalizer, add the normalizer and remove the label
+                if "variant" in extra and extra["variant"] in ("constenla", "jara"):
+                    preprocessors.append({'BribriNormalizer': {"orthography": "{}".format(extra["variant"])}, 'module': 'create_opusfilter_config'})
+                    extra["variant"] == "default"
             if lang == 'raramuri':
                 preprocessors.append({'RaramuriNormalizer': {}, 'module': 'create_opusfilter_config'})
             elif lang == 'chatino':
                 preprocessors.append({'ChatinoNormalizer': {}, 'module': 'create_opusfilter_config'})
+            elif lang == 'guarani':
+               preprocessors.append({'GuaraniNormalizer': {}, 'module': 'create_opusfilter_config'})
             else:
                 pass  # no preprocessing needed
             preprocessors.append({'WhitespaceNormalizer': {}})
