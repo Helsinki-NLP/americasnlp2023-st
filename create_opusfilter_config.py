@@ -96,14 +96,16 @@ EXTRA = {
         {'prefix': 'extra/OPUS'}
     ],
     'quechua': [
-        {'prefix': 'dict'},
-        {'prefix': 'parallel_data/es-quy/dict_misc.quy-es'},
-        {'prefix': 'parallel_data/es-quy/jw300.es-quy'},
         {'prefix': 'parallel_data/es-quy/minedu.quy-es'},
-        {'prefix': 'parallel_data/es-quz/jw300.es-quz', 'code': 'quz'},
-        {'prefix': 'extra/tatoeba_qu.raw', 'code': 'qu'},
-        {'prefix': 'extra/sent-boconst_que', 'code': 'que'},
+        {'prefix': 'parallel_data/es-quy/dict_misc.quy-es'},
+        {'prefix': 'synt/jw300_quy_pivot'},
+        {'prefix': 'parallel_data/es-quz/jw300.es-quz', 'code': 'quz', 'variant': 'quz'},
+        {'prefix': 'synt/jw300_quz_pivot', 'code': 'quz', 'variant': 'quz'},
+        {'prefix': 'extra/sent-boconst_que', 'code': 'que', 'variant': 'quh'},
         {'prefix': 'extra/sent-peconst', 'code': 'que'},
+        {'prefix': 'synt/bt_yves21'},
+        {'prefix': 'extra/flores200'},
+        {'prefix': 'extra/OPUS.quy-es'}
     ],
     'raramuri': [
         {'prefix': 'extra/sent-mxconst'}
@@ -180,7 +182,7 @@ BIBLES = {
     ],
     'quechua': [
         {'file': 'quy-x-bible-quy-v1.txt'},
-        {'file': 'quz-x-bible-quz-v1.txt'}
+        {'file': 'quz-x-bible-quz-v1.txt', 'variant': 'quz'}
     ],
     'raramuri': [
         {'file': 'tac-x-bible-tac-v1.txt'}
