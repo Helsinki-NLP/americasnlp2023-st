@@ -17,11 +17,7 @@ from yaml import dump, Dumper
 #    b. Extra variant cannot be normalized to train variant
 #       => use distinct label (e.g. Chatino)
 # 2. All training data in different variant than dev data:
-#    a. Dev variant can be normalized to train variant
-#       => normalize and use same label (e.g. Otomi)
-#       => need to undo normalization on test output
-#    b. Dev variant cannot be normalized to train variant
-#       => bad luck :( do nothing
+#    => No distinct labels, just use what we have
 
 LANGUAGES = ['ashaninka', 'aymara', 'bribri', 'chatino', 'guarani', 'hñähñu', 'nahuatl',
              'quechua', 'raramuri', 'shipibo_konibo', 'wixarika']
@@ -85,7 +81,8 @@ EXTRA = {
         {'prefix': 'extra/OPUS'}
     ],
     'hñähñu': [
-        {'prefix': 'extra/sent-mxconst'}
+        {'prefix': 'extra/sent-mxconst'},
+        {'prefix': 'extra/dict', 'code': 'ote'}
     ],
     'nahuatl': [
         {'prefix': 'extra/sent-mxconst'},
@@ -111,21 +108,19 @@ EXTRA = {
         {'prefix': 'extra/sent-mxconst'}
     ],
     'shipibo_konibo': [
-        {'prefix': 'parallel_data/dictionary'},
-        {'prefix': 'parallel_data/educational'},
-        {'prefix': 'parallel_data/flashcards'},
-        {'prefix': 'extra/Educational_0.4_2.4_35/train-es-shi', 'code': 'shi'},
-        {'prefix': 'extra/Educational_0.4_2.4_35/tune-es-shi', 'code': 'shi'},
-        {'prefix': 'extra/Educational_0.4_2.4_35/test-es-shi', 'code': 'shi'},
-        {'prefix': 'extra/Religious_0.2_2.4_35/train-es-shi', 'code': 'shi'},
-        {'prefix': 'extra/Religious_0.2_2.4_35/tune-es-shi', 'code': 'shi'},
-        {'prefix': 'extra/Religious_0.2_2.4_35/test-es-shi', 'code': 'shi'},
+        {'prefix': 'extra/Educational_0.4_2.4_35/all-es-shi', 'code': 'shi'},
+        {'prefix': 'extra/Religious_0.2_2.4_35/all-es-shi', 'code': 'shi'},
+        {'prefix': 'extra/tsanas1'},
+        {'prefix': 'extra/covid19'},
+        {'prefix': 'extra/sent-leyartesano'},
+        {'prefix': 'extra/bt_yves21'}
     ],
     'wixarika': [
         {'prefix': 'extra/sent-mxconst'},
         {'prefix': 'extra/corpora', 'code': 'wix'},
         {'prefix': 'extra/paral_own', 'code': 'wix'},
         {'prefix': 'extra/segcorpus', 'code': 'wix'},
+        {'prefix': 'synt/bt_yves21'}
         # Note: train.wix/hch is the combination of these:
         # {'prefix': 'extra/corp-train', 'code': 'wix'},
         # {'prefix': 'extra/corp-dev', 'code': 'wix'},
@@ -307,8 +302,6 @@ def normwix(text):
     text = re.sub(r"[íì]", "i", text, flags=re.IGNORECASE)
     text = re.sub(r"[óòö]", "o", text, flags=re.IGNORECASE)
     text = re.sub(r"[úù]", "u", text, flags=re.IGNORECASE)
-
-
     text = re.sub(r"([a-z+])\1+", r"\1", text, flags=re.IGNORECASE)
     return text
 
