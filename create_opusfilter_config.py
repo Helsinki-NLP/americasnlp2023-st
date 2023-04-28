@@ -224,7 +224,7 @@ def get_monolingual_files(lang):
     return [f'../data/{lang}-spanish/mono/{entry["file"]}' for entry in MONOLINGUAL[lang]]
 
 
-def get_input_files(lang, prefix='train', code=None, variant=None):
+def get_input_files(lang, prefix='train', code=None, variant=None, quality=None):
     code = LANGCODE[lang] if code is None else code
     if not os.path.isfile(f'data/{lang}-spanish/{prefix}.es'):
         logging.warning(f'No file at data/{lang}-spanish/{prefix}.es')
