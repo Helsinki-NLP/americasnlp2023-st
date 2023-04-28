@@ -10,6 +10,18 @@ import re
 import opusfilter
 from yaml import dump, Dumper
 
+# Variant handling:
+# 1. Extra data in different variant than train and dev data:
+#    a. Extra variant can be normalized to train variant
+#       => normalize and use same label as train (e.g. Bribri)
+#    b. Extra variant cannot be normalized to train variant
+#       => use distinct label (e.g. Chatino)
+# 2. All training data in different variant than dev data:
+#    a. Dev variant can be normalized to train variant
+#       => normalize and use same label (e.g. Otomi)
+#       => need to undo normalization on test output
+#    b. Dev variant cannot be normalized to train variant
+#       => bad luck :( do nothing
 
 LANGUAGES = ['ashaninka', 'aymara', 'bribri', 'chatino', 'guarani', 'hñähñu', 'nahuatl',
              'quechua', 'raramuri', 'shipibo_konibo', 'wixarika']
@@ -44,19 +56,40 @@ TOKENIZED_TRAIN = {
 }
 
 EXTRA = {
+    'ashaninka': [
+        {'prefix': 'synt/bt_yves21'}
+    ],
     'aymara': [
-        {'prefix': 'parallel_data/es-aym/opus_globalvoices.es-aym'},
-        {'prefix': 'extra/sent-boconst_aym'}
+        {'prefix': 'extra/sent-boconst_aym'},
+        {'prefix': 'extra/flores200'},
+        {'prefix': 'extra/OPUS'},
+        {'prefix': 'synt/bt_yves21'},
+        {'prefix': 'synt/nllb.md'},
+        {'prefix': 'synt/globalvoices_pivot'}
     ],
     'chatino': [
         {'prefix': 'extra/sent-mxconst', 'variant': 'plain'},
         {'prefix': 'synt/ctp-eng', 'code': 'ctp'},
     ],
+    'guarani': [
+        {'prefix': 'extra/sent-pyconst'},
+        {'prefix': 'synt/bt_yves21'},
+        {'prefix': 'extra/jojajovai/jojajovai'},
+        {'prefix': 'extra/noticias'},
+        {'prefix': 'extra/flores200'},
+        {'prefix': 'synt/nllbseed'},
+        {'prefix': 'extra/OPUS'}
+    ],
     'hñähñu': [
         {'prefix': 'extra/sent-mxconst'}
     ],
     'nahuatl': [
-        {'prefix': 'extra/sent-mxconst'}
+        {'prefix': 'extra/sent-mxconst'},
+        {'prefix': 'synt/bt_yves21'},
+        {'prefix': 'extra/texts'},
+        {'prefix': 'extra/dictexamplesents.spa-nah'},
+        {'prefix': 'synt/dictexamplesents_eng'},
+        {'prefix': 'extra/OPUS'}
     ],
     'quechua': [
         {'prefix': 'dict'},
@@ -118,7 +151,6 @@ BIBLES = {
         {'file': 'cni-x-bible-cni-v1.txt'}
     ],
     'aymara': [
-        {'file': 'ayr-x-bible-1997-v1.txt'},
         {'file': 'ayr-x-bible-2011-v1.txt'}
     ],
     'bribri': [
