@@ -2,12 +2,16 @@
 
 Steps:
 
-1) Install OpusFilter version 2.0.0-beta (https://github.com/Helsinki-NLP/OpusFilter/tree/2.0.0-beta)
+1) Install OpusFilter >= 2.0
+
+```
+pip install opusfilter
+```
 
 2) Create OpusFilter configuration using `processed_data` as work directory:
 
 ```
-python create_opusfilter_config.py opusfilter.yaml processed_data
+python create_opusfilter_config.py --no-dev --add-labels --no-monolingual opusfilter.yaml processed_data
 ```
 
 3) Run OpusFilter on the configuration:

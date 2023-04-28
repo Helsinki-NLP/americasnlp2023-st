@@ -58,14 +58,14 @@ EXTRA = {
     'aymara': [
         {'prefix': 'extra/sent-boconst_aym'},
         {'prefix': 'extra/flores200'},
-        {'prefix': 'extra/OPUS'},
-        {'prefix': 'synt/bt_yves21'},
+        {'prefix': 'extra/OPUS.aym-es', 'quality': 'noisy'},
+        {'prefix': 'synt/bt_yves21', 'quality': 'bt'},
         {'prefix': 'synt/nllb.md'},
         {'prefix': 'synt/globalvoices_pivot'}
     ],
     'bribri': [
         {'prefix': 'extra/uicn', 'variant': 'jara'},
-        {'prefix': 'extra/enciclopedia_final', 'variant': 'constenla'}
+        {'prefix': 'extra/enciclopedia_final', 'variant': 'constenla', 'quality': 'noisy'}
     ],
     'chatino': [
         {'prefix': 'extra/sent-mxconst', 'variant': 'plain'},
@@ -73,12 +73,12 @@ EXTRA = {
     ],
     'guarani': [
         {'prefix': 'extra/sent-pyconst'},
-        {'prefix': 'synt/bt_yves21'},
+        {'prefix': 'synt/bt_yves21', 'quality': 'bt'},
         {'prefix': 'extra/jojajovai/jojajovai'},
         {'prefix': 'extra/noticias'},
         {'prefix': 'extra/flores200'},
         {'prefix': 'synt/nllbseed'},
-        {'prefix': 'extra/OPUS'}
+        {'prefix': 'extra/OPUS.gn-es', 'quality': 'noisy'}
     ],
     'hñähñu': [
         {'prefix': 'extra/sent-mxconst'},
@@ -86,11 +86,11 @@ EXTRA = {
     ],
     'nahuatl': [
         {'prefix': 'extra/sent-mxconst'},
-        {'prefix': 'synt/bt_yves21'},
-        {'prefix': 'extra/texts'},
+        {'prefix': 'synt/bt_yves21', 'quality': 'bt'},
+        {'prefix': 'extra/texts', 'quality': 'noisy'},
         {'prefix': 'extra/dictexamplesents.spa-nah'},
         {'prefix': 'synt/dictexamplesents_eng'},
-        {'prefix': 'extra/OPUS'}
+        {'prefix': 'extra/OPUS.nah-es', 'quality': 'noisy'}
     ],
     'quechua': [
         {'prefix': 'parallel_data/es-quy/minedu.quy-es'},
@@ -100,9 +100,9 @@ EXTRA = {
         {'prefix': 'synt/jw300_quz_pivot', 'code': 'quz', 'variant': 'quz'},
         {'prefix': 'extra/sent-boconst_que', 'code': 'que', 'variant': 'quh'},
         {'prefix': 'extra/sent-peconst', 'code': 'que'},
-        {'prefix': 'synt/bt_yves21'},
+        {'prefix': 'synt/bt_yves21', 'quality': 'bt'},
         {'prefix': 'extra/flores200'},
-        {'prefix': 'extra/OPUS.quy-es'}
+        {'prefix': 'extra/OPUS.quy-es', 'quality': 'noisy'}
     ],
     'raramuri': [
         {'prefix': 'extra/sent-mxconst'}
@@ -112,15 +112,15 @@ EXTRA = {
         {'prefix': 'extra/Religious_0.2_2.4_35/all-es-shi', 'code': 'shi'},
         {'prefix': 'extra/tsanas1'},
         {'prefix': 'extra/covid19'},
-        {'prefix': 'extra/sent-leyartesano'},
-        {'prefix': 'extra/bt_yves21'}
+        {'prefix': 'extra/sent-leyartesano', 'code': 'shi'},
+        {'prefix': 'synt/bt_yves21', 'quality': 'bt'}
     ],
     'wixarika': [
         {'prefix': 'extra/sent-mxconst'},
         {'prefix': 'extra/corpora', 'code': 'wix'},
         {'prefix': 'extra/paral_own', 'code': 'wix'},
         {'prefix': 'extra/segcorpus', 'code': 'wix'},
-        {'prefix': 'synt/bt_yves21'}
+        {'prefix': 'synt/bt_yves21', 'quality': 'bt'}
         # Note: train.wix/hch is the combination of these:
         # {'prefix': 'extra/corp-train', 'code': 'wix'},
         # {'prefix': 'extra/corp-dev', 'code': 'wix'},
@@ -228,15 +228,27 @@ MONOLINGUAL = {
 
 
 def get_bible_files(lang):
+    for entry in BIBLES[lang]:
+        fn = f'data/bibles/{lang}/{entry["file"]}'
+        if not os.path.isfile(fn):
+            logging.warning("No file at", fn)
     return [(f'../data/bibles/{lang}/{entry["file"]}', entry.get('variant', 'default')) for entry in BIBLES[lang]]
 
 
 def get_monolingual_files(lang):
+    for entry in MONOLINGUAL[lang]:
+        fn = f'data/{lang}-spanish/mono/{entry["file"]}'
+        if not os.path.isfile(fn):
+            logging.warning("No file at", fn)
     return [f'../data/{lang}-spanish/mono/{entry["file"]}' for entry in MONOLINGUAL[lang]]
 
 
 def get_input_files(lang, prefix='train', code=None, variant=None):
     code = LANGCODE[lang] if code is None else code
+    if not os.path.isfile(f'data/{lang}-spanish/{prefix}.es'):
+        logging.warning(f'No file at data/{lang}-spanish/{prefix}.es')
+    if not os.path.isfile(f'data/{lang}-spanish/{prefix}.{code}'):
+        logging.warning(f'No file at data/{lang}-spanish/{prefix}.{code}')
     src = f'../data/{lang}-spanish/{prefix}.es'
     tgt = f'../data/{lang}-spanish/{prefix}.{code}'
     return [src, tgt]
@@ -280,8 +292,6 @@ class GuaraniNormalizer(opusfilter.PreprocessorABC):
             for idx, segment in enumerate(segments):
                 output.append(guaraniNormalize(segment) if idx == 1 else segment)
             yield output
-
-
 
 # From https://github.com/pywirrarika/wixnlp/blob/master/normwix.py
 def normwix(text):
@@ -546,20 +556,33 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
     }
 
     active_filters = {
-        'ashaninka': ['LengthRatioFilter'],
+        'ashaninka': ['LengthFilter', 'LengthRatioFilter'],
         'aymara': ['LengthFilter', 'LengthRatioFilter', 'CharacterScoreFilter',
                    'TerminalPunctuationFilter', 'NonZeroNumeralsFilter'],
-        'bribri': [],
+        'bribri': ['LengthFilter', 'LengthRatioFilter'],
         'chatino': ['LengthFilter', 'LengthRatioFilter'],
-        'guarani': ['LengthRatioFilter'],
-        'hñähñu': ['LengthRatioFilter'],
+        'guarani': ['LengthFilter', 'LengthRatioFilter'],
+        'hñähñu': ['LengthFilter', 'LengthRatioFilter'],
         'nahuatl': ['LengthFilter', 'LengthRatioFilter'],
         'quechua': ['LengthFilter', 'LengthRatioFilter', 'CharacterScoreFilter',
                     'TerminalPunctuationFilter', 'NonZeroNumeralsFilter'],
         'raramuri': ['LengthFilter', 'LengthRatioFilter', 'CharacterScoreFilter',
                      'NonZeroNumeralsFilter'],
-        'shipibo_konibo': [],
-        'wixarika': ['LengthRatioFilter', 'NonZeroNumeralsFilter']
+        'shipibo_konibo': ['LengthFilter', 'LengthRatioFilter'],
+        'wixarika': ['LengthFilter', 'LengthRatioFilter', 'NonZeroNumeralsFilter']
+    }
+
+    quality_filters = {
+        'noisy': [
+            {'HtmlTagFilter': {}},
+            {'LengthRatioFilter': {'unit': 'word', 'threshold': 2}},
+            {'CharacterScoreFilter': {'scripts': ['Latin', 'Latin'], 'thresholds': [0.9, 0.7]}},
+        ],
+        'bt': [
+            {'LengthRatioFilter': {'unit': 'word', 'threshold': 2}},
+            {'CharacterScoreFilter': {'scripts': ['Latin', 'Latin'], 'thresholds': [0.9, 0.7]}},
+            {'LanguageIDFilter': {'languages': ['es', 'en'], 'thresholds': [0.8, -1]}}
+        ]
     }
 
     steps = []
@@ -656,6 +679,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
         for idx, extra in enumerate(extra_datasets[lang]):
             inputs = get_input_files(lang, **extra)
             outputs = get_work_files(lang, f'extra-part-{idx}')
+            quality_label = extra.get('quality', 'default')
             preprocessors = []
             if lang == 'bribri':
                 # if variant label can be handled by normalizer, add the normalizer and remove the label
@@ -679,10 +703,18 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                     'preprocessors': preprocessors
                 }
             })
-            if filtering and active_filters[lang]:
+            if filtering:
                 inputs = outputs
                 outputs = get_work_files(lang, f'extra-part-{idx}_filtered')
-                filters = [{filt: filter_params[filt]} for filt in active_filters[lang]]
+                if active_filters[lang]:
+                    filters = [{filt: filter_params[filt]} for filt in active_filters[lang]]
+                else:
+                    filters = []
+                
+                # add specific filters for backtranslations and particularly noisy sources
+                if quality_label in quality_filters:
+                    filters.extend(quality_filters[quality_label])
+
                 steps.append({
                     'type': 'filter',
                     'parameters': {
@@ -691,6 +723,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                         'filters': filters
                     }
                 })
+
             if add_labels:
                 inputs = outputs
                 outputs = get_work_files(lang, f'extra-part-{idx}_labeled')
@@ -701,7 +734,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                         'inputs': inputs,
                         'outputs': outputs,
                         'preprocessors': [
-                            {'PrefixLabels': {'labels': [f'<{code}>', f'<{code}-{variant}>', '<default>']},
+                            {'PrefixLabels': {'labels': [f'<{code}>', f'<{code}-{variant}>', f'<{quality_label}>']},
                              'module': 'create_opusfilter_config'}
                         ]
                     }
@@ -833,7 +866,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                     }
                 })
             inputs = [get_work_files(lang, f'bible-{idx}_filtered') for idx in range(n_bibles)]
-            logging.warning(inputs)
+            #logging.warning(inputs)
             for idx in [0, 1]:
                 steps.append({
                     'type': 'concatenate',
