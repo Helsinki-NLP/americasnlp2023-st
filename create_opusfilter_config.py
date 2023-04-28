@@ -67,6 +67,10 @@ EXTRA = {
         {'prefix': 'synt/nllb.md'},
         {'prefix': 'synt/globalvoices_pivot'}
     ],
+    'bribri': [
+        {'prefix': 'extra/uicn', 'variant': 'jara'},
+        {'prefix': 'extra/enciclopedia_final', 'variant': 'constenla'}
+    ],
     'chatino': [
         {'prefix': 'extra/sent-mxconst', 'variant': 'plain'},
         {'prefix': 'synt/ctp-eng', 'code': 'ctp'},
@@ -154,7 +158,7 @@ BIBLES = {
         {'file': 'ayr-x-bible-2011-v1.txt'}
     ],
     'bribri': [
-        {'file': 'bzd-x-bible-bzd-v1.txt'}
+        {'file': 'bzd-x-bible-bzd-v1.txt', 'variant': 'constenla'}
     ],
     'chatino': [
         {'file': 'cta-x-bible-cta-v1.txt', 'variant': 'plain'},
@@ -795,6 +799,11 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
                 })
                 outputs = get_work_files(lang, f'bible-{idx}')
                 preprocessors = []
+                if lang == 'bribri':
+                    # if variant label can be handled by normalizer, add the normalizer and remove the label
+                    if "variant" in extra and extra["variant"] in ("constenla", "jara"):
+                        preprocessors.append({'BribriNormalizer': {"orthography": "{}".format(extra["variant"])}, 'module': 'create_opusfilter_config'})
+                        extra["variant"] == "default"
                 if lang == 'wixarika':
                     preprocessors.append({'WixarikaNormalizer': {}, 'module': 'create_opusfilter_config'})
                 elif lang == 'raramuri':
