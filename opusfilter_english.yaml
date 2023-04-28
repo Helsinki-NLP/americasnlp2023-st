@@ -11,6 +11,7 @@ steps:
             preprocessing: raw
             src_output: ep.es.gz
             tgt_output: ep.en.gz
+            suppress_prompts: true
     - type: opus_read
       parameters:
             corpus_name: GlobalVoices
@@ -20,6 +21,7 @@ steps:
             preprocessing: raw
             src_output: gv.es.gz
             tgt_output: gv.en.gz
+            suppress_prompts: true
     - type: opus_read
       parameters:
             corpus_name: News-Commentary
@@ -29,6 +31,7 @@ steps:
             preprocessing: raw
             src_output: nc.es.gz
             tgt_output: nc.en.gz
+            suppress_prompts: true
     - type: opus_read
       parameters:
             corpus_name: TED2020
@@ -38,6 +41,7 @@ steps:
             preprocessing: raw
             src_output: ted.es.gz
             tgt_output: ted.en.gz
+            suppress_prompts: true
     - type: opus_read
       parameters:
             corpus_name: Tatoeba
@@ -47,6 +51,7 @@ steps:
             preprocessing: raw
             src_output: tatoeba.es.gz
             tgt_output: tatoeba.en.gz
+            suppress_prompts: true
     - type: opus_read
       parameters:
             corpus_name: bible-uedin
@@ -56,6 +61,7 @@ steps:
             preprocessing: raw
             src_output: bible.es.gz
             tgt_output: bible.en.gz
+            suppress_prompts: true
     - type: opus_read
       parameters:
             corpus_name: wmt-news
@@ -65,17 +71,7 @@ steps:
             preprocessing: raw
             src_output: wmt.es.gz
             tgt_output: wmt.en.gz
-    - type: concatenate
-      parameters:
-            inputs:
-                - jw.es.gz
-                - bible-uedin.es
-                - Europarl.es
-                - GlobalVoices.es
-                - News-Commentary.es
-                - Tatoeba.es
-                - TED2020.es
-            output: other.es.gz
+            suppress_prompts: true
     - type: concatenate
       parameters:
             inputs:
@@ -139,8 +135,8 @@ steps:
                     thresholds:
                         - 0.9
                         - 0.9
-      - type: preprocess
-        parameters:
+    - type: preprocess
+      parameters:
           inputs:
           - default_filt.es.gz
           - default_filt.en.gz

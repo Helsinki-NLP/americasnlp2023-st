@@ -11,6 +11,7 @@ steps:
             preprocessing: raw
             src_output: ost.es.gz
             tgt_output: ost.en.gz
+            suppress_prompts: true
     - type: remove_duplicates 
       parameters:
             inputs:
@@ -66,8 +67,8 @@ steps:
                 priors: align_priors
                 src_threshold: 2
                 tgt_threshold: 2
-      - type: preprocess
-        parameters:
+    - type: preprocess
+      parameters:
           inputs:
           - ost_filt2.es.gz
           - ost_filt2.en.gz
