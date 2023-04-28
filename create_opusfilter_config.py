@@ -128,25 +128,6 @@ EXTRA = {
     ]
 }
 
-# Only parallel datasets provided by the organizers
-RESTRICTED_EXTRA = {
-    'aymara': [
-        {'prefix': 'parallel_data/es-aym/opus_globalvoices.es-aym'}
-    ],
-    'quechua': [
-        {'prefix': 'dict'},
-        {'prefix': 'parallel_data/es-quy/dict_misc.quy-es'},
-        {'prefix': 'parallel_data/es-quy/jw300.es-quy'},
-        {'prefix': 'parallel_data/es-quy/minedu.quy-es'},
-        {'prefix': 'parallel_data/es-quz/jw300.es-quz', 'code': 'quz'},
-    ],
-    'shipibo_konibo': [
-        {'prefix': 'parallel_data/dictionary'},
-        {'prefix': 'parallel_data/educational'},
-        {'prefix': 'parallel_data/flashcards'},
-    ]
-}
-
 BIBLES = {
     'ashaninka': [
         {'file': 'cni-x-bible-cni-v1.txt'}
@@ -519,7 +500,7 @@ class PrefixLabels(opusfilter.PreprocessorABC):
 
 
 def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=True,
-         monolingual=True, restricted_extra=False, filtering=True, train_lms=False,
+         monolingual=True, filtering=True, train_lms=False,
          add_labels=False):
     # WORKDIR = 'processed_data'
     # OUTPUT = 'opusfilter.yaml'
@@ -534,11 +515,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
         logging.info("Dev sets disabled")
     if not monolingual:
         logging.info("Monolingual sets disabled")
-    if restricted_extra:
-        logging.info("Using restricted extra data")
-        extra_datasets = RESTRICTED_EXTRA
-    else:
-        extra_datasets = EXTRA
+    extra_datasets = EXTRA
     if not filtering:
         logging.info("Filtering disabled")
     if add_labels:
@@ -1095,8 +1072,6 @@ if __name__ == '__main__':
     parser.add_argument('--no-bibles', dest='bibles', action='store_false', help='Exclude Bibles')
     parser.add_argument('--no-dev', dest='dev', action='store_false', help='Exclude dev sets')
     parser.add_argument('--no-monolingual', dest='monolingual', action='store_false', help='Exclude monolingual sets')
-    parser.add_argument('--restricted-extra', dest='restricted_extra', action='store_true',
-                        help='Exclude extra parallel data sets not provided by the organizers')
     parser.add_argument('--no-filtering', dest='filtering', action='store_false', help='Exclude filtering')
     parser.add_argument('--tokenize', action='store_true', help='Include tokenization')
     parser.add_argument('--lm', action='store_true', help='Train char LMs')
@@ -1106,5 +1081,4 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
     main(args.output, args.workdir, single=args.single, tokenize=args.tokenize,
          bibles=args.bibles, dev=args.dev, monolingual=args.monolingual,
-         restricted_extra=args.restricted_extra, filtering=args.filtering,
-         train_lms=args.lm, add_labels=args.add_labels)
+         filtering=args.filtering, train_lms=args.lm, add_labels=args.add_labels)

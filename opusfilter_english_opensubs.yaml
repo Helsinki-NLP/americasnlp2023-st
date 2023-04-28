@@ -1,0 +1,83 @@
+common:
+    output_directory: processed_data/english
+
+steps:
+    - type: opus_read
+      parameters:
+            corpus_name: OpenSubtitles
+            source_language: es
+            target_language: en
+            release: v2018
+            preprocessing: raw
+            src_output: ost.es.gz
+            tgt_output: ost.en.gz
+    - type: remove_duplicates 
+      parameters:
+            inputs:
+                - ost.es.gz
+                - ost.en.gz
+            outputs:
+                - ost_dedup.es.gz
+                - ost_dedup.en.gz
+    - type: filter
+      parameters:
+            inputs:
+                - ost_dedup.es.gz
+                - ost_dedup.en.gz 
+            outputs:
+                - ost_filt.es.gz
+                - ost_filt.en.gz
+            filters:
+                - LengthFilter:
+                    unit: word
+                    min_length: 5
+                    max_length: 30
+                - LengthRatioFilter:
+                    unit: word
+                    threshold: 1.5
+                - LanguageIDFilter:
+                    languages:
+                        - es
+                        - en
+                    thresholds:
+                        - 0.9
+                        - 0.9
+    # train alignment model on the other "cleaner" corpora
+    - type: train_alignment
+      parameters:
+            src_data: default_filt.es.gz
+            tgt_data: default_filt.en.gz
+            parameters:
+                src_tokenizer: [moses, es]
+                tgt_tokenizer: [moses, en]
+            output: align_priors
+    - type: filter
+      parameters:
+        inputs:
+            - ost_filt.es.gz
+            - ost_filt.en.gz
+        outputs:
+            - ost_filt2.es.gz
+            - ost_filt2.en.gz
+        filters:
+            - WordAlignFilter:
+                src_tokenizer: [moses, es]
+                tgt_tokenizer: [moses, en]
+                priors: align_priors
+                src_threshold: 2
+                tgt_threshold: 2
+      - type: preprocess
+        parameters:
+          inputs:
+          - ost_filt2.es.gz
+          - ost_filt2.en.gz
+          outputs:
+          - ost_labeled.es.gz
+          - ost_labeled.en.gz
+          preprocessors:
+          - PrefixLabels:
+              labels:
+              - <eng>
+              - <eng-default>
+              - <noisy>
+            module: create_opusfilter_config

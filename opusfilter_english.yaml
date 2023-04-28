@@ -1,0 +1,212 @@
+common:
+    output_directory: processed_data/english
+
+steps:
+    - type: opus_read
+      parameters:
+            corpus_name: Europarl
+            source_language: es
+            target_language: en
+            release: v8
+            preprocessing: raw
+            src_output: ep.es.gz
+            tgt_output: ep.en.gz
+    - type: opus_read
+      parameters:
+            corpus_name: GlobalVoices
+            source_language: es
+            target_language: en
+            release: v2018q4
+            preprocessing: raw
+            src_output: gv.es.gz
+            tgt_output: gv.en.gz
+    - type: opus_read
+      parameters:
+            corpus_name: News-Commentary
+            source_language: es
+            target_language: en
+            release: v16
+            preprocessing: raw
+            src_output: nc.es.gz
+            tgt_output: nc.en.gz
+    - type: opus_read
+      parameters:
+            corpus_name: TED2020
+            source_language: es
+            target_language: en
+            release: v1
+            preprocessing: raw
+            src_output: ted.es.gz
+            tgt_output: ted.en.gz
+    - type: opus_read
+      parameters:
+            corpus_name: Tatoeba
+            source_language: es
+            target_language: en
+            release: v2023-04-12
+            preprocessing: raw
+            src_output: tatoeba.es.gz
+            tgt_output: tatoeba.en.gz
+    - type: opus_read
+      parameters:
+            corpus_name: bible-uedin
+            source_language: es
+            target_language: en
+            release: v1
+            preprocessing: raw
+            src_output: bible.es.gz
+            tgt_output: bible.en.gz
+    - type: opus_read
+      parameters:
+            corpus_name: wmt-news
+            source_language: es
+            target_language: en
+            release: v2019
+            preprocessing: raw
+            src_output: wmt.es.gz
+            tgt_output: wmt.en.gz
+    - type: concatenate
+      parameters:
+            inputs:
+                - jw.es.gz
+                - bible-uedin.es
+                - Europarl.es
+                - GlobalVoices.es
+                - News-Commentary.es
+                - Tatoeba.es
+                - TED2020.es
+            output: other.es.gz
+    - type: concatenate
+      parameters:
+            inputs:
+                - ep.en.gz
+                - gv.en.gz
+                - nc.en.gz
+                - tatoeba.en.gz
+                - ted.en.gz
+            output: default.en.gz
+    - type: concatenate
+      parameters:
+            inputs:
+                - ep.es.gz
+                - gv.es.gz
+                - nc.es.gz
+                - tatoeba.es.gz
+                - ted.es.gz
+            output: default.es.gz
+    - type: remove_duplicates 
+      parameters:
+            inputs:
+                - default.es.gz
+                - default.en.gz
+            outputs:
+                - default_dedup.es.gz
+                - default_dedup.en.gz
+    - type: filter
+      parameters:
+            inputs:
+                - default_dedup.es.gz
+                - default_dedup.en.gz 
+            outputs:
+                - default_filt.es.gz
+                - default_filt.en.gz
+            filters:
+                - LengthFilter:
+                    unit: word
+                    min_length: 2
+                    max_length: 100
+                - LengthRatioFilter:
+                    unit: word
+                    threshold: 2
+                - LongWordFilter:
+                    threshold: 40
+                - HtmlTagFilter: {}
+                - CharacterScoreFilter:
+                    scripts:
+                        - Latin
+                        - Latin
+                    thresholds:
+                        - 1
+                        - 1
+                - TerminalPunctuationFilter:
+                    threshold: -2
+                - NonZeroNumeralsFilter:
+                    threshold: 0.5
+                - LanguageIDFilter:
+                    languages:
+                        - es
+                        - en
+                    thresholds:
+                        - 0.9
+                        - 0.9
+      - type: preprocess
+        parameters:
+          inputs:
+          - default_filt.es.gz
+          - default_filt.en.gz
+          outputs:
+          - default_labeled.es.gz
+          - default_labeled.en.gz
+          preprocessors:
+          - PrefixLabels:
+              labels:
+              - <eng>
+              - <eng-default>
+              - <default>
+            module: create_opusfilter_config
+    - type: remove_duplicates 
+      parameters:
+            inputs:
+                - bible.es.gz
+                - bible.en.gz
+            outputs:
+                - bible_dedup.es.gz
+                - bible_dedup.en.gz
+    - type: filter
+      parameters:
+            inputs:
+                - bible_dedup.es.gz
+                - bible_dedup.en.gz 
+            outputs:
+                - bible_filt.es.gz
+                - bible_filt.en.gz
+            filters:
+                - LengthFilter:
+                    unit: word
+                    min_length: 2
+                    max_length: 100
+                - LengthRatioFilter:
+                    unit: word
+                    threshold: 2
+                - BlankFilter:
+                    module: create_opusfilter_config
+    - type: preprocess
+      parameters:
+        inputs:
+        - bible_filt.es.gz
+        - bible_filt.en.gz
+        outputs:
+        - bible_labeled.es.gz
+        - bible_labeled.en.gz
+        preprocessors:
+        - PrefixLabels:
+            labels:
+            - <eng>
+            - <eng-default>
+            - <bible>
+          module: create_opusfilter_config
+    - type: preprocess
+      parameters:
+        inputs:
+        - wmt.es.gz
+        - wmt.en.gz
+        outputs:
+        - wmt_labeled.es.gz
+        - wmt_labeled.en.gz
+        preprocessors:
+        - PrefixLabels:
+            labels:
+            - <eng>
+            - <eng-default>
+            - <default>
+          module: create_opusfilter_config
