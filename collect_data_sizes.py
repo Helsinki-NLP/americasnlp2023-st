@@ -23,8 +23,8 @@ if __name__ == '__main__':
 
     logging.basicConfig(level=logging.INFO)
     
-    prefixes = ['train', 'extra', 'combined', 'dedup', 'dedup_filtered', 'bibles_filtered', 'monolingual_filtered', 'dev']
-    labels = ['train', 'extra', 'combined', 'dedup', 'filtered', 'bibles', 'monolingual', 'dev']
+    prefixes = ['train', 'extra', 'combined', 'dedup', 'bibles', 'monolingual_filtered', 'dev_labeled']
+    labels = ['train', 'extra', 'combined', 'dedup', 'bibles', 'monolingual', 'dev']
 
     table = {}
     table['language'] = [l.replace('_', '-').title() for l in LANGUAGES]

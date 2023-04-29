@@ -460,8 +460,6 @@ class ChatinoNormalizer(opusfilter.PreprocessorABC):
         ('ⁱ', 'ᴵ'),
         ('ʲ', 'ᴶ'),
         ('ᵏ', 'ᴷ'),
-        ('', ''),
-        ('', ''),
         # extras
         ('ꟲ', 'ᶜ'),
         ('ꟳ', 'ᶠ')
@@ -774,7 +772,7 @@ def main(config_output, workdir, single=None, tokenize=False, bibles=True, dev=T
         })
 
     # Bibles
-    # * k=3 random entries from Spanish bibles
+    # * k=1...3 random entries from Spanish bibles
     # * all tokenized -> detokenize
     # * wixarika should use normalization in normwix.py
     if bibles:
