@@ -61,7 +61,8 @@ EXTRA = {
         {'prefix': 'extra/OPUS.aym-es', 'quality': 'noisy'},
         {'prefix': 'synt/bt_yves21', 'quality': 'bt'},
         {'prefix': 'synt/nllb.md'},
-        {'prefix': 'synt/globalvoices_pivot'}
+        {'prefix': 'synt/globalvoices_pivot'},
+        {'prefix': 'extra/udhr', 'quality': 'noisy'}
     ],
     'bribri': [
         {'prefix': 'extra/uicn', 'variant': 'jara'},
@@ -78,11 +79,13 @@ EXTRA = {
         {'prefix': 'extra/noticias'},
         {'prefix': 'extra/flores200'},
         {'prefix': 'synt/nllbseed'},
-        {'prefix': 'extra/OPUS.gn-es', 'quality': 'noisy'}
+        {'prefix': 'extra/OPUS.gn-es', 'quality': 'noisy'},
+        {'prefix': 'extra/udhr', 'quality': 'noisy'}
     ],
     'hñähñu': [
         {'prefix': 'extra/sent-mxconst'},
-        {'prefix': 'extra/dict', 'code': 'ote'}
+        {'prefix': 'extra/dict', 'code': 'ote'},
+        {'prefix': 'extra/udhr', 'quality': 'noisy'},
     ],
     'nahuatl': [
         {'prefix': 'extra/sent-mxconst'},
@@ -90,7 +93,8 @@ EXTRA = {
         {'prefix': 'extra/texts', 'quality': 'noisy'},
         {'prefix': 'extra/dictexamplesents.spa-nah'},
         {'prefix': 'synt/dictexamplesents_eng'},
-        {'prefix': 'extra/OPUS.nah-es', 'quality': 'noisy'}
+        {'prefix': 'extra/OPUS.nah-es', 'quality': 'noisy'},
+        {'prefix': 'extra/udhr', 'quality': 'noisy'}
     ],
     'quechua': [
         {'prefix': 'parallel_data/es-quy/minedu.quy-es'},
@@ -102,7 +106,10 @@ EXTRA = {
         {'prefix': 'extra/sent-peconst', 'code': 'que'},
         {'prefix': 'synt/bt_yves21', 'quality': 'bt'},
         {'prefix': 'extra/flores200'},
-        {'prefix': 'extra/OPUS.quy-es', 'quality': 'noisy'}
+        {'prefix': 'extra/OPUS.quy-es', 'quality': 'noisy'},
+        {'prefix': 'extra/udhr', 'quality': 'noisy'},
+        {'prefix': 'extra/udhr', 'quality': 'noisy', 'code': 'quz', 'variant': 'quz'},
+        {'prefix': 'extra/udhr', 'quality': 'noisy', 'code': 'quh', 'variant': 'quh'},
     ],
     'raramuri': [
         {'prefix': 'extra/sent-mxconst'}
@@ -113,7 +120,8 @@ EXTRA = {
         {'prefix': 'extra/tsanas1'},
         {'prefix': 'extra/covid19'},
         {'prefix': 'extra/sent-leyartesano', 'code': 'shi'},
-        {'prefix': 'synt/bt_yves21', 'quality': 'bt'}
+        {'prefix': 'synt/bt_yves21', 'quality': 'bt'},
+        {'prefix': 'extra/udhr', 'quality': 'noisy'},
     ],
     'wixarika': [
         {'prefix': 'extra/sent-mxconst'},
