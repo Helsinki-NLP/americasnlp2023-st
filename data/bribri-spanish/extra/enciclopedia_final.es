@@ -1,28 +1,12 @@
-D E süe ̀ Ley yöne, skáchö ie, íyi, jkö noie énä se’ swöʼ kí ̈ me ́ ka ̈ rak ìrìr, eʼ yöne á ̈s apeʼ se’ jkáche buáeme, se’ kákí ̈ʼ és ská ̈ ye ́rke añìjke e e ́na ̈ tä ìeʼ pa skímemi se’ ká̈ shu a ̈ Decreto Ejecutìvo yuwe ̈́kane eʼ tse ́ wö rör 22072-MEP. eʼ yöne 25 de febrerode 1993, éna Decretö kí yöne eʼ tse wörör 37801, e ́ rör se’ ská ̈wak kabe ́ La pa enä táyeLa pa.
-Ëʼ wöuLa we ̈ke se’ʼ jtöwa e ́ ̈ nä síkua jtöwa, ás ke ̀ se’ weír se’ ká ̈ shúa, é t ä és se’ wö ́ uLána se’ jtewa se’ su ̈wöwä ás se’ wö ́ uLar se ́ nuk buáe íyì uLítenea ̈.
-Éta Decreto ske ́ yöne ká ̈wö 15 de Julio, duás 2013, eʼ tse ́wö rör 37801-MEP, e' yöna se’ ská ̈ wak wöuLá wö ̈ ye, ás se’ kí̈mer kö ́ ̈s se’ ká ̈ tsö tser ejke, és se’ e ́ ̈na iäna, we ̈́s seʼ eʼ tsá ̈jchömì.
-Kí ̈jke se’ ská̈wak kácheke, swák- tö ̀ wa we ́ ̈s swö uLármì ská ̈ k e n è u ̈k, swák pata ̈ wë́s sñìr páumì, se ̈́ra e me cháke we ̀ ̈s se’ e ̈ yuwömì, e' kenewé ̈, Ministerio de Educación Pública, el equipo técnico del , DOCid=1, lang=spa].
-El 15 de julio del 2013 se publica en la Gaceta el nuevo decreto N° 37801 MEP, reforma del Subsistema de Educación Indígena, para que se adecue completamente a las necesidades de las comunidades indígenas y con mecanismos de participación claros en el cumplimiento de sus derechos; también, establece las particularidades de la educación indígena en términos de Kë́wë uás bákmì dobö ́ m bö ́ yöké t á̈ ská̈ Costa Rìca e e ̈́tsöse’ dtsö ̀ ena ̈ ape', uLítanee wa, míka ley yöne 7426duás 1994, e ́ ta ̈ se’ ká ̈wö chö we ̈ke ie' parör eʼ yöne.
-DE süe ̀ Ley yöne, skáchö ie, íyi, jkö noieénä se’ swöʼ kí ̈ me ́ ka ̈ rak ìrìr, eʼ yöne á ̈sapeʼ se’ jkáche buáeme, se’ kákí ̈ʼ és ská ̈ye ́rke añìjke e e ́na ̈ tä ìeʼ pa skímemi se’ká̈ shu a ̈ Decreto Ejecutìvo yuwe ̈́kane eʼ tse ́ wörör 22072MEP. eʼ yöne 25 de febrerode 1993, éna Decretö kí yöne eʼ tse wörör 37801, e ́ rör se’ ská̈wak kabe ́ La paenä táyeLa pa.
-Ëʼ wöuLa we ̈ke se’ʼ jtöwa e ́ ̈näsíkua jtöwa, ás ke ̀ se’ weír se’ ká ̈ shúa,é t ä és se’ wö ́ uLána se’ jtewa se’ su ̈wöwäás se’ wö ́ uLar se ́ nuk buáe íyì uLítenea ̈.
-Éta Decreto ske ́ yöne ká ̈wö 15 de Julio,duás 2013, eʼ tse ́wö rör 37801MEP, e'yöna se’ ská̈ wak wöuLá wö ̈ ye, ás se’kí̈mer kö ́ ̈s se’ ká ̈ tsö tser ejke, és se’ e ́ ̈naiäna, we ̈́s seʼ eʼ tsá ̈jchömì.
-Kí ̈jke se’ská̈wak kácheke, swák tö ̀ wa we ́ ̈s swöuLármì ská ̈ k e n è u ̈k, swák pata ̈ wë́s sñìrpáumì, se ̈́ra e me cháke we ̀ ̈s se’ e ̈yuwömì, e' kenewé ̈, Ministerio deEducación Pública, el equipo técnico delKë́wë uás bákmì dobö ́ m bö ́ yöké t á̈ ská̈ Costa Rìca e e ̈́tsöse’ dtsö ̀ ena ̈ ape', uLítanee wa, míka ley yöne 7426duás 1994, e ́ ta ̈ se’ ká ̈wö chö we ̈ke ie' parör eʼ yöne.
-DE süe ̀ Ley yöne, skáchö ie, íyi, jkö noieénä se’ swöʼ kí ̈ me ́ ka ̈ rak ìrìr, eʼ yöne á ̈sapeʼ se’ jkáche buáeme, se’ kákí ̈ʼ és ská ̈ye ́rke añìjke e e ́na ̈ tä ìeʼ pa skímemi se’ká̈ shu a ̈ Decreto Ejecutìvo yuwe ̈́kane eʼ tse ́ wörör 22072MEP. eʼ yöne 25 de febrerode 1993, éna Decretö kí yöne eʼ tse wörör 37801, e ́ rör se’ ská̈wak kabe ́ La paenä táyeLa pa.
-Ëʼ wöuLa we ̈ke se’ʼ jtöwa e ́ ̈näsíkua jtöwa, ás ke ̀ se’ weír se’ ká ̈ shúa,é t ä és se’ wö ́ uLána se’ jtewa se’ su ̈wöwäás se’ wö ́ uLar se ́ nuk buáe íyì uLítenea ̈.
-Éta Decreto ske ́ yöne ká ̈wö 15 de Julio,duás 2013, eʼ tse ́wö rör 37801MEP, e'yöna se’ ská̈ wak wöuLá wö ̈ ye, ás se’kí̈mer kö ́ ̈s se’ ká ̈ tsö tser ejke, és se’ e ́ ̈naiäna, we ̈́s seʼ eʼ tsá ̈jchömì.
-Kí ̈jke se’ská̈wak kácheke, swák tö ̀ wa we ́ ̈s swöuLármì ská ̈ k e n è u ̈k, swák pata ̈ wë́s sñìrpáumì, se ̈́ra e me cháke we ̀ ̈s se’ e ̈yuwömì, e' kenewé ̈, Ministerio deEducación Pública, el equipo técnico delobjetivos, idioma, enfoque, organización administrativoterritorial y recursos humanos; asimismo, los procedimientos de consulta y los mecanismos de participación de los pueblos indígenas en los procesos de toma de decisiones en materia educativa.
+Prólogo.
+Desde finales del siglo XX Costa Rica se vislumbra como un país “multiétnico y pluricultural, al promulgarse la Ley N° 7426 de 1994 el Día de las Culturas y en concordancia con lo que había sido dispuesto en la Ley Fundamental de Educación acerca de la conservación y ampliación de la herencia cultural.
+Su fundamento se origina en reducir las brechas sociales relacionadas con la calidad de la educación en las áreas rurales del sistema educativo y con ello mejorar la equidad, eficiencia y utilización de los recursos del sector educativo con énfasis en las poblaciones indígenas; mediante la reforma del Decreto Ejecutivo N° 22072-MEP, del 25 de febrero de 1993 y con la reforma del decreto del Subsistema 37801; se trata de enseñar a los niños y niñas indígenas que utilicen su idioma materno, así como el idioma español, responder a las necesidades culturales y socioeconómicas de las comunidadesv, abarcando su historia, su cosmovisión, sus conocimientos y sus sistemas de valores y tradiciones, entre otros.
+El 15 de julio del 2013 se publica en la Gaceta el nuevo decreto N° 37801 MEP, reforma del Subsistema de Educación Indígena, para que se adecue completamente a las necesidades de las comunidades indígenas y con mecanismos de participación claros en el cumplimiento de sus derechos; también, establece las particularidades de la educación indígena en términos de objetivos, idioma, enfoque, organización administrativoterritorial y recursos humanos; asimismo, los procedimientos de consulta y los mecanismos de participación de los pueblos indígenas en los procesos de toma de decisiones en materia educativa.
 Este esfuerzo conjunto del Ministerio de Educación Pública, Equipo Técnico del Departamento de Educación Intercultural, PROMECE, permite la construcción de 7 Tomos de los Territorios Indígenas Costarricenses y en este Tomo 1 se adecuará la información provista de un marco metodológico y pedagógico, sobre los aspectos generales y vivenciales de los bribis y cabécares de Sulá.
 Con el fin de contar con información adecuada, ágil y oportuna, se exponen todos los elementos útiles, para lograr un conocimiento mayor, para entender el pasado, el presente y el futuro del mundo de los bribris y cabécares de Sulá.
 Con este trabajo se logra brindar insumos para la definición y análisis integral de todo ese legado cultural que conforman, por medio de la información obtenida, y constituir un aporte del Ministerio de Educación, específicamente el Departamento de Educación Intercultural a todo el sistema educativo, establecidos en la Región de Talamanca, y, en general, al país y fuera de sus fronteras.
-Departamento de EducaciónIntercultural, PROMECE, we ̈́s se’ rör íyìbke ́ itse, erör se’ dehe ́ ìe ́ mì s ká ̈ ká̈bta,íyìwak jkö ́ nö ie.
-Ítä se’ jtö ́ se swö', e' tsö ia ̈ 100%, erese’ swö' pámìk ke rör és.
-Éreta ̈ ská̈wötä iwa kaneu ̈k. we ́ s sdìkíetkuö ì ke ̈neö és, é ta ̈ s se ́ rmì ye ́ s yé e ̀ , buáe me yöbìta ̈.
-Brìbrì pa é kabe ́ car pa e ́rörSuLaʼ ichaSsh ke ̀kì skácheke e ̈́nä ì wé we ̈Se’ʼ swö ’ kacheke SpájchenaSká̈wö ta ̈ uLítane e ̈ʼ yuök, ìdLö ̀ yök we ̈́neyö̈́rke kaneblö k sta, se’ uLìtane eʼ jte ta ̈eʼ dche ́ rör skabua we ̈́mì, se’ʼ é apeluLítane se’rke ká íkì stómì, sö ì suémìwe ́ s s swö ʼ tsö tse ̈́r kuókì, kuö kì.
-Se’dtsöwa, íerö n aka bar.
-Isá̈ükÚ me ́ keka ̈ i k e n e ̀ w ö ̈́ ì e , á ̈s ská ̈wömenér.
-Ká̈ í kï, eʼ kene we ̈ ke ínskí ̈ e, ás se’ʼ swöke chö ̀ wa.
-Érör skímemì, ás sañì dìö yöe ́rör skímemì sde che ́ yö ̈́k, es sdtse’wö es swö' erör sme ́ ka ̈m ì a ñ ì j k e e s e ’ 'uLítane a ̈.
-S os bribris y cabécares de Sulá señalan dos poblaciones indígenas unidas por razones históricas, sin embargo con grandes diferencias en el idioma, cantos y danzas ceremoniales, narraciones sagradas, costumbres y tradiciones propias de cada cultura aportan al conocimiento de la cultura costarricense.
+Introducción.
+Los bribris y cabécares de Sulá señalan dos poblaciones indígenas unidas por razones históricas, sin embargo con grandes diferencias en el idioma, cantos y danzas ceremoniales, narraciones sagradas, costumbres y tradiciones propias de cada cultura aportan al conocimiento de la cultura costarricense.
 Se descubre así, una riqueza ancestral, a partir de la recopilación de los principales aportes de historiadores e investigadores, enriquecido con los conocimientos y prácticas vivenciales de los sabios de la cultura, líderes comunales, maestros de cultura, de lenguaje y pobladores.
 Este tomo contiene la mayoría de sus costumbres ancestrales, su vida espiritual, el idioma, que han seguido practicando por décadas en Talamanca.
 Esto resulta en una información perdurable y valiosa sobre sus vivencias, su mundo mítico rodeado de espíritus buenos y malos, respetado en todo el estilo de vida de sus pobladores, desde el nacimiento hasta la muerte. Se encuentran en la tierra como en el cosmos.
@@ -35,127 +19,53 @@ Dicha ceremonia se inicia con el encendido de un fuego y un segundo enterramient
 Las leyendas sobre los guías espirituales explican su poder mítico de transformación, por ejemplo, el águila, por ser el animal más fuerte y poderoso; convertido en jaguar, el animal más feroz, lucha en las batallas guerreras, ataca y destruye a sus enemigos, los salva del “jaguar de agua”, responsable de las muertes que suceden con las inundaciones o aquellas personas embriagadas que cruzan los ríos y mueren en ellos.
 También de gran importancia es la serpiente, el murciélago y la lechuza, que en los rituales vsiempre lo acompañan para demostrar su poder.
 Todos estos aspectos generales y vivenciales se abordan desde un punto de vista metodológicosistemático de recopilación de información documental y de trabajo de campo (comunicación personal mediante entrevistas con informantes de cada pueblo) por ello cabe preservar sus conocimientos y opiniones para impulsar y estimular el aprendizaje de esta cultura hacia al mundo.
-A 1.
-Historia y antecedentes finales del siglo XIX, Baja Talamanca vivió una serie de enfrentamientos con no indígenas, por la usurpación de sus territorios, con la llegada de compañías transnacionales, como la United Fruit Company, para la producción de banano, y la Northern Railway, con la construcción del ferrocarril al Atlántico.
+1. Historia y antecedentes
+A finales del siglo XIX, Baja Talamanca vivió una serie de enfrentamientos con no indígenas, por la usurpación de sus territorios, con la llegada de compañías transnacionales, como la United Fruit Company, para la producción de banano, y la Northern Railway, con la construcción del ferrocarril al Atlántico.
 Debido a esto, se afectaron muchas comunidades como Suretka, Watsi, Katsi entre otras, por un proceso de aculturación y desplazamiento de muchos indígenas a otras regiones.
 En Talamanca habitaba un rey, con el nombre de Antonio Saldaña, que se opuso a que sus tierras fueran cedidas por el gobierno a dichas empresas e incluso, cuando lo invitaban a viajar a San José para que negociara y aceptara las propuestas de dejar las tierras, no lo lograron convencer, él concebía como tierras sagradas y dejadas por sus antepasados por lo cual volvía a sus territorios, a defenderlos.
 El estado envió, en ese tiempo, “un juez de paz” para que pusiera orden y evitara las rebeliones en contra de las empresas, e incluso instalaron un cuartel con muchos policías, traídos de otros lugares como San José y Cartago.
-En 1910 muere de forma misteriosa Antonio Saldaña y muchos de los pobladores manifiestan un posible envenenamiento.
-No hubo otro líder que lo sucediera y estas poblaciones ya no tenían quien los defendiera, por lo tanto fueron cediendo terreno y dichas empresas se apropiaron de la mayoría de sus tierras.
+En 1910 muere de forma misteriosa Antonio Saldaña y muchos de los pobladores manifiestan un posible envenenamiento. No hubo otro líder que lo sucediera y estas poblaciones ya no tenían quien los defendiera, por lo tanto fueron cediendo terreno y dichas empresas se apropiaron de la mayoría de sus tierras.
 De este modo, cada vez se iban desplazando más adentro de la montaña.
 La producción de banano por la empresa norteamericana United Fruit Company duró pocos años; los indígenas se lo atribuyen al poder de los awapas, quienes, con su poder espiritual, invocan a los espíritus; ellos influyeron para cesar la explotación.
-En 1978 en la búsqueda de encontrar hidrocarburos, los no Parte ICapítulo IBribri pa rör SuLa ʼ icha 1S ë ’ J t ë̀ ë́ i wablënë, ká ̱ ìö̱ ìö̱ Historia y Antecedentesö̈́s se’ʼ ka ̈jkue (BajaTalamanca) ramì és sìkuapa se' k á k L ö w e ̈́wa, eʼwable duás XIX e btawa.
-Ëʼ kLö we ̈́wa Compañía kìeʼ United FruitCompany, chumu kuablie, e ̈́ ìé t rörNorthem Raìlway e ̈́rör tren ña Lá yö' dye ̈́,iker.
-KËrör se' Ká SuLe ̈́tchö , Wátsì, Kátsì e'suLuw ewa, se’' swö' budé e' méat, kíjkespó ka.
-Ë' ke ̈́wöta se’' bLu' t á' e' spö k a.
-Ë' kewöt a se’' bLu' t a e' kíne AntonìoSaldaña.
-Táin ìe' rör se’' íyö ts á che, Ke ̈́ìe' rör sìkua bLu' jtö tse’.
-Ape' w a ìmíkekrö rö e dö San Jö sé ás ìe' se’' músts a,ereta ke' ìe' w a sìku pa ìutene.
-Éta ìe'wa'r íche ̈́r íyök rör.
-O ke watörta e'káwöt a tsóìche ìe' rör.
-Éta síkua blu' rör, ape' tsö' yö ule (Juezde Paz), e' pajchebtu á ̈s ke ̀ sñíjpö chumúwö'kìrpata ̈, e' ke ́ wöta ì̀u yörak swötöwaìe ìshke ́ ̈k ì p a r e d á s e S a n J o s é é ̈Cartago.
-Étä se' blu' Antonio Saldaña ble ́new aduás 1910 ke ̀ sw aichë́r buáé, e ́ ret awe ́ swa kö pö ́ Li Sulúsì e ̈́wa ape' rörs té wa ke ̀ se’ blu,' sk̀a yönene, ekuekì se’'á̈tä sìáeme, ke yì k ú iä stsáchök.
-Ékuekì síkuapa rör ská ̈ yestsa se ̈́raeme,ë́ta ská ̈wö ta shkön mì kámìe ká ̈btayuLókne.
-Ëre chamú wökìrpanorteamerìca United Company ke se’netáìn.
-Skékepa ì treö mì.
-Ë skerekaneduás 1978, e reka kìö bíö k, tabe chkakì, e ́ ta kaL téLö r taín e ñaLa yuö ìe, uyuö ìe kapö ìe síkuapa rase úpakö k e ́ a ̈,éwa táìn e kaL te, éna ̈ di' yawé ̈kä.
-Íta Asociación de Desarrollo IntegralIndígena, tsö' íyök tsá ̈j chök, síkua Leywa, erör síkuapa rase ská ̈ yöts a kal i ö ́ k.
-Ére ta ̈ i' chökle ká ̈btaLa tsö ia ber ber.
-Éta síkua blu' rör, ape' tsö' yö ule (Juezde Paz), e' pajchebtu á ̈s ke ̀ sñíjpö chumúwö'kìrpata ̈, e' ke ́ wöta ì̀u yörak swötöwaìe ìshke ́ ̈k ì p a r e d á s e S a n J o s é é ̈Cartago.
-Étä se' blu' Antonio Saldaña ble ́new aduás 1910 ke ̀ sw aichë́r buáé, e ́ ret awe ́ swa kö pö ́ Li Sulúsì e ̈́wa ape' rörs té wa ke ̀ se’ blu,' sk̀a yönene, ekuekì se’'á̈tä sìáeme, ke yì k ú iä stsáchök.
-Ékuekì síkuapa rör ská ̈ yestsa se ̈́raeme,ë́ta ská ̈wö ta shkön mì kámìe ká ̈btayuLókne.
-Ëre chamú wökìrpanorteamerìca United Company ke se’netáìn.
-Skékepa ì treö mì.
-Ë skerekaneduás 1978, e reka kìö bíö k, tabe chkakì, e ́ ta kaL téLö r taín e ñaLa yuö ìe, uyuö ìe kapö ìe síkuapa rase úpakö k e ́ a ̈,éwa táìn e kaL te, éna ̈ di' yawé ̈kä.
-Íta Asociación de Desarrollo IntegralIndígena, tsö' íyök tsá ̈j chök, síkua Leywa, erör síkuapa rase ská ̈ yöts a kal i ö ́ k.
-Ére ta ̈ i' chökle ká ̈btaLa tsö ia ber ber. indígenas, penetraron con maquinaria a las montañas; cortaron toneladas de árboles, para hacer caminos y establecer lugares turísticos como hoteles, en un proceso continuo de deforestación y contaminación de ríos.
+En 1978 en la búsqueda de encontrar hidrocarburos, los no indígenas, penetraron con maquinaria a las montañas; cortaron toneladas de árboles, para hacer caminos y establecer lugares turísticos como hoteles, en un proceso continuo de deforestación y contaminación de ríos.
 La creación de la Asociación de Desarrollo Integral Indígena, busca proteger nuevamente las tierras con una normativa legal vigente de personas o empresas que quieran invadir sus territorios, como los madereros, sin embargo aún se conservan vírgenes por ser áreas protegidas.
-Significado y origen del nombre “bribri” Los bribris, “nacieron de una semilla esparcida por Sibö en la Cordillera de Talamanca y como los indígenas siguen la misma ruta del Sol, se nace, se crece y se muere para regresar al lugar de donde se viene, es el alma de todo lo existente.
-El nombre bribri significa pueblo de espíritu guerrero; valiente, libertario desde los habitantes originarios, en la época de la conquista, se defendían con la única arma que poseían, el arco y la flecha, es por ello que los llamaban ‘los flecheros’, defendían sus territorios para que fueran respetados (Entrevista a Alejandro Swaby Rodríguez, 2013). 3.
-Cosmogonía Estas comunidades tienen una visión espiritual y mítica del universo y del mundo, así como su conocimiento ancestral el cual representa el equilibrio entre los humanos y las fuerzas sobrenaturales que los rodean.
+2. Significado y origen del nombre “bribri”.
+Los bribris, “nacieron de una semilla esparcida por Sibö en la Cordillera de Talamanca y como los indígenas siguen la misma ruta del Sol, se nace, se crece y se muere para regresar al lugar de donde se viene, es el alma de todo lo existente.
+El nombre bribri significa pueblo de espíritu guerrero; valiente, libertario desde los habitantes originarios, en la época de la conquista, se defendían con la única arma que poseían, el arco y la flecha, es por ello que los llamaban ‘los flecheros’, defendían sus territorios para que fueran respetados.
+Entrevista a Alejandro Swaby Rodríguez, 2013.
+3. Cosmogonía
+Estas comunidades tienen una visión espiritual y mítica del universo y del mundo, así como su conocimiento ancestral el cual representa el equilibrio entre los humanos y las fuerzas sobrenaturales que los rodean.
 Se trata de la explicación mítica del origen del universo y de los dioses hacia una explicación racional del respeto y valores de todo lo creado por Sibö en el mundo, con ello han resistido desde la conquista española y sus tradiciones han sido legadas a las familias y comunidades, habitantes armoniosos con su naturaleza y el cosmos.
-4.
-Lugares sagrados Los lugares sagrados “tienen una connotación espiritual importante para los habitantes bribris, representan esa interacción de Sibö con el ser humano, como la montaña sagrada llamada Suláyöm, los cerros, los ríos, el agua, los animales, las lagunas, charcas de agua caliente llamadas Duli, dejadas por Sibö para curarse cuando estaba en la Tierra; si alguien se baña allí no puede tocar carne o sal por 15 días.
+4. Lugares Sagrados.
 Por ello, es que muchos de estos lugares sagrados que rodean las comunidades, tienen esa gran dimensión que los convierte en sitios sagrados”.
 Así, la montaña Suláyöm es el sitio sagrado por excelencia, considerado como el centro de la tierra y el cielo.
-Desde el principio de los tiempos, fue escogido por los dioses para ser el centro dinámico y ceremonial de la creación, donde enterraban a sus reyes y donde, según su historia, en el fondo del abismo se encuentra la gigantesca olla de piedra, la cual, Sibö trajo de otros planetas.
 En la montaña Suláyöm Sibö esparció la primera semilla humana de maíz, mazorca de todos los colores, la plantó en pares, cuidadas por Surá como guardiana de esas semillas, de allí, nacieron los clanes de los bribris, y de otras tribus hermanas.
 Sibö aparece como aire o viento que dispersa las semillas o la gente.
-4.
-Sikuapa rëbtu skí.
-LugaresSagradosE' káyene s yámìpa a ká w áñe, ás s se’'se’r w áñe budeme ská ̈ e kákö Ltö ta.
-Éta SuLá yö m erör swö táìn sé a.
-Éröká shúsh a.
-We íyì uLítene tsöne, e ̈́ e röSìbö ̀ sdìö ya’, e erö bLupa blew a e'meke é ta tsínet ú j c h e r , S ì b ö ̀ w á e ' r ekátsö kámìe k áköLtö a ë́ erö.
-SuLáyom pámìk Sìbö ̀ rör se’' kuábLe',etìkuö wöa rör ku ö̈́kì kuö kì, e' kuábLé böt böt, e' jkö ne SuLá parör, e erö se’'dtse’wö tsíkìne e ̈́ syámì pa bár.
-Éta Sìbö ̀rámì swökì és ìe'.
-Rör se’' tsìkì'.
-Ká̈bta e' á̈tä, ká kìe Lárì Talámáncaejker.
-Ë' yöka k ábla ke parör, ParqueInternacìonal La Amìstad. (e' yöne duás bámmì tse’wö 1982 ewa,éta Panamá e ̈́ Costa Rica e' bLúpa rö ìméat jköne añìt a.
-Mík duás ék re ì k í é t ayö bì e' méat sì a wáñe jkön e, e' yöUNESCO rör. )És se’' brìbrì awápa, ìe' pa rör keképatáìn e, ì wöuLa rak sw ö ' pakök, Sìbö ̀ e ̈́ákma pa t a jtök, due wák wöuñuk,stöjchök.
-Íyì suLúsì úyökmì kamíe, ás s se’r buá.
-(Ë' che Natalìa Gobb rör, duás.
-2013)4.
-Sikuapa rëbtu skí.
-LugaresSagradosE' káyene s yámìpa a ká w áñe, ás s se’'se’r w áñe budeme ská ̈ e kákö Ltö ta.
-Éta SuLá yö m erör swö táìn sé a.
-Éröká shúsh a.
-We íyì uLítene tsöne, e ̈́ e röSìbö ̀ sdìö ya’, e erö bLupa blew a e'meke é ta tsínet ú j c h e r , S ì b ö ̀ w á e ' r ekátsö kámìe k áköLtö a ë́ erö.
-SuLáyom pámìk Sìbö ̀ rör se’' kuábLe',etìkuö wöa rör ku ö̈́kì kuö kì, e' kuábLé böt böt, e' jkö ne SuLá parör, e erö se’'dtse’wö tsíkìne e ̈́ syámì pa bár.
-Éta Sìbö ̀rámì swökì és ìe'.
-Rör se’' tsìkì'.
-Ká̈bta e' á̈tä, ká kìe Lárì Talámáncaejker.
-Ë' yöka k ábla ke parör, ParqueInternacìonal La Amìstad. (e' yöne duás bámmì tse’wö 1982 ewa,éta Panamá e ̈́ Costa Rica e' bLúpa rö ìméat jköne añìt a.
-Mík duás ék re ì k í é t ayö bì e' méat sì a wáñe jkön e, e' yöUNESCO rör. )És se’' brìbrì awápa, ìe' pa rör keképatáìn e, ì wöuLa rak sw ö ' pakök, Sìbö ̀ e ̈́ákma pa t a jtök, due wák wöuñuk,stöjchök.
-Íyì suLúsì úyökmì kamíe, ás s se’r buá.
-(Ë' che Natalìa Gobb rör, duás.
-4.
-Sikuapa rëbtu skí.
-LugaresSagradosE' káyene s yámìpa a ká w áñe, ás s se’'se’r w áñe budeme ská ̈ e kákö Ltö ta.
-Éta SuLá yö m erör swö táìn sé a.
-Éröká shúsh a.
-We íyì uLítene tsöne, e ̈́ e röSìbö ̀ sdìö ya’, e erö bLupa blew a e'meke é ta tsínet ú j c h e r , S ì b ö ̀ w á e ' r ekátsö kámìe k áköLtö a ë́ erö.
-SuLáyom pámìk Sìbö ̀ rör se’' kuábLe',etìkuö wöa rör ku ö̈́kì kuö kì, e' kuábLé böt böt, e' jkö ne SuLá parör, e erö se’'dtse’wö tsíkìne e ̈́ syámì pa bár.
-Éta Sìbö ̀rámì swökì és ìe'.
-Rör se’' tsìkì'.
-Ká̈bta e' á̈tä, ká kìe Lárì Talámáncaejker.
-Ë' yöka k ábla ke parör, ParqueInternacìonal La Amìstad. (e' yöne duás bámmì tse’wö 1982 ewa,éta Panamá e ̈́ Costa Rica e' bLúpa rö ìméat jköne añìt a.
-Mík duás ék re ì k í é t ayö bì e' méat sì a wáñe jkön e, e' yöUNESCO rör. )És se’' brìbrì awápa, ìe' pa rör keképatáìn e, ì wöuLa rak sw ö ' pakök, Sìbö ̀ e ̈́ákma pa t a jtök, due wák wöuñuk,stöjchök.
-Íyì suLúsì úyökmì kamíe, ás s se’r buá.
-(Ë' che Natalìa Gobb rör, duás.
-2013)4.
-Sikuapa rëbtu skí.
-LugaresSagradosE' káyene s yámìpa a ká w áñe, ás s se’'se’r w áñe budeme ská ̈ e kákö Ltö ta.
-Éta SuLá yö m erör swö táìn sé a.
-Éröká shúsh a.
-We íyì uLítene tsöne, e ̈́ e röSìbö ̀ sdìö ya’, e erö bLupa blew a e'meke é ta tsínet ú j c h e r , S ì b ö ̀ w á e ' r ekátsö kámìe k áköLtö a ë́ erö.
-SuLáyom pámìk Sìbö ̀ rör se’' kuábLe',etìkuö wöa rör ku ö̈́kì kuö kì, e' kuábLé böt böt, e' jkö ne SuLá parör, e erö se’'dtse’wö tsíkìne e ̈́ syámì pa bár.
-Éta Sìbö ̀rámì swökì és ìe'.
-Rör se’' tsìkì'.
-Ká̈bta e' á̈tä, ká kìe Lárì Talámáncaejker.
-Ë' yöka k ábla ke parör, ParqueInternacìonal La Amìstad. (e' yöne duás bámmì tse’wö 1982 ewa,éta Panamá e ̈́ Costa Rica e' bLúpa rö ìméat jköne añìt a.
-Mík duás ék re ì k í é t ayö bì e' méat sì a wáñe jkön e, e' yöUNESCO rör. )És se’' brìbrì awápa, ìe' pa rör keképatáìn e, ì wöuLa rak sw ö ' pakök, Sìbö ̀ e ̈́ákma pa t a jtök, due wák wöuñuk,stöjchök.
-Íyì suLúsì úyökmì kamíe, ás s se’r buá.
-(Ë' che Natalìa Gobb rör, duás.
-2013)5.
-Creación del universo El universo bribri consta de cuatro grandes divisiones cosmológicas: • Arriba: El mundo de Sibö, del mar, el trueno y el Sol. • Abajo: La Tierra, el mundo de los hombres, animales, plantas, los dueños de los animales y los enemigos de la semilla (los no indígenas). • El mundo inferior: Conformada por el mundo de Sulá (espíritu bueno), y los espíritus malos que son invisibles, aparecen bajo la forma de un animal como la danta, serpientes: habitan las partes de menos acceso del bosque. • Lugar debajo de donde nace el sol, de donde vienen las cosas buenas y malas que suceden en la tierra.
+Dicha montaña se encuentra ubicada en Alta Talamanca, en el Parque Internacional La Amistad.
+En 1982, los presidentes de Panamá y Costa Rica, acuerdan la creación de dicho parque, por lo que es compartido por ambos países y un año después lo declararon Patrimonio Natural de la Humanidad por la UNESCO.
+Del mismo modo, el awá para los bribris, “es el personaje más importante, cumple la función de guía espiritual al que Sibö dio conocimientos y valores para interpretar la historia, tradiciones, su espiritualidad, la sabiduría entre el mundo de Sibö y el mundo humano.
+Mantiene relaciones con los espíritus para tener al pueblo libre de enfermedades, plagas, inundaciones o peligros que los acechen”
+Entrevista a Natalia Gobb, 2013.
+5. Creación del universo.
+El universo bribri consta de cuatro grandes divisiones cosmológicas: • Arriba: El mundo de Sibö, del mar, el trueno y el Sol.
+Abajo: La Tierra, el mundo de los hombres, animales, plantas, los dueños de los animales y los enemigos de la semilla (los no indígenas).
+El mundo inferior: Conformada por el mundo de Sulá (espíritu bueno), y los espíritus malos que son invisibles, aparecen bajo la forma de un animal como la danta, serpientes: habitan las partes de menos acceso del bosque.
+Lugar debajo de donde nace el sol: de donde vienen las cosas buenas y malas que suceden en la tierra.
 Estas cuatro grandes divisiones cosmológicas se interpretan como una gran casa cónica, dada por Sibö al cubrir y techar la gran casa universal, especie de templo cónico, representante del mundo ancestral.
-La construcción de una casa física, míticamente se está construyendo a imagen de la misma, hacia abajo, en los dominios de Sibö y Surá, complementando lo masculino con lo femenino, lo claro con lo oscuro, de arriba hacia abajo, en los dominios de Sibö y Surá, alternando el dios Sol que alumbra en el día para que la Luna alumbre de noche la gran casa cósmica, universal, cuando Dulu (el árbol de la creación), quería botarla, Sibö pidió ayuda superior y formó los océanos para protegerla, por ello el mar y la tierra son redondos.
-6.
-La creación de la TierraPara los sabios de la cultura bribri de Sulá, el mito de la creación narra la historia de Iriria, la niña tierra que vivía en una de las cuatro divisiones cosmológicas subterráneas con su abuela y su madre.
+6. La creación de la Tierra.
+Para los sabios de la cultura bribri de Sulá, el mito de la creación narra la historia de Iriria, la niña tierra que vivía en una de las cuatro divisiones cosmológicas subterráneas con su abuela y su madre.
 Antes de que subiera a la superficie, su abuela Namasia la lleva a una fiesta que da Sibö.
-Una vez allí, Namaitmi, al notar la presencia de su hija, trata de alzarla, pero ésta se le resbala de las manos y es aplastada por los asistentes, quienes danzaban en dicha celebración; bailaban el Sorbón, danza ritual, y no daban cuenta que iba desapareciendo hasta convertirse en tierra.
 Luego del cielo surgen las aguas, el suelo fértil, plantas y animales, los clanes que descienden de la mazorca de maíz, esparcidos sus granos en pares por la montaña sagrada.
-7.
-Narraciones sagradasLas narraciones sagradas poseen origen espiritual, se trata de un sistema unificado de mitos y creencias, articulado desde la experiencia cultural, así como formas de interpretación e identificación de la realidad, desde sus propios cambios culturales, mediante los antepasados, trasmitidos en forma oral de generación en generación.
+7. Narraciones sagradas.
 Narración sagrada: “la Jala de la Piedra”.
 El awá, Justo Avelino Torres de Amubri, se considera un líder espiritual que une la comunidad con la tradición ancestral y milenaria de la “jala de la piedra”, celebrada desde hace varios años en Amubri, narrada por él mismo: “participa toda la comunidad, y llegan visitantes de otras regiones a participar de dicha vivencia.
 Para iniciar el recorrido a la montaña se busca la piedra que recibe el nombre de kewa kuwe , la cual debe ser plana porque representa la máquina de trabajo que les heredó Sibö, para unir a la comunidad y el trabajo lo hacen entre todos.
 Permanece oculta en la montaña, con hojas de caña blanca para invocar los espíritus hasta que la encuentren.
 Es custodiada por cuatro troncos que están unidos con bejucos, que jalan las mujeres.
 En el recorrido se va explicando la importancia de valorar su cultura, tradiciones y preservar el idioma y una vez que encuentran la piedra, se hace unos rituales para purificarla.
-Se llama a las mujeres para que tomen el bejuco extenso que guiará el trayecto; así da la orden para su levantamiento con gritos y las personas corren, a pesar del gran peso de la piedra, que va en hombros de los pobladores, al pasar por algunas casas los motivan con gritos de fortaleza, no importa si hace calor o llueve, todos siguen avanzando con la piedra hasta llegar al centro de la comunidad donde la colocan en el suelo con el ritmo de cantos al son de un tambor” (Narrado por Justo Avelino Torres, 2013).
-Narración “El Misterio de la creación de los indígenas”:Narración sagrada ancestral sobre la Creación.
+Se llama a las mujeres para que tomen el bejuco extenso que guiará el trayecto; así da la orden para su levantamiento con gritos y las personas corren, a pesar del gran peso de la piedra, que va en hombros de los pobladores, al pasar por algunas casas los motivan con gritos de fortaleza, no importa si hace calor o llueve, todos siguen avanzando con la piedra hasta llegar al centro de la comunidad donde la colocan en el suelo con el ritmo de cantos al son de un tambor”.
+Narrado por Justo Avelino Torres, 2013.
+Narración “El Misterio de la creación de los indígenas”: Narración sagrada ancestral sobre la Creación.
 Según narra Juana Segundo Sánchez: “Quiero compartir esta narración ancestral de nuestra cosmovisión: ésto sucedió cuando en este planeta todo era oscuro, solo habían seres espirituales que no hacían nada y un ser que era el único que pensaba: Sibö, el gran pensador, Dios.
 En algún momento Sibö pensó que debía cambiar ese ambiente; pero los seres espirituales que existen, no son muy amigables para el proyecto de Sibö, entonces Sibö se transformó en dos bebés, que representaban la creación del mundo y la humanidad y se fue a otro planeta a buscar semillas de maíz, donde viven los dioses del maíz.
 Estos dioses le entregaron una gran canasta de maíz, con granos grandes, pequeños, medianos de diferentes colores, como el amarillo, rojo, azul, negros, blancos, morados, entre otros; la canasta la cuida Sibö y llega a este planeta, no continente.
@@ -165,29 +75,20 @@ Sibö le dice que cuando regrese nuevamente, bajen el jícaro y le hagan dos gua
 Yamblu estuvo de acuerdo y les pidió a sus colaboradores lo que decía Sibö cuando volviera a visitarlo.
 Sibö vuelve a visitarlo y Yamblu como tenía muchos colaboradores, les dijo: traigan el guacal lleno de chocolate como Sibö quería, les traen el chocolate y Sibö, no la toma, sino sopla la bebida y se la da a Yamblu y le dice tomaré el siguiente.
 Yamblu se la tomó e hizo un ruido, dijo, “¿será que tomé algo sagrado”; Sibö no respondió; la canasta salió expulsada de Yamblu y Sibö huyó con la canasta.
-E kuáblëna k á i k í bö ́ tkla, bö ́ tkla.
-Míka itsik ína ët a i klö ̀ tLána blumbLu ë, wë ́s, káL táin ëjkë míka ̱ iwönata irör së' ë ́jkë, ë ́rör së' SusuLéyibi,tsikine k ë́we kë̀ mit a, kë ̀ yë' t a.
-Ë 'këpë ́ yana, wöína, páut a, ë' a íyiulítënë ë' yönë, wë ́ ̱s Sibö ̀ rör íyök, dyë ̀ ,díwö w ë̱́s ë' yönë, wë ́ ̱s Sibö ̀ añíbukáknamapa ulítënë t a së' ku ë́ki.
-Kíjkë suw ök ulítënë ë' pakan a, ë́ k u ékiwëpa yöne awá ië, okum, bikákla, syöksuë ́ brök, tsököl, t au yöjk a.
-AláköLpayönë tsru' tmi ie, sia ̱' tmi, syök, byök,byöblök, sLö ́ u ̱k, uLámuk.
-Spáut a wë́ së' k áwota së ́ nuk ká ̱ í ki ̱ská̱wöta̱, áknamapa, k ábta, yö ́ lkö, ditsáli, btsörö, dyë, UsëköLpa ká, jtë ̀ ,pö ́ íyiwak kiñiru, ë' dlölö yök.
-K ë̀ s k áne kl ublök, íchi jkë ́ uk, stökw a,íyiwak urú, chichi, krö, ë' wë́ ikök.
-Skáwota s yamipa dlö ̀ yök, ë ́ ku ë̱ ki̱ siai yëna yi rör sduö'.
-Míka spáut a së' r á ë ë́ ta Sibö ̀ rörSusuLé yibi uLábas së ̱raë, sdiö yanaë́ t a̱ ië' mía.
-Yámblu rör áknama táin blu ñabë ë rörödlër, ulítane këkol.
-Mika Sibö ̀ w asëdtsëwö dék a ka i ki ëta ká i ia tsëtsëë, kämi káñir.
 Pero ahí no termina la persecución de esos seres colaboradores de Yamblu, que querían vengarse de su muerte.
 Sibö tuvo que convertirse en un viejito y escondió la canasta, cuando ve todos esos seres y seres, les preguntó ‘¿no han visto a Sibö?’, ‘no’, ‘yo soy el dios viejito’ y volvió a ver hacia el espacio y les dijo ‘allá va con la canasta’, que tenía un reflejo resplandeciente como el oro, y también se elevaron muchos espíritus que querían quitarle la canasta para hacerle algún daño, pero se fueron a otro planeta.
 Sibó seguía cuidando la canasta cuando apareció otro gran parásito que es la enfermedad del bocio” (Entrevista a Juana Segundo Sánchez, 2013)8.
-Cosmovisión Según nos narra Alejandro Swaby Rodríguez “El pasado indígena sobrevive en su herencia cultural, pero el pasado también está aquí hoy, impregnado en la manera de relacionarnos con la madre naturaleza, nuestros cultivos, nuestras fiestas, nuestras técnicas de manejo del agua, nuestros centros ceremoniales, nuestras artes, etc. Basta echar un vistazo por nuestro legado y por nuestras costumbres para notar que el pasado está vivo en nosotros; que gracias a ese pasado común reconstruimos y profundizamos la confianza entre nosotros, en tanto pueblos indígenas.
+Cosmovisión Según nos narra Alejandro Swaby Rodríguez “El pasado indígena sobrevive en su herencia cultural, pero el pasado también está aquí hoy, impregnado en la manera de relacionarnos con la madre naturaleza, nuestros cultivos, nuestras fiestas, nuestras técnicas de manejo del agua, nuestros centros ceremoniales, nuestras artes, etc.
+Basta echar un vistazo por nuestro legado y por nuestras costumbres para notar que el pasado está vivo en nosotros; que gracias a ese pasado común reconstruimos y profundizamos la confianza entre nosotros, en tanto pueblos indígenas.
 Desarrollamos nuestras identidades, nos integramos, nos reconocemos y celebramos que estamos juntos, que pertenecemos a la misma tierra.
-Sentimos orgullo de nuestro origen, por eso luchamos, por nuestra identidad, por el reconocimiento de nuestros aportes a la cultura en general. ”(Entrevista a Alejandro Swaby, 2013).
+Sentimos orgullo de nuestro origen, por eso luchamos, por nuestra identidad, por el reconocimiento de nuestros aportes a la cultura en general.
+”(Entrevista a Alejandro Swaby, 2013).
 Por lo tanto, perciben la vida como la unión del cuerpo, los sentidos, la mente, el alma, la naturaleza, cuya base simbólica y material es la Tierra.
 Seres vivos en comunicación con la naturaleza, por medio de signos y señales para interpretar cuando sufren, lloran y mueren.
 La mujer está presente en todas las actividades orientadas a la vida, la crianza, la educación y la revitalización de la cultura.
 Los pobladores de las comunidades indígenas valoran y perciben a la mujer como base de su organización social, y transmiten a sus hijos los saberes de su cultura.
-9.
-Nacimiento y ceremonia de purificaciónSegún la creencia bribri, “cuando una mujer está embarazada, está en un estado delicado y peligroso porque está contaminada hasta que nazca el niño y pueda ser purificada.
+9. Nacimiento y ceremonia de purificación
+Según la creencia bribri, “cuando una mujer está embarazada, está en un estado delicado y peligroso porque está contaminada hasta que nazca el niño y pueda ser purificada.
 Cuando se aproxima el parto, la mujer se separa de la sociedad, es como devolverla a la naturaleza.
 El padre se va al bosque; hace un pequeño rancho al cual se retira la mujer al sentir los primeros dolores; sola y sin asistencia, da a luz.
 Después una anciana se acerca a la madre con mucho cuidado para evitar el bucurú, o impureza, al mismo tiempo se le provee de un poco de agua tibia en una hoja de plátano para bañar al niño.
@@ -197,9 +98,9 @@ El proceso finaliza cuando llega el awá, que es el único encargado de la purif
 Generalmente, toma al niño e inicia con los cantos de depuración del cuerpo con cacao, para extraerle los espíritus malignos que lo afecten, durante el crecimiento, como enfermedades.
 Enciende después el tabaco de su pipa y sopla sobre ella el humo.
 Enseguida se purifica, lavándose las manos.
-Ni la mujer ni el hijo deben ser vistos antes de que termine la ceremonia de purificación, después de lo cual se puede regresar al hogar” (Entrevista a Juana Segundo Sánchez, 2013).
-10.
-Percepción de la muerteSegún la tradición bribri, cuando una persona muere no se puede enterrar de inmediato pues contaminaría la tierra.
+Entrevista a Juana Segundo Sánchez, 2013.
+10. Percepción de la muerte.
+Según la tradición bribri, cuando una persona muere no se puede enterrar de inmediato pues contaminaría la tierra.
 El cadáver lo preparan envolviéndolo en hojas o manta y lo cubren totalmente para que no quede al descubierto y no huela, lo trasladan en un palo fuera de la casa hasta el monte, donde le construyen un rancho de palma.
 Sus familiares regresan a la casa y ayunan por tres días para que no le pase nada al cadáver y cuando regresan después de mucho tiempo, llevan a cabo el entierro.
 Se hacía todo un ritual para que el cadáver pudiera ser enterrado, ya que el alma salía del cuerpo.
@@ -215,72 +116,16 @@ Es evidente que en estas sociedades de clara tendencia agraria, los rituales est
 Se trata de no romper el ciclo de origen y retorno del grupo familiar, pues si esto sucede, los grupos familiares corren peligro y por extensión toda la comunidad.
 La colocación del difunto se hace de forma extendida, con sus pertenencias junto al cadáver, el cual según la mitología talamanqueña es un ser protector de los humanos.
 Le celebran el rito de la muerte, se reparte suficiente comida para asegurar que en la otra vida haya suficiente y así se compensan los pecados de mezquindad o tacañería en que incurrió el fallecido o fallecida.
-10.
-Duokwa ̱.
-P e r c e p c i ̀ o n d e l amuerteMíka se’ duówa, e ́ ta se’ wímbLu míanewë́ Sìbö ̀ ráre se’ yuLö k, erör SuLaká̈ska.
-Míka ̈ se’ duówa ̈ é tä syámìpa ká ̈wötä se’ wìmblu kímuk, ee kane ́we ̈keÓkumpa na bìkakLa rör.
-Se’ bLena ̈ wä e' Kaneö na buáe me e ́ta ̈erör se’ wímbLu kìmemì, ásì ì rö SuLaKaska, E' kue ̈kì̈ s yámìpa káwöta ekenéu ̈k krörö e.
-Éta e ̈́rör skímemì á ̈s se’tsíkírne as se' stíkírne ká ̈ íkïnë.
-Étä kese’ jchìne e kì ̈ tä se’ dtsewö e ̈́r wamì.
-Míka ö ́ kumpa e' kane weke ta ̈ ì e p a ìmékeka ̈ ye ́ s yes e, ìö ̈ mìkì íchì yekeka ̈,é t ä kö ́ s s se ́ e' tìéke, e a ̈ tsuru' te ́ ke, blö'ame ́ ke, és swì́bLu tsá ̈ jche ̀ ke áknama payö ́ kì.
-Sé ’ a ta ̈ es se’ jte ́ rö, míka ̈ yí blénawa ̈ é t ae patreke sík dtsítak wa buá e ́ , á ̈s ke i.
-Lar, e ̀ uköki ̈ tä, kál mík i mue ̈́keka tsékemi kamíe, e erö úLa yuwe ́ keka ̈ é ämé ät.
-U k ö́ k i ̈tä i yámipa btsöke, ká ̈miát.
-Á ̈s ke ̀ ideuntu tsríwe ̈.
-Míka ̈ ká̈wö jchá duás e ́ ké t ä i ska kene we ̈ kene.
-Éta ̈ eʼ erörwímbLu Kí ̈mö ie.
-WeLe weLe íta ̈ iyámipa to bié wa ̈ iúómika i ú ö ̈ míka ì íyi uLítene eʼ me ̈́ke wa ̈i tä.
-Étä suLítene ré swápie é a ̈ chökö10.
-Duokwa ̱.
-P e r c e p c i ̀ o n d e l amuerteMíka se’ duówa, e ́ ta se’ wímbLu míanewë́ Sìbö ̀ ráre se’ yuLö k, erör SuLaká̈ska.
-Míka ̈ se’ duówa ̈ é tä syámìpa ká ̈wötä se’ wìmblu kímuk, ee kane ́we ̈keÓkumpa na bìkakLa rör.
-Se’ bLena ̈ wä e' Kaneö na buáe me e ́ta ̈erör se’ wímbLu kìmemì, ásì ì rö SuLaKaska, E' kue ̈kì̈ s yámìpa káwöta ekenéu ̈k krörö e.
-Éta e ̈́rör skímemì á ̈s se’tsíkírne as se' stíkírne ká ̈ íkïnë.
-Étä kese’ jchìne e kì ̈ tä se’ dtsewö e ̈́r wamì.
-Míka ö ́ kumpa e' kane weke ta ̈ ì e p a ìmékeka ̈ ye ́ s yes e, ìö ̈ mìkì íchì yekeka ̈,é t ä kö ́ s s se ́ e' tìéke, e a ̈ tsuru' te ́ ke, blö'ame ́ ke, és swì́bLu tsá ̈ jche ̀ ke áknama payö ́ kì.
-Sé ’ a ta ̈ es se’ jte ́ rö, míka ̈ yí blénawa ̈ é t ae patreke sík dtsítak wa buá e ́ , á ̈s ke i.
-Lar, e ̀ uköki ̈ tä, kál mík i mue ̈́keka tsékemi kamíe, e erö úLa yuwe ́ keka ̈ é ämé ät.
-U k ö́ k i ̈tä i yámipa btsöke, ká ̈miát.
-Á ̈s ke ̀ ideuntu tsríwe ̈.
-Míka ̈ ká̈wö jchá duás e ́ ké t ä i ska kene we ̈ kene.
-Éta ̈ eʼ erörwímbLu Kí ̈mö ie.
-WeLe weLe íta ̈ iyámipa to bié wa ̈ iúómika i ú ö ̈ míka ì íyi uLítene eʼ me ̈́ke wa ̈i tä.
-Étä suLítene ré swápie é a ̈ chökö10.
-Duokwa ̱.
-P e r c e p c i ̀ o n d e l amuerteMíka se’ duówa, e ́ ta se’ wímbLu míanewë́ Sìbö ̀ ráre se’ yuLö k, erör SuLaká̈ska.
-Míka ̈ se’ duówa ̈ é tä syámìpa ká ̈wötä se’ wìmblu kímuk, ee kane ́we ̈keÓkumpa na bìkakLa rör.
-Se’ bLena ̈ wä e' Kaneö na buáe me e ́ta ̈erör se’ wímbLu kìmemì, ásì ì rö SuLaKaska, E' kue ̈kì̈ s yámìpa káwöta ekenéu ̈k krörö e.
-Éta e ̈́rör skímemì á ̈s se’tsíkírne as se' stíkírne ká ̈ íkïnë.
-Étä kese’ jchìne e kì ̈ tä se’ dtsewö e ̈́r wamì.
-Míka ö ́ kumpa e' kane weke ta ̈ ì e p a ìmékeka ̈ ye ́ s yes e, ìö ̈ mìkì íchì yekeka ̈,é t ä kö ́ s s se ́ e' tìéke, e a ̈ tsuru' te ́ ke, blö'ame ́ ke, és swì́bLu tsá ̈ jche ̀ ke áknama payö ́ kì.
-Sé ’ a ta ̈ es se’ jte ́ rö, míka ̈ yí blénawa ̈ é t ae patreke sík dtsítak wa buá e ́ , á ̈s ke i.
-Lar, e ̀ uköki ̈ tä, kál mík i mue ̈́keka tsékemi kamíe, e erö úLa yuwe ́ keka ̈ é ämé ät.
-U k ö́ k i ̈tä i yámipa btsöke, ká ̈miát.
-Á ̈s ke ̀ ideuntu tsríwe ̈.
-Míka ̈ ká̈wö jchá duás e ́ ké t ä i ska kene we ̈ kene.
-Éta ̈ eʼ erörwímbLu Kí ̈mö ie.
-WeLe weLe íta ̈ iyámipa to bié wa ̈ iúómika i ú ö ̈ míka ì íyi uLítene eʼ me ̈́ke wa ̈i tä.
-Étä suLítene ré swápie é a ̈ chököame ́ ke, eʼ meke i yámipa rör tsruʼ ie,dúLa ie'.
-És i kene we ̈ke ñ́ íta.
-11 Kë ́ r wa na s shëkë ́ k ï paCreacion del UniversoSìbö ̀ rör ke ́ rwa buá we ̈kä, se’ dtsö ̀ a ̈ íyökañíes, e' káche ke sìa ̈ kuö̈kì̈, kuö ̈k.
-Éta ̈Sìbö ̀ erör se’ dtsö bLeke, á ̈k na mapy ö́ k ì̈, é k u é k ì ̈ ì újkö tsö tse ̈r díwö tsíkìrke e jke ̈r, e' jkö ́ ne ̈ke aknama pa buábuá erör.
-Á ̈ s áknama suLúsì ka röwa se’ká̈ ä.
-Wé̈Le rör e' möwe ̀ rö, íyök wömoo yöweke jcha' chö ́ ká ye. e ́ rör á ̈s së’ ë́na ìa ̈rwe ́ s Sibö ̀ u rör wé shke ̈.
-Iste ́ pa rör jcha' yuerö í yök wa ̈ é tä ì wöa La, yueke e ̀ t e shké k, e rör we ́ ̈s Sìbö ̀ ue' ujkö, é t e díwö tsìkírke ejke ̈r.
-Étä brìbrì wák e' rör íyì uLítene e'kënewe ̈ ke awá pata ̈, ìé pa jtö ̀ ke áknamapa ta ̈, köpöLì wak ta ̈, ìkLúkeáknama ìte ̀ wés, s ske ́ pe yeke.
-Ie' pa wa ̈ ijche ̈r wés kerwa yöne we ́ s íyiuLitene tsöne, spájte ́ ke e ̈nä.
-S i b ö ̀ r ö rid i c hé mé i a ̈.
-Ás ijtö ákna ma pa ta ̈.
-11.
-Universo simbólico y orden jerárquico espiritualSibö como creador del universo, hacedor del mundo de los indígenas de Talamanca, tiene una relación directa con la Madre Tierra y se presenta a la población de diferentes formas.
+11. Universo simbólico y orden jerárquico espiritual.
+Sibö como creador del universo, hacedor del mundo de los indígenas de Talamanca, tiene una relación directa con la Madre Tierra y se presenta a la población de diferentes formas.
 En un plano cósmico, la casa de Sibö protege a las semillas de otros agentes sobrenaturales que tratan de dañarlas.
 Por ello la puerta hacia este, en sus casas, es resguardada por entes míticos que impiden el paso de los primeros seres a este mundo.
 En este sentido, se relaciona los sonajeros, las pelotillas de arcilla dentro de los soportes de los jarrones, como un símbolo de las semillas (los seres humanos) a lo interno de la casa de Sibö.
 La ubicación de una sola ranura en los soportes de los jarrones se asocia con la representación de la entrada de la casa cósmica; una sola entrada viendo al este.
 La población bribri concentra su tradición espiritual en la figura del awá, guía espiritual con conocimientos en medicina natural que efectúa curaciones, cantos sacros en un lenguaje espiritual y poético.
 Conocen sobre el origen del cosmos y de todo lo existente, es el consejero de la comunidad, tiene los poderes que Sibö le otorgó para tener contacto con los espíritus.
-12.
-Arte y culturaLos cantos bribris contienen principalmente rituales de curación ancestrales, sobre peligrosos ríos por donde pasa el alma del difunto, al cual acechan espíritus.
+12. Arte y cultura.
+Los cantos bribris contienen principalmente rituales de curación ancestrales, sobre peligrosos ríos por donde pasa el alma del difunto, al cual acechan espíritus.
 Existían también pequeños fragmentos de cantos fúnebres.
 Así, en 1962, Doris Stone publicó una colección de 11 cantos que incluye un Sorbón (el del mono colorado), una canción de cuna, una canción de trabajo (de la elaboración de chicha).
 A partir de 1986 Cervantes Gamboa y Constela Umaña incluyen, las transcripciones y las partituras de 20 cantos del ritual funerario y la traducción de uno de ellos; en 1990, se habían transcrito varios cantos de rituales de curación.
@@ -288,23 +133,27 @@ Otros cantos complementarios refieren a la naturaleza animales, se presentan en 
 En cuanto a la ancestral “danza del Sorbón”, hombres y mujeres forman un gran círculo marcado por sus pasos, simboliza la solidaridad y la pertenencia a la tierra.
 Esta danza por lo general se da después de la construcción de un rancho comunitario o la reparación de un puente colgante, va acompañada de chicha, comida, se convierte en toda una festividad para compartir en la comunidad, con las principales danzas de la serpiente, el zopilote, el tigre de agua, de montaña, el águila.
 Finalmente, los bribris participaban desde hace décadas de un fuerte sincretismos, en bailes con instrumentos de música no autóctona, como el acordeón o guitarra, o bien, bailes y cantos, mezclados entre los nativos, que han ido absorbiendo otros estilos modernos de bailes aprendidos generalmente por los jóvenes.
-13.
-Artesanía Se especializan en la fabricación de arcos y flechas las cuales llevan un proceso muy cuidadoso.
+Miel en la Boca.
+Duérmete chiquita, mamita ya se va a trabajar.
+Nosotros nos quedamos en nuestra casita.
+Ella volverá cuando el horizonte se tiña de verde.
+Entonces ellos ya regresarán, habiendo trabajado mucho todito el día, pues es algo que traen en la sangre. Ya vamos en pos de ella para darle algo de comer.
+13. Artesanía.
+Se especializan en la fabricación de arcos y flechas las cuales llevan un proceso muy cuidadoso.
 Utilizan la madera del árbol del pejibaye y chonta dura, deben tener gran conocimiento sobre la madera apropiada para cada fabricación.
-Elaboran a partir de diferentes materiales traídos del mar o de animales silvestres, esto permite observar la relación directa entre los pobladores con el mar y la montaña: “Entre las artesanías están los collares de caracoles marinos (chaquiras) y dientes de jaguar.
-La variedad de las fibras naturales que se utilizaban antiguamente para elaborar artesanías ha sido remplazada por fibras sintéticas y otros utensilios que antes se hacían a partir de especies vegetales, ahora pueden comprarse en el mercado” (Pastora Jakson Jakson, 2013).
-14.
-FestividadesDesde tiempos ancestrales se realizaban festividades en honor a los dioses, para darles agradecimiento por la buena recolección de la cosecha, nacimiento de un niño o la muerte de un indígena en la comunidad.
+La variedad de las fibras naturales que se utilizaban antiguamente para elaborar artesanías ha sido remplazada por fibras sintéticas y otros utensilios que antes se hacían a partir de especies vegetales, ahora pueden comprarse en el mercado”.
+Pastora Jakson Jakson, 2013.
+14. Festividades.
 En los funerales las familias de los difuntos debían dar de todo lo que se tuviera a mano, para facilitar el camino del alma del difunto al otro mundo.
 De no hacerlo así había peligros para el difunto, al encontrar en su camino culebras que atajan su alma.
-1.
-Geografía: (Provincia - Cantón - Distrito)Extensión Habitantes Localidadesy Valle de la Estrella43690 ha 7500Watsi, Akberye, Suretka, Shiroles, Yorkin, boca Uren, Katsi, Soki, Alto Uren, Alto Lari, Amubri, Coroma, Sepecue, Mo -- Cahuita - Sixaola3538 ha 450Altos de Kekoldi, Bajos de Ke -koldi, Cocles y alto Margaritaos bribris también habitan algunos poblados tales como: Manzanillo, Puerto Viejo, Talía, Daytonia, Home Creek, y Cahuita.
+1. Geografía.
+Los bribris también habitan algunos poblados tales como: Manzanillo, Puerto Viejo, Talía, Daytonia, Home Creek, y Cahuita.
 Asimismo, entre los ríos de la vertiente Atlántica utilizados por los Bribris se citan el Yorkin, Telire, Uren, Lari y Coen.
 El Telire es uno de los ríos más importantes para la economía de las comunidades por el transporte de los productos como plátanos y cacao al puerto de Suretka.
 El río Sixaola, se ubica en el límite de Costa Rica con Panamá.
 Estos ríos son factores de riesgo en la zona; cuando provocan inundaciones se da una pérdida del cultivo de plátano, de viviendas, de animales, deslizamiento de tierra en las partes más altas de las montañas y destrucción de caminos y carreteras, lo cual hace de la zona un difícil acceso para los indígenas del lugar.
-2.
-Geografía cultural Para hablar sobre geografía cultural de los bribris, no puede pasar inadvertido la interpretación histórica de los orígenes, narrado por Alejandro Swaby Rodríguez, nativo de Suretka Talamanca: “…Aquí desde la rebelde Talamanca, mi tierra natal, sitio de historias, saberes, mitos y leyendas, bajo la sombra de un frondoso árbol de cedro, escucho el silencioso susurro de las aguas, del viento que pasa suavemente, el dulce canto de las aves, las ranas y el bullicio de las chicharras… Desde este paraíso en medio de la espesa selva, bajo el manto de un mosaico de bosques, que guardan celosamente los restos de las tumbas, las huellas y los espíritus de nuestros antepasados, que siguen sigilosamente cuidados por los guardianes naturales, el Kamuk, el Dooyomm, el Suláyöm, el Namasol, Chkabecol, otros sitios, que reconocieron nuestros caciques y guerreros, como los sitios donde dejaron los caminos surcados con huellas de sangre de pueblo indígena, para toda la eternidad.
+2. Geografía cultural.
+Para hablar sobre geografía cultural de los bribris, no puede pasar inadvertido la interpretación histórica de los orígenes, narrado por Alejandro Swaby Rodríguez, nativo de Suretka Talamanca: “…Aquí desde la rebelde Talamanca, mi tierra natal, sitio de historias, saberes, mitos y leyendas, bajo la sombra de un frondoso árbol de cedro, escucho el silencioso susurro de las aguas, del viento que pasa suavemente, el dulce canto de las aves, las ranas y el bullicio de las chicharras… Desde este paraíso en medio de la espesa selva, bajo el manto de un mosaico de bosques, que guardan celosamente los restos de las tumbas, las huellas y los espíritus de nuestros antepasados, que siguen sigilosamente cuidados por los guardianes naturales, el Kamuk, el Dooyomm, el Suláyöm, el Namasol, Chkabecol, otros sitios, que reconocieron nuestros caciques y guerreros, como los sitios donde dejaron los caminos surcados con huellas de sangre de pueblo indígena, para toda la eternidad.
 Es importante para la historia la reconstrucción en nuestras mentes de esas gestas heroicas, para reconocer los heroísmos de nuestros antepasados, que permitieron la sobrevivencia de este pueblo glorioso.
 Sin resistencia ni luchas hubiéramos sido totalmente aniquilados y absorbidos…” (2013).
 3.
