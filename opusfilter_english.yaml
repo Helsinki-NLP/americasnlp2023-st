@@ -64,7 +64,7 @@ steps:
             suppress_prompts: true
     - type: opus_read
       parameters:
-            corpus_name: wmt-news
+            corpus_name: WMT-News
             source_language: es
             target_language: en
             release: v2019
@@ -174,8 +174,6 @@ steps:
                 - LengthRatioFilter:
                     unit: word
                     threshold: 2
-                - BlankFilter:
-                    module: create_opusfilter_config
     - type: preprocess
       parameters:
         inputs:
