@@ -1,0 +1,30 @@
+common:
+    output_directory: .
+
+steps:
+# Remove duplicates of the corpus
+  - type: remove_duplicates
+    parameters:
+      inputs: [OpenSubtitles.en-es.es, OpenSubtitles.en-es.en]
+      outputs: [opensub.dedup.es, opensub.dedup.en]
+   
+  - type: filter
+    parameters:
+      inputs: [opensub.dedup.es, opensub.dedup.en]
+      outputs: [opensub.filtered.es, opensub.filtered.en]
+      filters:
+        - AlphabetRatioFilter:  {}
+        
+        - LengthFilter:
+            name: word
+            unit: word
+            min_length: 3
+            max_length: 100
+            
+        - CharacterScoreFilter:
+            scripts: [Latin, Latin]
+            thresholds: [0.75, 0.75] 
+
+        - LongWordFilter: {}
+        
+        - AverageWordLengthFilter: {}
